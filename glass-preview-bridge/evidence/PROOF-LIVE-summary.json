@@ -1,0 +1,28 @@
+{
+  "at": "2026-08-06T23:24:35.000Z",
+  "glassUrls": {
+    "market": "http://127.0.0.1:8100/",
+    "admin": "http://127.0.0.1:8101/"
+  },
+  "flutterSources": {
+    "market": "http://127.0.0.1:8095/",
+    "admin": "http://127.0.0.1:7400/"
+  },
+  "market": {
+    "ok": true,
+    "firstFrameReady": true,
+    "bytes": 114473,
+    "status": "flutter-first-frame",
+    "proof": "PROOF-LIVE-market.png",
+    "ui": "Welcome screen — بوابة أمانة / أبحث عن خدمة / أرغب في العمل"
+  },
+  "admin": {
+    "ok": true,
+    "firstFrameReady": true,
+    "bytes": 44462,
+    "status": "flutter-first-frame",
+    "proof": "PROOF-LIVE-admin.png",
+    "ui": "Login — بوابة المشرف / تسجيل الدخول إلى لوحة التحكم"
+  },
+  "bridge": "dual-bridge.js (single Chrome, plain HTML+PNG)"
+}

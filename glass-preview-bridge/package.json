@@ -1,0 +1,17 @@
+{
+  "name": "glass-preview-bridge",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Side-panel safe Flutter preview: Playwright screenshots served as plain HTML (no WASM)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "start:market": "node server.js --name market --flutter-port 8095 --bridge-port 8100",
+    "start:admin": "node server.js --name admin --flutter-port 7400 --bridge-port 8101",
+    "prove": "node prove-failure.js",
+    "evidence": "node capture-evidence.js"
+  },
+  "dependencies": {
+    "playwright": "^1.54.0"
+  }
+}

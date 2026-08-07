@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>أمانة — معرض تصاميم Stitch</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --primary: #00355f;
+      --primary-light: #0f4c81;
+      --accent: #8e4e14;
+      --surface: #ffffff;
+      --background: #f7f4f2;
+      --border: #d9dde3;
+      --muted: #66717f;
+      font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: #18202a; background: var(--background); }
+    header {
+      padding: 32px clamp(20px, 5vw, 64px);
+      color: #fff;
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    }
+    header h1 { margin: 0 0 8px; font-size: clamp(26px, 4vw, 42px); }
+    header p { margin: 0; max-width: 720px; line-height: 1.7; color: #dceaff; }
+    .toolbar {
+      position: sticky; top: 0; z-index: 10;
+      display: flex; flex-wrap: wrap; gap: 10px;
+      padding: 14px clamp(20px, 5vw, 64px);
+      background: rgba(255, 255, 255, .96);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(8px);
+    }
+    button, input { font: inherit; }
+    .filter {
+      padding: 9px 16px; border: 1px solid var(--border); border-radius: 999px;
+      color: var(--primary); background: #fff; cursor: pointer;
+    }
+    .filter:hover, .filter.active { color: #fff; background: var(--primary); border-color: var(--primary); }
+    #search {
+      min-width: 220px; flex: 1;
+      padding: 9px 14px; border: 1px solid var(--border); border-radius: 10px;
+      text-align: right; background: #fff;
+    }
+    main { max-width: 1440px; margin: auto; padding: 28px clamp(20px, 5vw, 64px) 64px; }
+    .summary { margin: 0 0 22px; color: var(--muted); }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px;
+    }
+    .card {
+      display: flex; flex-direction: column; min-height: 185px;
+      padding: 20px; border: 1px solid var(--border); border-radius: 16px;
+      background: var(--surface); box-shadow: 0 4px 18px rgba(0, 53, 95, .06);
+    }
+    .badge {
+      align-self: flex-start; padding: 5px 10px; border-radius: 999px;
+      color: var(--accent); background: #fff3e8; font-size: 12px; font-weight: 700;
+    }
+    .card h2 { margin: 16px 0 7px; color: var(--primary); font-size: 18px; }
+    .card p { margin: 0 0 18px; color: var(--muted); font-size: 13px; direction: ltr; text-align: right; }
+    .actions { display: flex; gap: 8px; margin-top: auto; }
+    .actions a, .actions button {
+      flex: 1; padding: 10px; border: 1px solid var(--primary); border-radius: 9px;
+      text-align: center; text-decoration: none; cursor: pointer;
+    }
+    .open { color: #fff; background: var(--primary); }
+    .preview-button { color: var(--primary); background: #fff; }
+    dialog {
+      width: min(1180px, 96vw); height: 92vh; padding: 0;
+      border: 0; border-radius: 16px; overflow: hidden;
+      box-shadow: 0 20px 70px rgba(0, 0, 0, .35);
+    }
+    dialog::backdrop { background: rgba(0, 20, 36, .72); }
+    .dialog-head {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 12px; padding: 12px 16px; color: #fff; background: var(--primary);
+    }
+    .dialog-head strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .dialog-head button {
+      border: 1px solid rgba(255,255,255,.45); border-radius: 8px;
+      padding: 7px 12px; color: #fff; background: transparent; cursor: pointer;
+    }
+    iframe { width: 100%; height: calc(100% - 54px); border: 0; background: #fff; }
+    .empty { grid-column: 1 / -1; padding: 48px; text-align: center; color: var(--muted); }
+    footer { padding: 24px; text-align: center; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>معرض تصاميم أمانة</h1>
+    <p>نسخة منظمة لمعاينة شاشات العميل ومقدم الخدمة والإدارة والبوابات، مع إبقاء ملفات Stitch الأصلية كما هي.</p>
+  </header>
+  <nav class="toolbar" aria-label="تصفية التصاميم">
+    <button class="filter active" data-group="all">الكل (49)</button>
+    <button class="filter" data-group="gateway">البوابات (2)</button>
+    <button class="filter" data-group="customer">العميل (16)</button>
+    <button class="filter" data-group="provider">مقدم الخدمة (15)</button>
+    <button class="filter" data-group="admin">الإدارة (16)</button>
+    <input id="search" type="search" placeholder="ابحث باسم الشاشة…" aria-label="ابحث باسم الشاشة">
+  </nav>
+  <main>
+    <p class="summary" id="summary"></p>
+    <div class="grid" id="grid"></div>
+  </main>
+  <dialog id="preview">
+    <div class="dialog-head">
+      <strong id="preview-title"></strong>
+      <button type="button" id="close-preview">إغلاق</button>
+    </div>
+    <iframe id="preview-frame" title="معاينة التصميم"></iframe>
+  </dialog>
+  <footer>أمانة — ملفات HTML ثابتة، بلا إطار عمل أو خطوة بناء.</footer>
+  <script>
+    const groups = {
+      gateway: {
+        label: "البوابات",
+        screens: [
+          ["بوابة اختيار المسار", "screens/gateway/main.html"],
+          ["بوابة الإدارة", "screens/gateway/admin.html"]
+        ]
+      },
+      customer: {
+        label: "العميل",
+        names: [
+          "الإعدادات", "البحث المتقدم", "تفاصيل الخدمة", "الدعم الفني",
+          "تقييم الخدمة", "تأكيد الدفع", "إشعار فوري", "اختيار الخدمة",
+          "لوحة التحكم", "الملف الشخصي", "الرئيسية", "التتبع المباشر",
+          "الإشعارات", "المحادثة", "الرئيسية — بديل", "تسجيل العميل"
+        ]
+      },
+      provider: {
+        label: "مقدم الخدمة",
+        names: [
+          "لوحة التحكم", "تحديد التخصص", "المحفظة", "توثيق الحساب",
+          "لوحة التحكم — بديل", "الملف الشخصي", "وضع العمل", "المحادثة",
+          "تنبيه الرصيد", "لوحة التحكم — بديل 2", "بدء التسجيل",
+          "تقارير الأرباح", "تتبع الموقع", "الطلبات الجديدة", "تفاصيل الطلب النشط"
+        ]
+      },
+      admin: {
+        label: "الإدارة",
+        names: [
+          "تقرير الضرائب والعمولات", "تفاصيل المستخدم", "نظرة عامة عليا",
+          "لوحة تحكم المشرف", "التقارير المالية", "إدارة التقييم",
+          "إدارة المستخدمين", "إنشاء كود خصم", "النزاعات", "المراجعات",
+          "تفاصيل الطلب", "إدارة مقدمي الخدمة", "لوحة الإدارة",
+          "تتبع العمولات", "سجل العمليات", "إعدادات النظام"
+        ]
+      }
+    };
+
+    for (const key of ["customer", "provider", "admin"]) {
+      groups[key].screens = groups[key].names.map((name, index) => [
+        name,
+        `screens/${key}/screen-${String(index + 1).padStart(2, "0")}.html`
+      ]);
+    }
+
+    const designs = Object.entries(groups).flatMap(([group, value]) =>
+      value.screens.map(([name, path], index) => ({
+        group, groupLabel: value.label, name, path, number: index + 1
+      }))
+    );
+    const grid = document.querySelector("#grid");
+    const summary = document.querySelector("#summary");
+    const search = document.querySelector("#search");
+    const preview = document.querySelector("#preview");
+    const previewFrame = document.querySelector("#preview-frame");
+    const previewTitle = document.querySelector("#preview-title");
+    let activeGroup = "all";
+
+    function render() {
+      const query = search.value.trim().toLocaleLowerCase("ar");
+      const visible = designs.filter(item =>
+        (activeGroup === "all" || item.group === activeGroup) &&
+        (`${item.name} ${item.groupLabel} ${item.path}`).toLocaleLowerCase("ar").includes(query)
+      );
+      summary.textContent = `يتم عرض ${visible.length} من أصل ${designs.length} تصميمًا`;
+      grid.innerHTML = visible.length ? visible.map(item => `
+        <article class="card">
+          <span class="badge">${item.groupLabel} · ${item.number}</span>
+          <h2>${item.name}</h2>
+          <p>${item.path}</p>
+          <div class="actions">
+            <a class="open" href="${item.path}" target="_blank" rel="noopener">فتح</a>
+            <button class="preview-button" data-path="${item.path}" data-title="${item.name}">معاينة</button>
+          </div>
+        </article>
+      `).join("") : '<p class="empty">لا توجد تصاميم مطابقة.</p>';
+    }
+
+    document.querySelectorAll(".filter").forEach(button => {
+      button.addEventListener("click", () => {
+        document.querySelector(".filter.active").classList.remove("active");
+        button.classList.add("active");
+        activeGroup = button.dataset.group;
+        render();
+      });
+    });
+    search.addEventListener("input", render);
+    grid.addEventListener("click", event => {
+      const button = event.target.closest(".preview-button");
+      if (!button) return;
+      previewTitle.textContent = button.dataset.title;
+      previewFrame.src = button.dataset.path;
+      preview.showModal();
+    });
+    document.querySelector("#close-preview").addEventListener("click", () => preview.close());
+    preview.addEventListener("close", () => { previewFrame.src = "about:blank"; });
+    render();
+  </script>
+</body>
+</html>

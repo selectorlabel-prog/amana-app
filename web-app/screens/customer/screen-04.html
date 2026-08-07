@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>الدعم الفني - أمانة</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=Noto+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-white": "#FFFFFF",
+                      "on-primary-fixed": "#001c37",
+                      "surface-container-high": "#eae7e7",
+                      "surface-bright": "#fcf9f8",
+                      "secondary-container": "#ffab69",
+                      "on-secondary-fixed-variant": "#6f3800",
+                      "on-surface": "#1b1c1c",
+                      "tertiary-container": "#00544b",
+                      "primary": "#00355f",
+                      "sand-accent": "#F4A261",
+                      "outline": "#727780",
+                      "inverse-primary": "#a0c9ff",
+                      "secondary-fixed-dim": "#ffb780",
+                      "surface-variant": "#e5e2e1",
+                      "on-secondary-container": "#783d01",
+                      "surface-container": "#f0eded",
+                      "success-green": "#27A745",
+                      "on-background": "#1b1c1c",
+                      "on-tertiary-fixed": "#00201c",
+                      "on-tertiary-container": "#61cbbc",
+                      "secondary-fixed": "#ffdcc4",
+                      "on-surface-variant": "#42474f",
+                      "background": "#fcf9f8",
+                      "surface-container-highest": "#e5e2e1",
+                      "secondary": "#8e4e14",
+                      "tertiary": "#003b34",
+                      "surface-container-lowest": "#ffffff",
+                      "on-tertiary": "#ffffff",
+                      "on-secondary-fixed": "#2f1400",
+                      "surface": "#fcf9f8",
+                      "nile-blue-deep": "#0A2E4D",
+                      "on-primary-container": "#8ebdf9",
+                      "on-primary": "#ffffff",
+                      "error": "#ba1a1a",
+                      "primary-fixed": "#d2e4ff",
+                      "surface-dim": "#dcd9d9",
+                      "primary-fixed-dim": "#a0c9ff",
+                      "inverse-surface": "#303030",
+                      "on-error-container": "#93000a",
+                      "tertiary-fixed-dim": "#6fd8c8",
+                      "primary-container": "#0f4c81",
+                      "tertiary-fixed": "#8cf5e4",
+                      "surface-gray-light": "#F8F9FA",
+                      "warning-amber": "#FFBF00",
+                      "surface-tint": "#2d6197",
+                      "on-tertiary-fixed-variant": "#005048",
+                      "error-container": "#ffdad6",
+                      "on-error": "#ffffff",
+                      "surface-container-low": "#f6f3f2",
+                      "outline-variant": "#c2c7d1",
+                      "error-red": "#D93025",
+                      "on-secondary": "#ffffff",
+                      "on-primary-fixed-variant": "#07497d",
+                      "inverse-on-surface": "#f3f0ef"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xl": "32px",
+                      "gutter-mobile": "12px",
+                      "xs": "8px",
+                      "lg": "24px",
+                      "sm": "12px",
+                      "margin-mobile": "16px",
+                      "base": "4px",
+                      "md": "16px"
+              },
+              "fontFamily": {
+                      "headline-lg-mobile": ["IBM Plex Sans"],
+                      "body-lg": ["Noto Sans"],
+                      "headline-md": ["IBM Plex Sans"],
+                      "label-md": ["IBM Plex Sans"],
+                      "headline-lg": ["IBM Plex Sans"],
+                      "label-sm": ["IBM Plex Sans"],
+                      "body-md": ["Noto Sans"]
+              },
+              "fontSize": {
+                      "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                      "headline-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-surface');
+            -webkit-tap-highlight-color: transparent;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Smooth transitions for FAQ accordion */
+        .faq-content {
+            transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+        .faq-item.active .faq-content {
+            max-height: 500px;
+            opacity: 1;
+            padding-top: 12px;
+            padding-bottom: 12px;
+        }
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+      </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased min-h-screen flex flex-col md:flex-row">
+<!-- Desktop Navigation Drawer (Hidden on Mobile) -->
+<nav aria-label="Sidebar Navigation" class="hidden md:flex h-full w-[280px] rounded-l-xl bg-surface-bright shadow-lg flex-col py-lg px-md sticky top-0">
+<!-- Drawer Header -->
+<div class="flex items-center gap-sm mb-xl">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container shrink-0">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="Close up professional portrait of a confident young Sudanese man in modern smart-casual attire. Soft natural daylight illuminates his face. The background is a slightly blurred, modern office interior with subtle light blue and white tones matching the Amana brand. 4k resolution, highly detailed." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2wmJp3u1atQgRdoH_dj3EBQf8LN_taesnazztGqYldozd5sp1xvWKkSbMRgC_QCLdbqEuOJJGjTGvDYF1UhopTWHi6UtyzuNbkYhRi4i2Wvg_3v8J1ttky27oEyjQS6GcNmhZN9DXF7vJHuawz2EHRaV-Iq68PxqzozexrQjLWIoNVDhm1h6Q0h25iDMJQ2XreIWB28Sh30qRrKBwwUhiy8tgE3Y63UWlIuN0RO_2AYl2aHT03_UQ5k4IMYPcoQRujQ2zVIbhTxdE"/>
+</div>
+<div>
+<h2 class="font-headline-md text-primary truncate">أحمد محمد</h2>
+<p class="font-label-sm text-on-surface-variant truncate">مزود خدمة معتمد</p>
+<p class="font-label-sm text-outline truncate">الخرطوم، السودان</p>
+</div>
+</div>
+<!-- Navigation Links -->
+<ul class="flex flex-col gap-xs flex-grow">
+<li>
+<a class="flex items-center gap-md px-sm py-sm rounded-lg text-on-surface-variant hover:bg-surface-variant transition-all" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body-md text-body-md">لوحة التحكم</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md px-sm py-sm rounded-lg text-on-surface-variant hover:bg-surface-variant transition-all" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="font-body-md text-body-md">المحفظة</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md px-sm py-sm rounded-lg text-on-surface-variant hover:bg-surface-variant transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-body-md text-body-md">الإعدادات</span>
+</a>
+</li>
+<!-- Active State -->
+<li>
+<a class="flex items-center gap-md px-sm py-sm rounded-lg bg-primary-container text-on-primary-container font-bold" href="#">
+<span class="material-symbols-outlined filled">support_agent</span>
+<span class="font-body-md text-body-md">الدعم الفني</span>
+</a>
+</li>
+</ul>
+<!-- Logout -->
+<div class="mt-auto pt-md border-t border-surface-container">
+<a class="flex items-center gap-md px-sm py-sm rounded-lg text-error hover:bg-error-container transition-all" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-body-md text-body-md">تسجيل الخروج</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-grow flex flex-col w-full bg-background relative pb-[100px] md:pb-0">
+<!-- TopAppBar (Mobile & Desktop) -->
+<header class="w-full top-0 sticky z-40 bg-surface border-b border-outline-variant flex justify-between items-center px-margin-mobile h-[64px]">
+<!-- Leading (Avatar for mobile, empty for desktop sidebar padding) -->
+<div class="flex items-center gap-sm">
+<button class="md:hidden w-10 h-10 rounded-full overflow-hidden focus:outline-none focus:ring-2 focus:ring-primary">
+<img alt="User Profile Avatar" class="w-full h-full object-cover" data-alt="Close up professional portrait of a confident young Sudanese man in modern smart-casual attire. Soft natural daylight illuminates his face. The background is a slightly blurred, modern office interior with subtle light blue and white tones matching the Amana brand. 4k resolution, highly detailed." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzz3oBpD-UQlTx8FSKxL5dk8o9ZLbrSkQCAVbkWBEsEnf0xbax1ul318FAcml1w4tFDbIax21KQ9Suu6_4gGpjhPp-eunD5HnsilXMjRTc10-dKL5PX1BVs-NAkOXKO9XsSfXC2fN0tqlW4JcwHp0bov8KcgJ2SAVmZsKNLOpk1CesP8wohPqUMQCLew18Qt0sFLCnR1GInR5lrIMS2AMgOu9935yCTRnsda1Udv_5v08m1n_C2A0I24F1YDdVc8gJ9VasZd5F7Q9s"/>
+</button>
+</div>
+<!-- Headline -->
+<h1 class="font-headline-md-mobile text-headline-md-mobile font-bold text-primary text-center flex-grow md:text-right md:mr-4">أمانة</h1>
+<!-- Trailing (Notifications) -->
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-primary hover:bg-surface-container-high transition-colors active:scale-95 duration-100 focus:outline-none">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</header>
+<!-- Page Canvas -->
+<div class="flex-grow overflow-y-auto px-margin-mobile py-lg max-w-4xl mx-auto w-full space-y-xl">
+<!-- Header Section -->
+<div class="text-center space-y-sm">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary md:font-headline-lg md:text-headline-lg">كيف يمكننا مساعدتك؟</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">ابحث عن إجابات، تواصل مع فريقنا، أو شاهد شروحات الفيديو.</p>
+</div>
+<!-- Search Bar -->
+<div class="relative w-full shadow-sm rounded-xl overflow-hidden bg-surface-white border border-outline-variant focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-all">
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-4 pr-12 py-3 border-none focus:ring-0 font-body-md text-body-md bg-transparent placeholder-outline-variant text-on-surface" placeholder="ابحث عن مساعدة (مثال: طريقة الدفع)..." type="text"/>
+</div>
+<!-- Quick Contact Channels -->
+<section class="space-y-md">
+<h3 class="font-headline-md text-headline-md text-on-surface">تواصل معنا مباشرة</h3>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-md">
+<!-- Live Chat -->
+<button class="flex flex-col items-center justify-center p-md bg-surface-white rounded-xl border border-outline-variant shadow-sm hover:border-primary-container hover:shadow-md transition-all active:scale-95 group">
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center mb-sm group-hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined filled text-primary group-hover:text-on-primary-container">chat</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">المحادثة المباشرة</span>
+<span class="font-label-sm text-label-sm text-outline-variant mt-1">متاح الآن</span>
+</button>
+<!-- Phone Support -->
+<button class="flex flex-col items-center justify-center p-md bg-surface-white rounded-xl border border-outline-variant shadow-sm hover:border-primary-container hover:shadow-md transition-all active:scale-95 group">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center mb-sm group-hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined filled text-on-surface-variant group-hover:text-on-primary-container">call</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">الدعم الهاتفي</span>
+<span class="font-label-sm text-label-sm text-outline-variant mt-1">9 ص - 9 م</span>
+</button>
+<!-- WhatsApp Support -->
+<button class="flex flex-col items-center justify-center p-md bg-surface-white rounded-xl border border-success-green/30 shadow-sm hover:border-success-green hover:shadow-md transition-all active:scale-95 group relative overflow-hidden">
+<!-- Subtle green background hint -->
+<div class="absolute inset-0 bg-success-green/5 z-0"></div>
+<div class="w-12 h-12 rounded-full bg-success-green/20 flex items-center justify-center mb-sm z-10">
+<!-- Using standard chat icon as proxy for WhatsApp in Material Symbols -->
+<span class="material-symbols-outlined filled text-success-green">forum</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface z-10">دعم واتساب</span>
+<span class="font-label-sm text-label-sm text-success-green mt-1 z-10">الأسرع استجابة</span>
+</button>
+</div>
+</section>
+<!-- Top FAQ (Bento/Accordion Hybrid) -->
+<section class="space-y-md">
+<div class="flex justify-between items-center">
+<h3 class="font-headline-md text-headline-md text-on-surface">الأسئلة الشائعة</h3>
+<a class="font-label-md text-label-md text-primary hover:underline" href="#">عرض الكل</a>
+</div>
+<div class="bg-surface-white rounded-xl border border-outline-variant shadow-sm overflow-hidden divide-y divide-outline-variant">
+<!-- FAQ Item 1 -->
+<div class="faq-item">
+<button class="w-full flex justify-between items-center p-md text-right focus:outline-none hover:bg-surface-gray-light transition-colors" onclick="this.parentElement.classList.toggle('active')">
+<span class="font-label-md text-label-md text-on-surface font-semibold">كيف أقوم بحجز خدمة جديدة؟</span>
+<span class="material-symbols-outlined text-outline faq-icon">expand_more</span>
+</button>
+<div class="faq-content px-md bg-surface-bright">
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                يمكنك حجز خدمة عن طريق التوجه إلى الصفحة الرئيسية، اختيار القسم المناسب (مثل سباكة، كهرباء)، ثم تصفح مزودي الخدمة المتاحين واختيار الأنسب لك والنقر على زر "حجز الآن".
+                            </p>
+</div>
+</div>
+<!-- FAQ Item 2 -->
+<div class="faq-item">
+<button class="w-full flex justify-between items-center p-md text-right focus:outline-none hover:bg-surface-gray-light transition-colors" onclick="this.parentElement.classList.toggle('active')">
+<span class="font-label-md text-label-md text-on-surface font-semibold">كيف يمكنني شحن رصيد محفظتي؟</span>
+<span class="material-symbols-outlined text-outline faq-icon">expand_more</span>
+</button>
+<div class="faq-content px-md bg-surface-bright">
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                من القائمة الجانبية أو السفلية، اختر "المحفظة"، ثم اضغط على "إضافة رصيد". يمكنك استخدام طرق الدفع المحلية المتاحة مثل SyberPay أو البطاقات البنكية لإتمام العملية بأمان.
+                            </p>
+</div>
+</div>
+<!-- FAQ Item 3 -->
+<div class="faq-item">
+<button class="w-full flex justify-between items-center p-md text-right focus:outline-none hover:bg-surface-gray-light transition-colors" onclick="this.parentElement.classList.toggle('active')">
+<span class="font-label-md text-label-md text-on-surface font-semibold">ما هي سياسة العمولة والرسوم؟</span>
+<span class="material-symbols-outlined text-outline faq-icon">expand_more</span>
+</button>
+<div class="faq-content px-md bg-surface-bright">
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                تطبق أمانة عمولة رمزية قدرها 10% على كل خدمة تكتمل بنجاح. لا يتم خصم أي مبالغ حتى يؤكد العميل استلام الخدمة ورضاه عنها.
+                            </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Tutorial Videos (Glassmorphism/Card Layout) -->
+<section class="space-y-md">
+<h3 class="font-headline-md text-headline-md text-on-surface">شروحات فيديو</h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-md">
+<!-- Video Card 1 -->
+<div class="group relative rounded-xl overflow-hidden border border-outline-variant shadow-sm bg-surface-white cursor-pointer hover:shadow-md transition-shadow">
+<!-- Thumbnail Area -->
+<div class="relative h-40 w-full bg-surface-container-highest">
+<img alt="Tutorial Thumbnail 1" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity" data-alt="A high quality thumbnail image showing a close-up of a modern smartphone screen displaying the Amana app interface. The screen shows a digital wallet with a balance in Sudanese Pounds. A person's finger is tapping an 'Add Funds' button. The lighting is bright and clean, reflecting a modern tech aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbwiQ0mJfyCcstqg-gS9myQkL2_uBiJzUIfXNi7CyGUYWIz2VrytBkB_zkdQPZ1zxzqHg1ZTC0zIyBAIg5EiI__X0zXwkeCLixpKODKX2fvkEXOlAwib-Je6UvmHxUkTT6d_oPd1byHcAEvQOvuGcnHc0Xwzt0qzJx7ltRZsoUmR1U3LTdjWMzDYVYHzqqYOR-ECUIBnSGsQNlEdgkxDVbX5LPfSWG5wFTfkEQrnBQab8Ag9Fel9YJvdTcSL8ImRKERcsETJqm70pg"/>
+<!-- Play Button Overlay -->
+<div class="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/10 transition-colors">
+<div class="w-12 h-12 rounded-full bg-surface-white/80 backdrop-blur-sm flex items-center justify-center text-primary shadow-lg transform group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined filled text-2xl">play_arrow</span>
+</div>
+</div>
+<!-- Duration badge -->
+<div class="absolute bottom-2 left-2 bg-black/70 text-surface-white px-2 py-1 rounded text-xs font-semibold">
+                                02:15
+                            </div>
+</div>
+<!-- Content -->
+<div class="p-sm">
+<h4 class="font-label-md text-label-md text-on-surface font-semibold line-clamp-1">طريقة استخدام المحفظة والدفع الإلكتروني</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">خطوة بخطوة لشحن الرصيد بأمان.</p>
+</div>
+</div>
+<!-- Video Card 2 -->
+<div class="group relative rounded-xl overflow-hidden border border-outline-variant shadow-sm bg-surface-white cursor-pointer hover:shadow-md transition-shadow">
+<!-- Thumbnail Area -->
+<div class="relative h-40 w-full bg-surface-container-highest">
+<img alt="Tutorial Thumbnail 2" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity" data-alt="A high quality thumbnail image showing a professional Sudanese service provider, like a plumber or electrician, smiling at the camera holding a smartphone showing the Amana app dashboard. The background is a clean residential setting. The overall tone is trustworthy and reliable." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAprWrUiYf3BZC39InpN0npC2OqtbLQTxECWhgSSPQ-k1wyKGeEML8x6l4VmWV2zUIhx0mrJYEEOwRG69MTwqmeTLdoTTuRcu8Toda6VwHotYN4f69Fz8g4Ldb3wVImhuZiz9hStA8qjZFNe_hYKQC9WltTc6AFdhkcdZcjl4RwGSf4uj3YInHjXBBSbL3NDV6TMy5MD29fYkuVMXbtCAWJ094yRWIurhipz8CpL0Any0r4D4HvLLfLDY0qjv2kdt4FNM2FtkAke4PZ"/>
+<!-- Play Button Overlay -->
+<div class="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/10 transition-colors">
+<div class="w-12 h-12 rounded-full bg-surface-white/80 backdrop-blur-sm flex items-center justify-center text-primary shadow-lg transform group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined filled text-2xl">play_arrow</span>
+</div>
+</div>
+<!-- Duration badge -->
+<div class="absolute bottom-2 left-2 bg-black/70 text-surface-white px-2 py-1 rounded text-xs font-semibold">
+                                03:40
+                            </div>
+</div>
+<!-- Content -->
+<div class="p-sm">
+<h4 class="font-label-md text-label-md text-on-surface font-semibold line-clamp-1">دليل مزود الخدمة لإدارة الطلبات</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">كيفية قبول الطلبات وإدارة وقتك بكفاءة.</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav aria-label="Bottom Navigation" class="md:hidden fixed bottom-0 w-full z-50 rounded-t-xl bg-surface border-t border-outline-variant shadow-sm pb-safe flex justify-around items-center h-[80px]">
+<!-- Inactive -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant w-16 hover:opacity-80 transition-opacity active:inner-shadow duration-150" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-label-sm text-label-sm">الرئيسية</span>
+</a>
+<!-- Inactive -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant w-16 hover:opacity-80 transition-opacity active:inner-shadow duration-150" href="#">
+<span class="material-symbols-outlined mb-1">assignment</span>
+<span class="font-label-sm text-label-sm">طلباتي</span>
+</a>
+<!-- Inactive -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant w-16 hover:opacity-80 transition-opacity active:inner-shadow duration-150" href="#">
+<span class="material-symbols-outlined mb-1">chat</span>
+<span class="font-label-sm text-label-sm">المحادثات</span>
+</a>
+<!-- Active (Settings/Account area represents where Help typically sits if no direct match, highlighting Account contextually) -->
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 w-[72px] hover:opacity-80 transition-opacity active:inner-shadow duration-150" href="#">
+<span class="material-symbols-outlined filled mb-1">person</span>
+<span class="font-label-sm text-label-sm font-bold">الحساب</span>
+</a>
+</nav>
+</body></html>

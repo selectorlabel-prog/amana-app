@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Amana - Service Selection</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100..900&family=Noto+Sans:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "success-green": "#27A745",
+                    "on-tertiary-container": "#61cbbc",
+                    "surface-tint": "#2d6197",
+                    "inverse-primary": "#a0c9ff",
+                    "tertiary-container": "#00544b",
+                    "on-primary-fixed-variant": "#07497d",
+                    "on-primary-fixed": "#001c37",
+                    "on-error": "#ffffff",
+                    "error-red": "#D93025",
+                    "on-secondary-fixed-variant": "#6f3800",
+                    "surface-container-high": "#eae7e7",
+                    "surface-variant": "#e5e2e1",
+                    "primary-container": "#0f4c81",
+                    "tertiary": "#003b34",
+                    "on-surface": "#1b1c1c",
+                    "inverse-on-surface": "#f3f0ef",
+                    "secondary-fixed": "#ffdcc4",
+                    "on-tertiary-fixed": "#00201c",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed": "#2f1400",
+                    "sand-accent": "#F4A261",
+                    "on-tertiary-fixed-variant": "#005048",
+                    "on-primary-container": "#8ebdf9",
+                    "primary-fixed-dim": "#a0c9ff",
+                    "on-tertiary": "#ffffff",
+                    "surface-white": "#FFFFFF",
+                    "tertiary-fixed": "#8cf5e4",
+                    "surface-container": "#f0eded",
+                    "error-container": "#ffdad6",
+                    "on-primary": "#ffffff",
+                    "surface-container-low": "#f6f3f2",
+                    "nile-blue-deep": "#0A2E4D",
+                    "surface-bright": "#fcf9f8",
+                    "on-surface-variant": "#42474f",
+                    "secondary-fixed-dim": "#ffb780",
+                    "inverse-surface": "#303030",
+                    "secondary-container": "#ffab69",
+                    "warning-amber": "#FFBF00",
+                    "background": "#fcf9f8",
+                    "secondary": "#8e4e14",
+                    "surface-gray-light": "#F8F9FA",
+                    "surface": "#fcf9f8",
+                    "outline": "#727780",
+                    "tertiary-fixed-dim": "#6fd8c8",
+                    "surface-container-highest": "#e5e2e1",
+                    "on-secondary-container": "#783d01",
+                    "on-secondary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "error": "#ba1a1a",
+                    "primary": "#00355f",
+                    "primary-fixed": "#d2e4ff",
+                    "outline-variant": "#c2c7d1",
+                    "on-background": "#1b1c1c",
+                    "surface-dim": "#dcd9d9"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "8px",
+                    "sm": "12px",
+                    "gutter-mobile": "12px",
+                    "margin-mobile": "16px",
+                    "xl": "32px",
+                    "base": "4px",
+                    "lg": "24px",
+                    "md": "16px"
+            },
+            "fontFamily": {
+                    "label-md": ["IBM Plex Sans"],
+                    "label-sm": ["IBM Plex Sans"],
+                    "headline-lg-mobile": ["IBM Plex Sans"],
+                    "headline-lg": ["IBM Plex Sans"],
+                    "headline-md": ["IBM Plex Sans"],
+                    "body-md": ["Noto Sans"],
+                    "body-lg": ["Noto Sans"]
+            },
+            "fontSize": {
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "headline-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Noto Sans', sans-serif;
+            background-color: #fcf9f8;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="bg-surface w-full top-0 sticky z-50 border-b border-outline-variant flex justify-between items-center px-margin-mobile h-14">
+<button class="active:scale-95 transition-transform text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Amana</h1>
+<button class="active:scale-95 transition-transform text-primary">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</header>
+<main class="flex flex-col gap-lg mt-md px-margin-mobile">
+<!-- Search Bar Section -->
+<section class="relative">
+<div class="relative w-full">
+<input class="w-full h-12 bg-surface-container-low border border-outline-variant rounded-xl pr-12 pl-4 text-body-md focus:ring-2 focus:ring-primary focus:outline-none transition-all" placeholder="ما هي الخدمة التي تبحث عنها؟" type="text"/>
+<div class="absolute inset-y-0 right-4 flex items-center pointer-events-none text-on-surface-variant">
+<span class="material-symbols-outlined">search</span>
+</div>
+</div>
+</section>
+<!-- Featured/Popular Categories (Bento-inspired Horizontal Scroll) -->
+<section>
+<div class="flex justify-between items-end mb-sm">
+<h2 class="font-headline-md text-headline-md text-primary">الأكثر طلباً</h2>
+<a class="font-label-md text-label-md text-secondary" href="#">عرض الكل</a>
+</div>
+<div class="flex overflow-x-auto gap-md hide-scrollbar py-2 -mx-4 px-4">
+<!-- Card 1: Home Maintenance -->
+<div class="flex-none w-64 h-48 rounded-xl overflow-hidden relative shadow-sm border border-outline-variant group active:scale-95 transition-all">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A professional technician in a clean blue uniform fixing an air conditioning unit in a bright, modern Sudanese living room. The lighting is warm and natural, emphasizing trust and high-quality service. The color palette incorporates deep blues and sand-colored accents consistent with the Amana brand identity." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDbHDS9yDGYbxDsMqsgh4qU0kOeuNHMr9QJsrWWWZ2MnspT97qXia5vJ1afKnI3YkXOuApmKQ6uXjdSPqi7LMgFaf80IQjFQpZJS7R1sXia1iWt9AqYcZ37YQm_JpW1Bp_wRvGMpd2aJh5l7wcQsAGPeqtkm2KAeXi6CUI0rXLjdg_NiMNruYNY5jOxPEcqjm2HJgpDnOBJlK7peD4Ssjq4wpBb9e-SkKr10VZi-ERXVc8FZepOYrktKAaHh1X0C8uFw6fc1jqIn769')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-nile-blue-deep/90 via-transparent to-transparent"></div>
+<div class="absolute bottom-3 right-3 text-surface-white">
+<span class="bg-sand-accent text-on-secondary-container px-2 py-0.5 rounded-full font-label-sm text-label-sm mb-1 inline-block">عروض خاصة</span>
+<h3 class="font-headline-md text-headline-md">صيانة المنازل</h3>
+<p class="font-label-sm text-label-sm opacity-90">كهرباء، سباكة، تكييف</p>
+</div>
+</div>
+<!-- Card 2: Cleaning -->
+<div class="flex-none w-64 h-48 rounded-xl overflow-hidden relative shadow-sm border border-outline-variant group active:scale-95 transition-all">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A bright, minimalist apartment interior after a professional cleaning service. The sunlight streams through large windows, reflecting off polished wooden floors and white surfaces. A subtle, high-end cleaning kit is neatly placed on a marble countertop. The atmosphere is serene, pristine, and professional." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBQ8agC8sHuwzd2Lj5DGZ3LihiPrSB39QLuqIo9j-u0H6YEleAmnGdk77JywFAn8KcPF7a_093itFWlvLnhUl5QlTtOoPAdxgd-BXI8yYDmRB1M-7rYk5Kq-7bUU2nli706KxZ7V9h4tt1yWmYB09PmCbBVl8-HXwLI7fWNJAAknmRLzB7ukjxfw-xxALNkMPwkGtGS3WChMdq6AxxLwkXeNDJuhXpmjMOgsCGBbl4yuvC7PhqQiaLiVyWCew2csFhAIOr2B4kEwbkY')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-nile-blue-deep/90 via-transparent to-transparent"></div>
+<div class="absolute bottom-3 right-3 text-surface-white">
+<h3 class="font-headline-md text-headline-md">خدمات النظافة</h3>
+<p class="font-label-sm text-label-sm opacity-90">نظافة عميقة، تعقيم</p>
+</div>
+</div>
+<!-- Card 3: Electronics -->
+<div class="flex-none w-64 h-48 rounded-xl overflow-hidden relative shadow-sm border border-outline-variant group active:scale-95 transition-all">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Close up of a skilled technician repairing a smartphone and laptop using precision tools. The workspace is organized with high-tech equipment under professional LED lighting. The style is modern, clinical, and reliable, focusing on the expertise and trust of the repair service." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBf-0bc3r8NTf-FLa0czbwaEhtD2qexeix4cXdODVc1uxdx_Xuxno9RMYnrqS0_DIoMwqTcFQOMiLTOYxz0gvAEe2Y86kxJor0bjhO1HjYKTOIu8yShzKW-z23CZ_hElxOoQJ2Y1-9HEBU4MJfcdW1DvQPVS0QXmB-zitOz9vildxezijIxkc_InFiIh3YrKOZ7TSTzmpHG7ZI0xfJHMAlybuP0ZEk-0FcPPa8Cp_5Sn9nPHqGUR7CbUuqdN4IeZd8nK5l3dHDYfkYb')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-nile-blue-deep/90 via-transparent to-transparent"></div>
+<div class="absolute bottom-3 right-3 text-surface-white">
+<h3 class="font-headline-md text-headline-md">صيانة الإلكترونيات</h3>
+<p class="font-label-sm text-label-sm opacity-90">موبايلات، لابتوب، شاشات</p>
+</div>
+</div>
+</div>
+</section>
+<!-- All Categories Grid -->
+<section>
+<h2 class="font-headline-md text-headline-md text-primary mb-md">جميع الفئات</h2>
+<div class="grid grid-cols-4 gap-gutter-mobile">
+<!-- Category Item -->
+<div class="flex flex-col items-center gap-base active:scale-90 transition-transform">
+<div class="w-16 h-16 bg-surface-container flex items-center justify-center rounded-2xl border border-outline-variant text-primary">
+<span class="material-symbols-outlined text-[32px]">home_repair_service</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface text-center">صيانة</span>
+</div>
+<div class="flex flex-col items-center gap-base active:scale-90 transition-transform">
+<div class="w-16 h-16 bg-surface-container flex items-center justify-center rounded-2xl border border-outline-variant text-primary">
+<span class="material-symbols-outlined text-[32px]">mop</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface text-center">نظافة</span>
+</div>
+<div class="flex flex-col items-center gap-base active:scale-90 transition-transform">
+<div class="w-16 h-16 bg-surface-container flex items-center justify-center rounded-2xl border border-outline-variant text-primary">
+<span class="material-symbols-outlined text-[32px]">plumbing</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface text-center">سباكة</span>
+</div>
+<div class="flex flex-col items-center gap-base active:scale-90 transition-transform">
+<div class="w-16 h-16 bg-surface-container flex items-center justify-center rounded-2xl border border-outline-variant text-primary">
+<span class="material-symbols-outlined text-[32px]">electrical_services</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface text-center">كهرباء</span>
+</div>
+<div class="flex flex-col items-center gap-base active:scale-90 transition-transform">
+<div class="w-16 h-16 bg-surface-container flex items-center justify-center rounded-2xl border border-outline-variant text-primary">
+<span class="material-symbols-outlined text-[32px]">pest_control</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface text-center">إبادة آفات</span>
+</div>
+<div class="flex flex-col items-center gap-base active:scale-90 transition-transform">
+<div class="w-16 h-16 bg-surface-container flex items-center justify-center rounded-2xl border border-outline-variant text-primary">
+<span class="material-symbols-outlined text-[32px]">imagesearch_roller</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface text-center">طلاء</span>
+</div>
+<div class="flex flex-col items-center gap-base active:scale-90 transition-transform">
+<div class="w-16 h-16 bg-surface-container flex items-center justify-center rounded-2xl border border-outline-variant text-primary">
+<span class="material-symbols-outlined text-[32px]">ac_unit</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface text-center">تكييف</span>
+</div>
+<div class="flex flex-col items-center gap-base active:scale-90 transition-transform">
+<div class="w-16 h-16 bg-surface-container flex items-center justify-center rounded-2xl border border-outline-variant text-primary">
+<span class="material-symbols-outlined text-[32px]">grid_view</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface text-center">المزيد</span>
+</div>
+</div>
+</section>
+<!-- Trust / Promotion Banner (Bento Style) -->
+<section class="bg-primary-container rounded-2xl p-md text-surface-white relative overflow-hidden">
+<div class="relative z-10 flex flex-col gap-xs">
+<span class="font-label-md text-label-md text-on-primary-container bg-surface-white/20 w-fit px-3 py-1 rounded-full">أمانة تضمن لك حقك</span>
+<h3 class="font-headline-md text-headline-md">هل تحتاج لمساعدة فورية؟</h3>
+<p class="font-body-md text-body-md opacity-90 max-w-[70%]">اطلب خدمة الصيانة الطارئة الآن وسنصلك في أقل من 30 دقيقة داخل الخرطوم.</p>
+<button class="mt-sm bg-sand-accent text-on-secondary-container px-6 py-2 rounded-xl w-fit font-label-md text-label-md active:scale-95 transition-all">اطلب الآن</button>
+</div>
+<div class="absolute -left-4 -bottom-4 opacity-20">
+<span class="material-symbols-outlined text-[120px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface rounded-t-xl shadow-lg border-t border-outline-variant flex justify-around items-center px-2 py-2">
+<button class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="font-label-sm text-label-sm">استكشف</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-2 active:scale-90 transition-all duration-200 hover:text-primary">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="font-label-sm text-label-sm">الطلبات</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-2 active:scale-90 transition-all duration-200 hover:text-primary">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-label-sm text-label-sm">المحفظة</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-2 active:scale-90 transition-all duration-200 hover:text-primary">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">حسابي</span>
+</button>
+</nav>
+<script>
+        // Micro-interaction for search bar focus
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('focus', () => {
+            searchInput.parentElement.classList.add('scale-[1.02]');
+        });
+        searchInput.addEventListener('blur', () => {
+            searchInput.parentElement.classList.remove('scale-[1.02]');
+        });
+    </script>
+</body></html>

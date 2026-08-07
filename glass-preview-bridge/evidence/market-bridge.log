@@ -1,0 +1,3 @@
+[bridge:market] Flutter source: http://127.0.0.1:8095
+[bridge:market] Glass URL:      http://127.0.0.1:8100/
+[bridge:market] listening on 127.0.0.1:8100

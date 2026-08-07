@@ -1,0 +1,89 @@
+{
+  "name": "Amana Price Confirmed → Admin Sync",
+  "nodes": [
+    {
+      "id": "webhook_price_confirmed",
+      "name": "Price Confirmed Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [240, 300],
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "amana-price-confirmed",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "webhookId": "amana-price-confirmed"
+    },
+    {
+      "id": "normalize_payload",
+      "name": "Normalize Payload",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [500, 300],
+      "parameters": {
+        "mode": "manual",
+        "duplicateItem": false,
+        "assignments": {
+          "assignments": [
+            {
+              "id": "a1",
+              "name": "event",
+              "value": "={{ $json.event || 'price_confirmed' }}",
+              "type": "string"
+            },
+            {
+              "id": "a2",
+              "name": "order_id",
+              "value": "={{ $json.order_id }}",
+              "type": "string"
+            },
+            {
+              "id": "a3",
+              "name": "price",
+              "value": "={{ $json.price }}",
+              "type": "number"
+            },
+            {
+              "id": "a4",
+              "name": "tracking_unlocked",
+              "value": "={{ true }}",
+              "type": "boolean"
+            },
+            {
+              "id": "a5",
+              "name": "admin_message",
+              "value": "=تم الاتفاق على السعر — التتبع الحي مفعّل للطلب {{ $json.order_id }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "respond_ok",
+      "name": "Respond OK",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [760, 300],
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify({ ok: true, event: $json.event, order_id: $json.order_id, tracking_unlocked: true }) }}",
+        "options": {}
+      }
+    }
+  ],
+  "connections": {
+    "Price Confirmed Webhook": {
+      "main": [[{ "node": "Normalize Payload", "type": "main", "index": 0 }]]
+    },
+    "Normalize Payload": {
+      "main": [[{ "node": "Respond OK", "type": "main", "index": 0 }]]
+    }
+  },
+  "settings": { "executionOrder": "v1" },
+  "meta": {
+    "description": "Receives price_confirmed from Flutter market apps. Live GPS stays on Supabase Realtime; this workflow is for admin/cross-app event fan-out. Production URL after activate: https://amana-app.app.n8n.cloud/webhook/amana-price-confirmed — set N8N_PRICE_CONFIRMED_WEBHOOK_URL in amana_app .env"
+  }
+}

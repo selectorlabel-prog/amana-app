@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>تتبع الموقع - Job Tracking</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Noto+Sans:wght@400;500&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100..900&family=Noto+Sans:wght@100..900&display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#00544b",
+                    "primary-fixed": "#d2e4ff",
+                    "surface-tint": "#2d6197",
+                    "outline": "#727780",
+                    "on-tertiary-fixed": "#00201c",
+                    "warning-amber": "#FFBF00",
+                    "primary-container": "#0f4c81",
+                    "on-primary-container": "#8ebdf9",
+                    "error-container": "#ffdad6",
+                    "success-green": "#27A745",
+                    "surface-gray-light": "#F8F9FA",
+                    "secondary": "#8e4e14",
+                    "surface-bright": "#fcf9f8",
+                    "secondary-container": "#ffab69",
+                    "on-background": "#1b1c1c",
+                    "on-secondary-fixed": "#2f1400",
+                    "inverse-surface": "#303030",
+                    "on-primary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "sand-accent": "#F4A261",
+                    "primary": "#00355f",
+                    "error-red": "#D93025",
+                    "on-tertiary": "#ffffff",
+                    "tertiary": "#003b34",
+                    "surface-variant": "#e5e2e1",
+                    "outline-variant": "#c2c7d1",
+                    "inverse-primary": "#a0c9ff",
+                    "nile-blue-deep": "#0A2E4D",
+                    "on-secondary-fixed-variant": "#6f3800",
+                    "inverse-on-surface": "#f3f0ef",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed-dim": "#a0c9ff",
+                    "background": "#fcf9f8",
+                    "tertiary-fixed-dim": "#6fd8c8",
+                    "surface-container-highest": "#e5e2e1",
+                    "surface-container-low": "#f6f3f2",
+                    "on-surface-variant": "#42474f",
+                    "surface-on-surface": "#1b1c1c",
+                    "surface-container-high": "#eae7e7",
+                    "on-surface": "#1b1c1c",
+                    "surface-container": "#f0eded",
+                    "on-secondary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed-variant": "#07497d",
+                    "tertiary-fixed": "#8cf5e4",
+                    "secondary-fixed-dim": "#ffb780",
+                    "surface-dim": "#dcd9d9",
+                    "secondary-fixed": "#ffdcc4",
+                    "on-primary-fixed": "#001c37",
+                    "on-secondary-container": "#783d01",
+                    "error": "#ba1a1a",
+                    "on-tertiary-fixed-variant": "#005048",
+                    "surface-white": "#FFFFFF",
+                    "on-tertiary-container": "#61cbbc",
+                    "surface": "#fcf9f8"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "8px",
+                    "margin-mobile": "16px",
+                    "base": "4px",
+                    "md": "16px",
+                    "lg": "24px",
+                    "gutter-mobile": "12px",
+                    "sm": "12px",
+                    "xl": "32px"
+            },
+            "fontFamily": {
+                    "label-sm": ["IBM Plex Sans Arabic"],
+                    "headline-md": ["IBM Plex Sans Arabic"],
+                    "body-lg": ["Noto Sans"],
+                    "headline-lg-mobile": ["IBM Plex Sans Arabic"],
+                    "body-md": ["Noto Sans"],
+                    "label-md": ["IBM Plex Sans Arabic"],
+                    "headline-lg": ["IBM Plex Sans Arabic"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "headline-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'IBM Plex Sans Arabic', sans-serif;
+            background-color: #fcf9f8;
+            overflow: hidden;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .pulse-ring {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: .5; transform: scale(1.2); }
+        }
+        .map-gradient {
+            background: linear-gradient(0deg, rgba(252,249,248,1) 0%, rgba(252,249,248,0) 20%);
+        }
+        .bottom-sheet {
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface">
+<!-- TopAppBar (JSON Mapping) -->
+<header class="fixed top-0 w-full z-50 bg-surface dark:bg-surface-dim border-b border-outline-variant dark:border-outline flex items-center justify-between px-margin-mobile h-14 w-full">
+<div class="flex items-center gap-4">
+<button class="active:scale-95 transition-transform hover:bg-surface-container-high transition-colors p-2 rounded-full">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary dark:text-primary-fixed">تتبع الموقع</h1>
+</div>
+<button class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors">Navigate</button>
+</header>
+<!-- Full Screen Map Canvas -->
+<main class="relative h-screen w-full pt-14">
+<!-- Map Placeholder -->
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="A detailed digital map view of Khartoum, Sudan, showing a blue navigation route line connecting two distinct pin markers through a modern city grid. The style is clean, corporate, and minimalist with a palette of soft grays, whites, and Nile blue accents. The lighting is bright and clear, reflecting a professional high-glare outdoor environment suitable for service tracking apps." data-location="Khartoum, Sudan" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcA72Sd_aifU-rBiSpKq09wCRoBPhifeVg8pLbaur1TPebEGQiyvPweVJ7haEfG-RWUHrlR7g3AihBiI0e_r6qcz-9xBN301H2QlIHMA8kvxKTd-x4-bbu1q489vM2hA_vgB9W9FrhYxLJ_c1HJ0wvFJniECR8eu_Pq4719g9lTY8qwtb1G5YifEh9AYRa8NmI_MN1LICI-OXZeVrEgoog84blnBke0am-1MOL2tyXVmMVHH1EAK1okwxcZzf8NInCp-dpwviXTumM"/>
+<!-- Map Interactions Overlay -->
+<div class="absolute inset-0 bg-black/5 pointer-events-none"></div>
+<div class="absolute inset-0 map-gradient pointer-events-none"></div>
+<!-- Custom Pins (Simulated on Map) -->
+<div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+<div class="bg-primary text-white p-2 rounded-full shadow-lg pulse-ring">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">my_location</span>
+</div>
+<div class="bg-primary/20 text-primary text-[10px] font-bold px-2 py-0.5 rounded-full mt-1 border border-primary/30 backdrop-blur-sm">موقعك</div>
+</div>
+<div class="absolute bottom-1/2 right-1/3 flex flex-col items-center">
+<div class="bg-secondary-container text-on-secondary-container p-2 rounded-full shadow-lg">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person_pin_circle</span>
+</div>
+<div class="bg-secondary-container/80 text-on-secondary-container text-[10px] font-bold px-2 py-0.5 rounded-full mt-1 border border-secondary-container backdrop-blur-sm">العميل</div>
+</div>
+</div>
+<!-- Floating Navigation Button -->
+<div class="absolute right-margin-mobile bottom-80 z-10">
+<button class="bg-surface-white w-14 h-14 rounded-xl shadow-lg flex items-center justify-center text-primary active:scale-90 transition-transform border border-outline-variant">
+<span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1;">explore</span>
+</button>
+</div>
+<!-- Persistent Bottom Card (The Sheet) -->
+<section class="fixed bottom-0 left-0 right-0 z-20 bg-surface-white rounded-t-[2rem] shadow-[0_-4px_20px_rgba(0,0,0,0.08)] border-t border-outline-variant px-margin-mobile pt-4 pb-8 max-w-xl mx-auto bottom-sheet">
+<!-- Drag Handle -->
+<div class="w-12 h-1.5 bg-outline-variant rounded-full mx-auto mb-6"></div>
+<!-- Estimated Time Info -->
+<div class="flex items-center justify-between mb-6 bg-surface-gray-light p-4 rounded-xl border border-outline-variant">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">وقت الوصول المتوقع</p>
+<p class="font-headline-md text-headline-md text-primary">15 دقيقة</p>
+</div>
+</div>
+<div class="text-left">
+<p class="font-label-sm text-label-sm text-on-surface-variant">المسافة</p>
+<p class="font-label-md text-label-md font-bold">4.2 كم</p>
+</div>
+</div>
+<!-- Customer Details Card -->
+<div class="flex items-start gap-4 mb-8">
+<div class="w-14 h-14 rounded-full overflow-hidden border-2 border-primary-fixed shadow-sm">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a Sudanese man with a friendly expression, wearing a neat traditional white jalabiya. The background is a soft, blurred corporate office environment with warm morning lighting. The image style is clean and high-quality, reflecting trust and professionalism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwBg04EzSl6iNjEwycojlf6ZxXrnwUFfrKM0gBGuxypRNbpGt9bFv84GkezXijMWeRnVj1IXsrswuL8-4fCMXe-u8DG9AUirbN5X9o6QL36RqRfWigH9IIhqp_hfJzYBfLEs04t65o2wyJ_eMZBAh_ro4cHzVHkoXLtp4fvEmSf188NlmlfhcIQG_255IDmIUOC_kBZydaStcZ-8lGa3Pdi8TE-Ed5fJ_EUcV6ovM5DL0d4-3GR7yLT31dOz5J9iXOcAPvh91c32iC"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-1">
+<h2 class="font-headline-md text-headline-md text-on-surface">محمد أحمد</h2>
+<span class="bg-secondary-fixed text-on-secondary-fixed text-[12px] px-3 py-1 rounded-full font-bold">صيانة مكيفات</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<p class="font-body-md text-body-md">الرياض، الخرطوم - شارع المشتل</p>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="grid grid-cols-2 gap-gutter-mobile">
+<button class="h-12 flex items-center justify-center gap-2 border-2 border-primary text-primary font-label-md text-label-md rounded-xl hover:bg-surface-container-high transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined">call</span>
+                    اتصال بالعميل
+                </button>
+<button class="h-12 flex items-center justify-center gap-2 bg-primary text-on-primary font-label-md text-label-md rounded-xl shadow-md hover:opacity-90 active:scale-95 duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                    تم الوصول
+                </button>
+</div>
+</section>
+</main>
+<!-- Navigation Overlay logic for micro-interactions -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sheet = document.querySelector('.bottom-sheet');
+            let isExpanded = true;
+
+            // Simple micro-interaction for the bottom sheet
+            sheet.addEventListener('click', (e) => {
+                if (e.target.closest('.w-12.h-1.5')) {
+                    if (isExpanded) {
+                        sheet.style.transform = 'translateY(160px)';
+                    } else {
+                        sheet.style.transform = 'translateY(0)';
+                    }
+                    isExpanded = !isExpanded;
+                }
+            });
+
+            // Button haptic simulation
+            const buttons = document.querySelectorAll('button');
+            buttons.forEach(btn => {
+                btn.addEventListener('touchstart', () => {
+                    btn.classList.add('scale-95');
+                });
+                btn.addEventListener('touchend', () => {
+                    btn.classList.remove('scale-95');
+                });
+            });
+        });
+    </script>
+</body></html>

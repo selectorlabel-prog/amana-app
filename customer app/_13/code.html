@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html class="light" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Amana - Notifications</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100..900&family=Noto+Sans:wght@100..900&display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#00544b",
+                    "sand-accent": "#F4A261",
+                    "primary-fixed": "#d2e4ff",
+                    "surface-container-highest": "#e5e2e1",
+                    "surface": "#fcf9f8",
+                    "surface-variant": "#e5e2e1",
+                    "inverse-primary": "#a0c9ff",
+                    "outline": "#727780",
+                    "nile-blue-deep": "#0A2E4D",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary": "#8e4e14",
+                    "tertiary-fixed-dim": "#6fd8c8",
+                    "surface-tint": "#2d6197",
+                    "on-background": "#1b1c1c",
+                    "inverse-on-surface": "#f3f0ef",
+                    "primary-container": "#0f4c81",
+                    "on-secondary-container": "#783d01",
+                    "error": "#ba1a1a",
+                    "success-green": "#27A745",
+                    "surface-white": "#FFFFFF",
+                    "surface-dim": "#dcd9d9",
+                    "on-surface-variant": "#42474f",
+                    "on-primary-fixed": "#001c37",
+                    "surface-container-low": "#f6f3f2",
+                    "secondary-container": "#ffab69",
+                    "surface-gray-light": "#F8F9FA",
+                    "on-tertiary-fixed": "#00201c",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed-dim": "#ffb780",
+                    "secondary-fixed": "#ffdcc4",
+                    "error-red": "#D93025",
+                    "surface-bright": "#fcf9f8",
+                    "primary-fixed-dim": "#a0c9ff",
+                    "on-primary-fixed-variant": "#07497d",
+                    "tertiary-fixed": "#8cf5e4",
+                    "on-secondary-fixed": "#2f1400",
+                    "on-error": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "warning-amber": "#FFBF00",
+                    "on-tertiary-fixed-variant": "#005048",
+                    "background": "#fcf9f8",
+                    "on-secondary": "#ffffff",
+                    "on-surface": "#1b1c1c",
+                    "on-primary": "#ffffff",
+                    "inverse-surface": "#303030",
+                    "primary": "#00355f",
+                    "on-primary-container": "#8ebdf9",
+                    "tertiary": "#003b34",
+                    "surface-container-high": "#eae7e7",
+                    "surface-container": "#f0eded",
+                    "on-tertiary-container": "#61cbbc",
+                    "on-tertiary": "#ffffff",
+                    "outline-variant": "#c2c7d1",
+                    "on-secondary-fixed-variant": "#6f3800"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "base": "4px",
+                    "sm": "12px",
+                    "lg": "24px",
+                    "xs": "8px",
+                    "xl": "32px",
+                    "md": "16px",
+                    "gutter-mobile": "12px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["IBM Plex Sans"],
+                    "label-md": ["IBM Plex Sans"],
+                    "body-lg": ["Noto Sans"],
+                    "headline-md": ["IBM Plex Sans"],
+                    "headline-lg": ["IBM Plex Sans"],
+                    "body-md": ["Noto Sans"],
+                    "label-sm": ["IBM Plex Sans"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "headline-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col relative overflow-x-hidden">
+<!-- TopAppBar from JSON -->
+<header class="bg-surface dark:bg-surface-dim text-primary dark:text-primary-fixed w-full top-0 sticky border-b border-outline-variant dark:border-outline shadow-none flex justify-between items-center px-margin-mobile h-[64px] z-40 transition-colors">
+<div class="flex items-center gap-sm">
+<img class="w-10 h-10 rounded-full object-cover border border-outline-variant" data-alt="A highly detailed close-up portrait of a professional Sudanese man with a welcoming smile, wearing modern smart-casual attire. The lighting is soft and bright, creating a clean, modern aesthetic suitable for a service marketplace profile picture. The background is a slightly blurred, high-key light neutral color to ensure focus remains on the subject." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgiW1d4ZE2RHt79KG6l23tFo1H3SqYgYQt6_H2yQqUPK9fJE4sw-GnNRQgJ-twHIo9ThMlzONcyA4gNJrFHIeFczdmL7N0y5yEJ2e_3WvYtnhldV25TriUnqULRCtC79mgzhjMCoKZejpKmyjv_U5nwryHuKe0Hzz4fxx_tTSIsbjdOXCD4OJRRtkTK9gs6ajTSG9xvpMTOZo8HVp3hPTtBmgxBHtJJxQSd2kR7CkrL5TumHn6oylV2li_-aNw_FMzGBemU4enH_9l"/>
+</div>
+<h1 class="font-headline-md-mobile text-headline-md-mobile font-bold text-primary dark:text-primary-fixed">Amana</h1>
+<button class="hover:bg-surface-container-high transition-colors active:scale-95 duration-100 p-2 rounded-full flex items-center justify-center relative">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed" style="font-variation-settings: 'FILL' 1;">notifications</span>
+<span class="absolute top-[6px] right-[6px] w-[8px] h-[8px] bg-error-red rounded-full border border-surface"></span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 px-margin-mobile pt-lg pb-[100px] flex flex-col gap-lg">
+<!-- Header & Action -->
+<div class="flex justify-between items-end">
+<div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">الإشعارات</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">لديك 3 إشعارات جديدة</p>
+</div>
+<button class="font-label-md text-label-md text-primary bg-primary-fixed bg-opacity-20 px-sm py-2 rounded-full hover:bg-opacity-30 transition-colors active:scale-95">
+                تحديد الكل كمقروء
+            </button>
+</div>
+<!-- Notifications Container (Bento/Elevated Card Style) -->
+<div class="flex flex-col gap-sm">
+<!-- Notification 1: Provider Arrived (Unread, High Priority) -->
+<div class="relative bg-surface-white border border-outline-variant rounded-xl p-md flex gap-sm items-start shadow-[0_2px_8px_rgba(0,0,0,0.04)] overflow-hidden group hover:bg-surface-gray-light transition-colors cursor-pointer">
+<!-- Unread Indicator Line -->
+<div class="absolute right-0 top-0 bottom-0 w-1 bg-primary"></div>
+<!-- Icon Container -->
+<div class="w-12 h-12 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined">directions_car</span>
+</div>
+<!-- Content -->
+<div class="flex-1 min-w-0 pr-2">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-headline-md text-headline-md text-on-surface truncate">مزود الخدمة وصل</h3>
+<span class="font-label-sm text-label-sm text-primary shrink-0 mr-2">الآن</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-tight">المهندس أحمد متواجد الآن في الموقع المحدد للبدء في خدمة صيانة المكيف.</p>
+</div>
+</div>
+<!-- Notification 2: New Price Offer (Unread, Actionable) -->
+<div class="relative bg-surface-container-lowest border border-sand-accent border-opacity-50 rounded-xl p-md flex gap-sm items-start shadow-[0_2px_8px_rgba(0,0,0,0.04)] overflow-hidden hover:shadow-md transition-shadow cursor-pointer">
+<!-- Unread Indicator Dot -->
+<div class="absolute top-md right-md w-2 h-2 bg-sand-accent rounded-full"></div>
+<!-- Icon Container -->
+<div class="w-12 h-12 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant flex items-center justify-center shrink-0 mt-2">
+<span class="material-symbols-outlined">local_offer</span>
+</div>
+<!-- Content -->
+<div class="flex-1 min-w-0 pr-2 pt-2">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-headline-md text-headline-md text-on-surface truncate">تم استلام عرض سعر جديد</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant shrink-0 mr-2">منذ 10 د</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-3 leading-tight">تلقيت عرضاً بقيمة 15,000 جنيه سوداني لطلب "تصميم شعار".</p>
+<div class="flex gap-2">
+<button class="flex-1 bg-primary text-on-primary font-label-md text-label-md py-2 rounded-lg text-center active:scale-95 transition-transform">عرض التفاصيل</button>
+</div>
+</div>
+</div>
+<!-- Notification 3: Wallet Low (Unread, Warning) -->
+<div class="relative bg-error-container bg-opacity-30 border border-error bg-blend-lighten rounded-xl p-md flex gap-sm items-center shadow-[0_2px_8px_rgba(0,0,0,0.04)] overflow-hidden cursor-pointer">
+<div class="absolute right-0 top-0 bottom-0 w-1 bg-error-red"></div>
+<div class="w-12 h-12 rounded-full bg-error-red bg-opacity-10 text-error-red flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+</div>
+<div class="flex-1 min-w-0 pr-2">
+<div class="flex justify-between items-center mb-1">
+<h3 class="font-headline-md text-headline-md text-error-red truncate">رصيد المحفظة منخفض</h3>
+<span class="font-label-sm text-label-sm text-error-red shrink-0 mr-2">منذ 2 س</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-tight">رصيدك الحالي أقل من 5,000 جنيه. يرجى الشحن لتجنب توقف الخدمات.</p>
+</div>
+</div>
+<div class="w-full h-px bg-outline-variant my-xs"></div>
+<h3 class="font-label-md text-label-md text-on-surface-variant px-2">سابقاً</h3>
+<!-- Notification 4: Service Completed (Read) -->
+<div class="bg-surface-container-low rounded-xl p-md flex gap-sm items-start opacity-75 hover:opacity-100 transition-opacity cursor-pointer">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest text-success-green flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="flex-1 min-w-0 pr-2">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-headline-md text-headline-md text-on-surface truncate">تم اكتمال الخدمة</h3>
+<span class="font-label-sm text-label-sm text-outline shrink-0 mr-2">أمس</span>
+</div>
+<p class="font-body-md text-body-md text-outline leading-tight">تم إنهاء خدمة "تنظيف المنزل". لا تنسى تقييم مزود الخدمة.</p>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar from JSON (All set to inactive as this is a sub-page accessed via AppBar) -->
+<nav class="bg-surface dark:bg-surface-container-lowest fixed bottom-0 w-full z-50 rounded-t-xl border-t border-outline-variant dark:border-outline shadow-sm flex justify-around items-center h-[80px] pb-safe">
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:opacity-80 transition-opacity active:inner-shadow duration-150 w-16">
+<span class="material-symbols-outlined mb-1 text-[24px]">home</span>
+<span class="font-label-sm text-label-sm">الرئيسية</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:opacity-80 transition-opacity active:inner-shadow duration-150 w-16">
+<span class="material-symbols-outlined mb-1 text-[24px]">assignment</span>
+<span class="font-label-sm text-label-sm">طلباتي</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:opacity-80 transition-opacity active:inner-shadow duration-150 w-16">
+<span class="material-symbols-outlined mb-1 text-[24px]">chat</span>
+<span class="font-label-sm text-label-sm">المحادثات</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:opacity-80 transition-opacity active:inner-shadow duration-150 w-16">
+<span class="material-symbols-outlined mb-1 text-[24px]">person</span>
+<span class="font-label-sm text-label-sm">الحساب</span>
+</button>
+</nav>
+</body></html>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/admin_navigation"
+    app:startDestination="@id/adminDashboardFragment">
+
+    <fragment
+        android:id="@+id/adminDashboardFragment"
+        android:name="amana.admin.ui.AdminDashboardFragment"
+        android:label="@string/menu_dashboard"
+        tools:layout="@layout/fragment_admin_dashboard" />
+
+    <fragment
+        android:id="@+id/adminUsersFragment"
+        android:name="amana.admin.ui.AdminUsersFragment"
+        android:label="@string/menu_users"
+        tools:layout="@layout/fragment_admin_users" />
+
+    <fragment
+        android:id="@+id/adminProvidersFragment"
+        android:name="amana.admin.ui.AdminProvidersFragment"
+        android:label="@string/menu_providers"
+        tools:layout="@layout/fragment_admin_providers" />
+
+    <fragment
+        android:id="@+id/adminOrdersFragment"
+        android:name="amana.admin.ui.AdminOrdersFragment"
+        android:label="@string/menu_orders"
+        tools:layout="@layout/fragment_admin_orders" />
+
+    <fragment
+        android:id="@+id/adminRechargeFragment"
+        android:name="amana.admin.ui.AdminRechargeFragment"
+        android:label="@string/menu_recharge"
+        tools:layout="@layout/fragment_admin_recharge" />
+
+    <fragment
+        android:id="@+id/adminDisputesFragment"
+        android:name="amana.admin.ui.AdminDisputesFragment"
+        android:label="@string/menu_disputes"
+        tools:layout="@layout/fragment_admin_disputes" />
+
+    <fragment
+        android:id="@+id/adminCommissionsFragment"
+        android:name="amana.admin.ui.AdminCommissionsFragment"
+        android:label="@string/menu_commissions"
+        tools:layout="@layout/fragment_admin_commissions" />
+
+    <fragment
+        android:id="@+id/adminReviewsFragment"
+        android:name="amana.admin.ui.AdminReviewsFragment"
+        android:label="@string/menu_reviews"
+        tools:layout="@layout/fragment_admin_reviews" />
+
+    <fragment
+        android:id="@+id/adminReportsFragment"
+        android:name="amana.admin.ui.AdminReportsFragment"
+        android:label="@string/menu_reports"
+        tools:layout="@layout/fragment_admin_reports" />
+
+    <fragment
+        android:id="@+id/adminSettingsFragment"
+        android:name="amana.admin.ui.AdminSettingsFragment"
+        android:label="@string/menu_settings"
+        tools:layout="@layout/fragment_admin_settings" />
+
+    <fragment
+        android:id="@+id/adminLogsFragment"
+        android:name="amana.admin.ui.AdminLogsFragment"
+        android:label="@string/menu_logs"
+        tools:layout="@layout/fragment_admin_logs" />
+
+</navigation>

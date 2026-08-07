@@ -1,0 +1,5 @@
+[debug] Injecting <script> tag. Using callback.
+[info] DDC is about to load 1/2 scripts with pool size = 1000
+[info] DDC is about to load 955/955 scripts with pool size = 1000
+
+PAGE ERRORS:

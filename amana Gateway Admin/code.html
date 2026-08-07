@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>أمانة - بوابة الإدارة</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=Noto+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error": "#ba1a1a",
+                    "on-primary-fixed-variant": "#07497d",
+                    "secondary": "#8e4e14",
+                    "tertiary-fixed": "#8cf5e4",
+                    "sand-accent": "#F4A261",
+                    "on-secondary-fixed": "#2f1400",
+                    "secondary-fixed": "#ffdcc4",
+                    "surface-container-high": "#eae7e7",
+                    "nile-blue-deep": "#0A2E4D",
+                    "on-secondary-fixed-variant": "#6f3800",
+                    "surface-gray-light": "#F8F9FA",
+                    "primary-fixed": "#d2e4ff",
+                    "surface-container-low": "#f6f3f2",
+                    "surface-dim": "#dcd9d9",
+                    "tertiary": "#003b34",
+                    "surface-variant": "#e5e2e1",
+                    "primary": "#00355f",
+                    "on-error-container": "#93000a",
+                    "surface-container": "#f0eded",
+                    "on-primary-container": "#8ebdf9",
+                    "on-primary": "#ffffff",
+                    "surface": "#fcf9f8",
+                    "on-surface": "#1b1c1c",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed": "#00201c",
+                    "outline-variant": "#c2c7d1",
+                    "tertiary-fixed-dim": "#6fd8c8",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed-dim": "#ffb780",
+                    "outline": "#727780",
+                    "inverse-primary": "#a0c9ff",
+                    "surface-white": "#FFFFFF",
+                    "inverse-on-surface": "#f3f0ef",
+                    "on-tertiary": "#ffffff",
+                    "warning-amber": "#FFBF00",
+                    "surface-container-highest": "#e5e2e1",
+                    "success-green": "#27A745",
+                    "secondary-container": "#ffab69",
+                    "on-surface-variant": "#42474f",
+                    "on-secondary-container": "#783d01",
+                    "on-primary-fixed": "#001c37",
+                    "error-red": "#D93025",
+                    "primary-container": "#0f4c81",
+                    "on-tertiary-container": "#61cbbc",
+                    "on-error": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "surface-tint": "#2d6197",
+                    "inverse-surface": "#303030",
+                    "tertiary-container": "#00544b",
+                    "on-tertiary-fixed-variant": "#005048",
+                    "surface-bright": "#fcf9f8",
+                    "primary-fixed-dim": "#a0c9ff",
+                    "on-background": "#1b1c1c",
+                    "background": "#fcf9f8"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter-mobile": "12px",
+                    "xl": "32px",
+                    "lg": "24px",
+                    "base": "4px",
+                    "sm": "12px",
+                    "md": "16px",
+                    "xs": "8px",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "label-sm": ["IBM Plex Sans"],
+                    "headline-lg-mobile": ["IBM Plex Sans"],
+                    "body-md": ["Noto Sans"],
+                    "label-md": ["IBM Plex Sans"],
+                    "headline-lg": ["IBM Plex Sans"],
+                    "body-lg": ["Noto Sans"],
+                    "headline-md": ["IBM Plex Sans"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "headline-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Noto Sans', sans-serif;
+            background-color: #fcf9f8;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(224, 224, 224, 0.5);
+        }
+        .auth-card-shadow {
+            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background min-h-screen flex flex-col">
+<!-- Subtle Background Element -->
+<div class="fixed inset-0 overflow-hidden pointer-events-none opacity-20">
+<div class="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] rounded-full bg-sand-accent blur-[120px]"></div>
+<div class="absolute -bottom-[10%] -right-[10%] w-[40%] h-[40%] rounded-full bg-nile-blue-deep blur-[120px]"></div>
+</div>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col items-center justify-center px-margin-mobile relative z-10">
+<!-- Logo & Brand Header -->
+<div class="mb-lg text-center">
+<div class="flex items-center justify-center mb-xs">
+<div class="bg-nile-blue-deep w-16 h-16 rounded-xl flex items-center justify-center shadow-lg transform rotate-3">
+<span class="material-symbols-outlined text-sand-accent text-[40px]" style="font-variation-settings: 'FILL' 1;">shield_person</span>
+</div>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-nile-blue-deep tracking-tight mb-xs">أمانة</h1>
+<div class="flex items-center justify-center gap-xs">
+<span class="material-symbols-outlined text-secondary text-md">admin_panel_settings</span>
+<span class="font-label-md text-label-md text-on-surface-variant">بوابة الإدارة والإشراف</span>
+</div>
+</div>
+<!-- Login Card -->
+<div class="w-full max-w-md glass-effect p-lg rounded-xl auth-card-shadow border border-outline-variant">
+<div class="flex items-center gap-xs mb-md border-b border-outline-variant pb-xs">
+<span class="material-symbols-outlined text-nile-blue-deep">lock</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">تسجيل الدخول الآمن</h2>
+</div>
+<form class="space-y-md" id="loginForm">
+<!-- User ID Field -->
+<div class="space-y-base">
+<label class="font-label-md text-label-md text-on-surface-variant px-base" for="username">البريد الإلكتروني أو اسم المستخدم</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute right-md top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">person</span>
+<input class="w-full h-[56px] pr-xl pl-md border border-outline-variant rounded-lg bg-surface focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none text-body-md" id="username" name="username" placeholder="admin@amana.com" required="" type="text"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="space-y-base">
+<label class="font-label-md text-label-md text-on-surface-variant px-base" for="password">كلمة المرور الإدارية</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute right-md top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">key</span>
+<input class="w-full h-[56px] pr-xl pl-xl border border-outline-variant rounded-lg bg-surface focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none text-body-md" id="password" name="password" placeholder="••••••••" required="" type="password"/>
+<button class="absolute left-md top-1/2 -translate-y-1/2 text-outline hover:text-on-surface transition-colors focus:outline-none" onclick="togglePassword()" type="button">
+<span class="material-symbols-outlined" id="eye-icon">visibility</span>
+</button>
+</div>
+</div>
+<!-- Forgot Password -->
+<div class="flex justify-end">
+<a class="font-label-md text-label-md text-primary hover:text-nile-blue-deep transition-colors" href="#">نسيت كلمة المرور؟</a>
+</div>
+<!-- Submit Button -->
+<button class="w-full h-[56px] bg-nile-blue-deep text-on-primary font-headline-md text-headline-md rounded-lg flex items-center justify-center gap-sm hover:bg-primary transition-all active:scale-[0.98] shadow-md mt-lg" type="submit">
+<span>دخول</span>
+<span class="material-symbols-outlined">login</span>
+</button>
+</form>
+<!-- Security Notice -->
+<div class="mt-xl p-md bg-surface-container rounded-lg flex items-start gap-sm border border-outline-variant">
+<span class="material-symbols-outlined text-warning-amber mt-xs">verified_user</span>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">تنبيه أمني:</p>
+<p class="font-body-md text-label-sm text-on-surface-variant opacity-80">يتم تسجيل كافة محاولات الدخول. يرجى التأكد من استخدام جهاز موثوق به وشبكة آمنة.</p>
+</div>
+</div>
+</div>
+<!-- Support Info -->
+<div class="mt-lg text-center space-y-xs pb-xl">
+<p class="font-label-md text-label-md text-on-surface-variant">هل تواجه مشكلة في الوصول؟</p>
+<a class="font-label-md text-label-md text-secondary border-b border-secondary border-opacity-30 hover:border-opacity-100 transition-all inline-flex items-center gap-xs" href="mailto:support@amana.com">
+                اتصل بالدعم الفني
+                <span class="material-symbols-outlined text-sm">support_agent</span>
+</a>
+</div>
+</main>
+<!-- Footer Identity -->
+<footer class="mt-auto py-md text-center bg-surface-container-low border-t border-outline-variant">
+<p class="font-label-sm text-label-sm text-on-surface-variant opacity-60">نظام أمانة للعمليات © 2024 - جميع الحقوق محفوظة</p>
+<p class="font-label-sm text-[10px] text-outline mt-base">نسخة الإصدار 1.0.4 (الخرطوم، السودان)</p>
+</footer>
+<script>
+        function togglePassword() {
+            const passwordInput = document.getElementById('password');
+            const eyeIcon = document.getElementById('eye-icon');
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                eyeIcon.textContent = 'visibility_off';
+            } else {
+                passwordInput.type = 'password';
+                eyeIcon.textContent = 'visibility';
+            }
+        }
+
+        // Micro-interaction for form submission
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('button[type="submit"]');
+            const originalContent = btn.innerHTML;
+            
+            btn.disabled = true;
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin">sync</span> جاري التحقق...';
+            btn.classList.add('opacity-80');
+
+            // Simulate server delay
+            setTimeout(() => {
+                btn.innerHTML = '<span class="material-symbols-outlined text-success-green">check_circle</span> تم الدخول';
+                btn.classList.remove('bg-nile-blue-deep');
+                btn.classList.add('bg-success-green');
+                
+                // Final visual feedback
+                setTimeout(() => {
+                    // In real app: window.location.href = '/dashboard';
+                    alert('تم التحقق بنجاح. يتم تحويلك إلى لوحة التحكم...');
+                    btn.disabled = false;
+                    btn.innerHTML = originalContent;
+                    btn.classList.remove('bg-success-green');
+                    btn.classList.add('bg-nile-blue-deep');
+                }, 1000);
+            }, 1500);
+        });
+    </script>
+</body></html>

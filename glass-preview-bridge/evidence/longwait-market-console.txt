@@ -1,0 +1,11 @@
+[debug] Injecting <script> tag. Using callback.
+[info] DDC is about to load 1/2 scripts with pool size = 1000
+[info] DDC is about to load 955/955 scripts with pool size = 1000
+[log] Starting application from main method in: org-dartlang-app:/web_entrypoint.dart.
+[warning] WARNING: Falling back to CPU-only rendering. Reason: canvasKitForceCpuOnly is set to true
+[warning] Found an existing <meta name="viewport"> tag. Flutter Web uses its own viewport configuration for better compatibility with Flutter. This tag will be replaced.
+[log] [SupabaseConfig] dotenv loaded from .env
+[log] [Supabase] initialize url=https://surdmukujpfiwrygcsvl.supabase.co dotenv=true keyPrefix=eyJhbGciOiJI...
+[log] supabase.supabase_flutter: INFO: ***** Supabase init completed ***** 
+[error] Access to XMLHttpRequest at 'https://lh3.googleusercontent.com/aida/AP1WRLvZlLO3JwxXoqZMjgQlgllqO94EJpo6RJPcgMjM6x_tuZALbRYwEVhfCcUrr3QO0quiFdnNJiHKudegZ0u1bZG7BOkhb9cTxorUmGAlI2Bs_MQhiMOJOdl2KSW5eAvYAeX6xx1yg2uMt55CgGsGWgZzynTmHr2txo4Ax5hx-R3jwwVChD_wdrLaOt3icWOm-NFi5dvxB48QS9Mtrx3WHfPPpv9n8kmTuy7E7kY-j-A9D_M8vtKhtNxrBLeb' from origin 'http://127.0.0.1:8095' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+[error] Failed to load resource: net::ERR_FAILED

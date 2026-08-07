@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Amana - Settings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500;600;700&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-container": "#783d01",
+                        "inverse-surface": "#303030",
+                        "warning-amber": "#FFBF00",
+                        "surface-container": "#f0eded",
+                        "inverse-primary": "#a0c9ff",
+                        "secondary": "#8e4e14",
+                        "surface-gray-light": "#F8F9FA",
+                        "on-primary-container": "#8ebdf9",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed-variant": "#07497d",
+                        "error": "#ba1a1a",
+                        "surface-container-high": "#eae7e7",
+                        "inverse-on-surface": "#f3f0ef",
+                        "secondary-fixed-dim": "#ffb780",
+                        "primary": "#00355f",
+                        "outline": "#727780",
+                        "on-tertiary-container": "#61cbbc",
+                        "on-secondary": "#ffffff",
+                        "surface-white": "#FFFFFF",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-low": "#f6f3f2",
+                        "surface-bright": "#fcf9f8",
+                        "surface": "#fcf9f8",
+                        "surface-container-highest": "#e5e2e1",
+                        "on-error": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#8cf5e4",
+                        "on-tertiary-fixed-variant": "#005048",
+                        "success-green": "#27A745",
+                        "background": "#fcf9f8",
+                        "surface-dim": "#dcd9d9",
+                        "primary-fixed-dim": "#a0c9ff",
+                        "outline-variant": "#c2c7d1",
+                        "on-secondary-fixed-variant": "#6f3800",
+                        "on-background": "#1b1c1c",
+                        "error-red": "#D93025",
+                        "primary-fixed": "#d2e4ff",
+                        "on-tertiary-fixed": "#00201c",
+                        "tertiary-fixed-dim": "#6fd8c8",
+                        "on-secondary-fixed": "#2f1400",
+                        "primary-container": "#0f4c81",
+                        "surface-tint": "#2d6197",
+                        "on-surface-variant": "#42474f",
+                        "on-primary-fixed": "#001c37",
+                        "secondary-container": "#ffab69",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#00544b",
+                        "secondary-fixed": "#ffdcc4",
+                        "tertiary": "#003b34",
+                        "sand-accent": "#F4A261",
+                        "surface-variant": "#e5e2e1",
+                        "on-surface": "#1b1c1c",
+                        "nile-blue-deep": "#0A2E4D",
+                        "error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "sm": "12px",
+                        "gutter-mobile": "12px",
+                        "base": "4px",
+                        "xs": "8px",
+                        "margin-mobile": "16px",
+                        "lg": "24px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["IBM Plex Sans", "sans-serif"],
+                        "headline-lg-mobile": ["IBM Plex Sans", "sans-serif"],
+                        "headline-lg": ["IBM Plex Sans", "sans-serif"],
+                        "label-sm": ["IBM Plex Sans", "sans-serif"],
+                        "label-md": ["IBM Plex Sans", "sans-serif"],
+                        "body-md": ["Noto Sans", "sans-serif"],
+                        "body-lg": ["Noto Sans", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "headline-lg": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Noto Sans', sans-serif; }
+        .font-ibm { font-family: 'IBM Plex Sans', sans-serif; }
+        
+        /* Toggle Switch Styling */
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #00355f;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #00355f;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col selection:bg-primary-fixed selection:text-on-primary-fixed pb-[100px]">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky bg-surface border-b border-outline-variant z-40">
+<div class="flex justify-between items-center px-margin-mobile h-[64px]">
+<div class="flex items-center gap-xs">
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-fixed">
+<img alt="User Profile Avatar" class="w-full h-full object-cover" data-alt="A professional headshot of a confident Sudanese man wearing a modern tailored suit in a well-lit contemporary office environment. The lighting is soft and bright, reflecting a corporate modern aesthetic with high contrast and clarity. The color palette emphasizes clean whites, deep navy blues, and warm skin tones, conveying dependability and trust." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_0H-vbC1lWlvFE5y7H361T4ACj1t4bA_YWLrlHrmwZVSdbMLhSC-A00296C6jyCTYWB6zP8dsMdMIWYQbyVhB844LmEV0jMMWQYouQPyAFJR9B7SvRwa9bvk7QYB0BPcfM77qcfF3b_1w0l8eVqaNNRMH3afhzJd0EbBzZ2jtzrgW7vmFu3cAFw9Q8a1eMl_Pui1pQipjQ3eSj0j-tgLPavBoYrpZrAo5wTcAfQIeg2M3R0SHCO9Xac1ZICbQBj4svmBgY1QhW4ks"/>
+</div>
+<span class="font-headline-md-mobile text-headline-md-mobile font-bold text-primary">الإعدادات</span>
+</div>
+<button class="w-12 h-12 flex items-center justify-center rounded-full hover:bg-surface-container-high transition-colors active:scale-95 duration-100 text-on-surface-variant">
+<span class="material-symbols-outlined text-[24px]">notifications</span>
+</button>
+</div>
+</header>
+<main class="flex-1 px-margin-mobile pt-lg max-w-2xl mx-auto w-full">
+<!-- Profile Section -->
+<section class="mb-lg">
+<h2 class="font-label-md text-label-md text-outline mb-sm px-xs">الملف الشخصي</h2>
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-sm overflow-hidden divide-y divide-outline-variant/30">
+<button class="w-full flex items-center justify-between p-md hover:bg-surface-container-low transition-colors active:bg-surface-container-highest">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">person</span>
+</div>
+<div class="text-right">
+<p class="font-body-md text-body-md text-on-surface font-semibold">تعديل الملف الشخصي</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">الاسم، الصورة، البريد الإلكتروني</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant">chevron_left</span>
+</button>
+</div>
+</section>
+<!-- Privacy & Security -->
+<section class="mb-lg">
+<h2 class="font-label-md text-label-md text-outline mb-sm px-xs">الخصوصية والأمان</h2>
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-sm overflow-hidden divide-y divide-outline-variant/30">
+<button class="w-full flex items-center justify-between p-md hover:bg-surface-container-low transition-colors active:bg-surface-container-highest">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">lock</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface font-semibold">تغيير كلمة المرور</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant">chevron_left</span>
+</button>
+<button class="w-full flex items-center justify-between p-md hover:bg-surface-container-low transition-colors active:bg-surface-container-highest">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">shield</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface font-semibold">سياسة الخصوصية</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant">chevron_left</span>
+</button>
+</div>
+</section>
+<!-- App Preferences -->
+<section class="mb-lg">
+<h2 class="font-label-md text-label-md text-outline mb-sm px-xs">تفضيلات التطبيق</h2>
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-sm overflow-hidden divide-y divide-outline-variant/30">
+<!-- Language -->
+<button class="w-full flex items-center justify-between p-md hover:bg-surface-container-low transition-colors active:bg-surface-container-highest">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">language</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface font-semibold">اللغة (Language)</span>
+</div>
+<div class="flex items-center gap-xs">
+<span class="font-label-sm text-label-sm text-primary">العربية</span>
+<span class="material-symbols-outlined text-outline-variant">chevron_left</span>
+</div>
+</button>
+<!-- Push Notifications -->
+<div class="flex items-center justify-between p-md">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">notifications_active</span>
+</div>
+<div class="text-right">
+<p class="font-body-md text-body-md text-on-surface font-semibold">إشعارات التطبيق</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">تنبيهات الطلبات والرسائل</p>
+</div>
+</div>
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 border-surface-variant appearance-none cursor-pointer z-10 transition-transform duration-200 ease-in-out left-0 checked:translate-x-6" id="push_toggle" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-surface-variant cursor-pointer" for="push_toggle"></label>
+</div>
+</div>
+<!-- SMS Notifications -->
+<div class="flex items-center justify-between p-md">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">sms</span>
+</div>
+<div class="text-right">
+<p class="font-body-md text-body-md text-on-surface font-semibold">إشعارات SMS</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">للتحديثات الهامة فقط</p>
+</div>
+</div>
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+<input class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 border-surface-variant appearance-none cursor-pointer z-10 transition-transform duration-200 ease-in-out left-0" id="sms_toggle" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-surface-variant cursor-pointer" for="sms_toggle"></label>
+</div>
+</div>
+</div>
+</section>
+<!-- Support & About -->
+<section class="mb-lg">
+<h2 class="font-label-md text-label-md text-outline mb-sm px-xs">الدعم وحول التطبيق</h2>
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-sm overflow-hidden divide-y divide-outline-variant/30">
+<button class="w-full flex items-center justify-between p-md hover:bg-surface-container-low transition-colors active:bg-surface-container-highest">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">description</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface font-semibold">شروط الخدمة</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant">chevron_left</span>
+</button>
+<button class="w-full flex items-center justify-between p-md hover:bg-surface-container-low transition-colors active:bg-surface-container-highest">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">info</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface font-semibold">عن تطبيق أمانة</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant">chevron_left</span>
+</button>
+</div>
+</section>
+<!-- Logout -->
+<section class="mb-xl pt-sm">
+<button class="w-full flex items-center justify-center gap-sm p-md rounded-xl border-2 border-error text-error hover:bg-error-container transition-colors active:scale-95 duration-150 font-label-md font-bold">
+<span class="material-symbols-outlined">logout</span>
+<span>تسجيل الخروج</span>
+</button>
+<p class="text-center font-label-sm text-outline-variant mt-md">الإصدار 2.4.1 (1092)</p>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl bg-surface border-t border-outline-variant shadow-sm pb-safe hidden md:hidden block">
+<div class="flex justify-around items-center h-[80px]">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:opacity-80 transition-opacity w-16" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-label-sm text-label-sm">الرئيسية</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:opacity-80 transition-opacity w-16" href="#">
+<span class="material-symbols-outlined mb-1">assignment</span>
+<span class="font-label-sm text-label-sm">طلباتي</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:opacity-80 transition-opacity w-16" href="#">
+<span class="material-symbols-outlined mb-1">chat</span>
+<span class="font-label-sm text-label-sm">المحادثات</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 hover:opacity-80 transition-opacity active:inner-shadow duration-150 w-20" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-label-sm text-label-sm font-bold">الحساب</span>
+</a>
+</div>
+</nav>
+<!-- Desktop Nav Drawer (Hidden on mobile) -->
+<aside class="hidden md:flex flex-col py-lg px-md h-full fixed right-0 top-0 w-[280px] rounded-l-xl bg-surface-bright shadow-lg z-50 border-l border-surface-container">
+<!-- Logo / Branding Area -->
+<div class="mb-xl px-sm">
+<span class="font-headline-lg text-primary">Amana</span>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-variant transition-all" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body-md text-body-md font-semibold">لوحة التحكم</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-variant transition-all" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="font-body-md text-body-md font-semibold">المحفظة</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg bg-primary-container text-on-primary-container font-bold hover:bg-surface-variant transition-all active:bg-primary-fixed-dim" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span class="font-body-md text-body-md">الإعدادات</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-variant transition-all" href="#">
+<span class="material-symbols-outlined">support_agent</span>
+<span class="font-body-md text-body-md font-semibold">الدعم الفني</span>
+</a>
+</nav>
+<div class="mt-auto border-t border-surface-container pt-md">
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-error hover:bg-error-container transition-all" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-body-md text-body-md font-semibold">تسجيل الخروج</span>
+</a>
+</div>
+</aside>
+</body></html>

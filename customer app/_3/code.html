@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Amana - Service Details</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=Noto+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-container": "#783d01",
+                        "surface-container": "#f0eded",
+                        "error-red": "#D93025",
+                        "tertiary-container": "#00544b",
+                        "on-secondary-fixed": "#2f1400",
+                        "background": "#fcf9f8",
+                        "primary": "#00355f",
+                        "secondary-fixed-dim": "#ffb780",
+                        "on-primary-fixed": "#001c37",
+                        "primary-fixed": "#d2e4ff",
+                        "tertiary-fixed": "#8cf5e4",
+                        "on-tertiary-container": "#61cbbc",
+                        "sand-accent": "#F4A261",
+                        "secondary": "#8e4e14",
+                        "surface-container-low": "#f6f3f2",
+                        "surface": "#fcf9f8",
+                        "surface-container-highest": "#e5e2e1",
+                        "on-background": "#1b1c1c",
+                        "tertiary": "#003b34",
+                        "secondary-fixed": "#ffdcc4",
+                        "on-secondary": "#ffffff",
+                        "surface-container-high": "#eae7e7",
+                        "primary-fixed-dim": "#a0c9ff",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#6f3800",
+                        "nile-blue-deep": "#0A2E4D",
+                        "inverse-on-surface": "#f3f0ef",
+                        "warning-amber": "#FFBF00",
+                        "outline": "#727780",
+                        "surface-white": "#FFFFFF",
+                        "on-tertiary-fixed-variant": "#005048",
+                        "surface-bright": "#fcf9f8",
+                        "surface-tint": "#2d6197",
+                        "on-tertiary-fixed": "#00201c",
+                        "surface-gray-light": "#F8F9FA",
+                        "secondary-container": "#ffab69",
+                        "inverse-surface": "#303030",
+                        "error": "#ba1a1a",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#6fd8c8",
+                        "success-green": "#27A745",
+                        "on-primary": "#ffffff",
+                        "on-surface-variant": "#42474f",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface": "#1b1c1c",
+                        "outline-variant": "#c2c7d1",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#e5e2e1",
+                        "surface-dim": "#dcd9d9",
+                        "on-primary-fixed-variant": "#07497d",
+                        "inverse-primary": "#a0c9ff",
+                        "on-primary-container": "#8ebdf9",
+                        "primary-container": "#0f4c81",
+                        "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "lg": "24px",
+                        "sm": "12px",
+                        "gutter-mobile": "12px",
+                        "xs": "8px",
+                        "md": "16px",
+                        "margin-mobile": "16px",
+                        "base": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["IBM Plex Sans"],
+                        "body-md": ["Noto Sans"],
+                        "headline-lg": ["IBM Plex Sans"],
+                        "label-sm": ["IBM Plex Sans"],
+                        "label-md": ["IBM Plex Sans"],
+                        "headline-lg-mobile": ["IBM Plex Sans"],
+                        "body-lg": ["Noto Sans"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Noto Sans', sans-serif; }
+        h1, h2, h3, h4, h5, h6, .font-headline-md, .font-headline-lg, .font-headline-lg-mobile, .font-label-sm, .font-label-md { font-family: 'IBM Plex Sans', sans-serif; }
+        .inner-shadow { box-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface-dim w-full top-0 sticky border-b border-outline-variant dark:border-outline z-40">
+<div class="flex justify-between items-center px-margin-mobile h-[64px]">
+<div class="flex items-center gap-xs">
+<button class="text-on-surface-variant dark:text-outline hover:bg-surface-container-high transition-colors active:scale-95 duration-100 p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<h1 class="font-headline-md-mobile text-headline-md-mobile text-primary dark:text-primary-fixed">تفاصيل الطلب</h1>
+</div>
+<button class="text-on-surface-variant dark:text-outline hover:bg-surface-container-high transition-colors active:scale-95 duration-100 p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</header>
+<main class="p-margin-mobile max-w-3xl mx-auto space-y-lg">
+<!-- Header / Status Card -->
+<section class="bg-surface-white rounded-xl border border-[#E0E0E0] shadow-sm p-md relative overflow-hidden">
+<!-- Status Badge -->
+<div class="absolute top-md left-md">
+<div class="bg-[#E6F4EA] text-success-green font-label-md text-label-md px-3 py-1 rounded-full flex items-center gap-1 border border-[#BCE8CB]">
+<span class="material-symbols-outlined text-[16px]" data-icon="check_circle">check_circle</span>
+                    مكتمل
+                </div>
+</div>
+<div class="flex items-start gap-md pt-sm">
+<div class="w-16 h-16 rounded-full overflow-hidden border-2 border-surface-container-high flex-shrink-0">
+<img alt="Provider Photo" class="w-full h-full object-cover" data-alt="A portrait of a professional Sudanese male plumber wearing a neat, dark blue work uniform, smiling warmly in an outdoor courtyard bathed in bright, natural midday sunlight. The background suggests a residential area in Khartoum, slightly out of focus to keep the subject sharp. The lighting is high-key and optimistic, emphasizing reliability and trustworthiness." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9kSpSO7wA5GCODuW63RUXHwr-r3_TPpwBrWUTyCzh8TvC29Zh4HpWz_FvbydyWluVHxTpihoQu4SAQC8DfUXCu1FJk9C0DfmCD8g7-wBEzQG8LwSdFaS-5Wd-19V9_4fry0eWwGZsvU38ke4LkbJCHKsvbUsCHzqrSybyD5sV2XmlXbHBm0GuGHg9NIVG0Mfysn7AocK-fONdPlITURKTwVNn61fk4uotEoE46pKENzOP0L55AP4mEOeYHzvxs9oM519BMUS5tWtD"/>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">عثمان حسن</h2>
+<p class="font-body-md text-body-md text-outline flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[18px]" data-icon="plumbing">plumbing</span>
+                        سباكة وتمديدات
+                    </p>
+<div class="flex items-center gap-4 mt-2">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-warning-amber text-[16px] font-variation-settings: 'FILL' 1;" data-icon="star" data-weight="fill">star</span>
+<span class="font-label-md text-label-md text-on-surface-variant">4.8</span>
+</div>
+<div class="text-outline text-sm">•</div>
+<div class="font-label-md text-label-md text-on-surface-variant">طلب #84729</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Service Details Box -->
+<section class="bg-surface-white rounded-xl border border-[#E0E0E0] shadow-sm p-md space-y-md">
+<h3 class="font-headline-md text-headline-md text-primary border-b border-surface-variant pb-2">تفاصيل الخدمة</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-sm">
+<div class="flex gap-sm items-start">
+<div class="p-2 bg-surface-container-low rounded-lg text-primary-container">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-outline">التاريخ والوقت</p>
+<p class="font-body-md text-body-md text-on-surface">15 أكتوبر 2023، 10:00 صباحاً</p>
+</div>
+</div>
+<div class="flex gap-sm items-start">
+<div class="p-2 bg-surface-container-low rounded-lg text-primary-container">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-outline">الموقع</p>
+<p class="font-body-md text-body-md text-on-surface">الخرطوم، العمارات شارع 15</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-sm mt-4">
+<p class="font-label-sm text-label-sm text-outline mb-1">وصف العمل المنجز</p>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                    تم إصلاح تسريب في الحوض الرئيسي للحمام وتغيير صمام المياه الرئيسي. العمل تضمن فحص الأنابيب المجاورة للتأكد من عدم وجود تسريبات أخرى. تم تنظيف المكان بعد الانتهاء من العمل.
+                </p>
+</div>
+</section>
+<!-- Cost Breakdown -->
+<section class="bg-surface-white rounded-xl border border-[#E0E0E0] shadow-sm p-md space-y-sm">
+<h3 class="font-headline-md text-headline-md text-primary border-b border-surface-variant pb-2 mb-4">التكلفة</h3>
+<div class="flex justify-between items-center py-1">
+<span class="font-body-md text-body-md text-on-surface-variant">تكلفة الخدمة الأساسية</span>
+<span class="font-body-md text-body-md text-on-surface">12,000 ج.س</span>
+</div>
+<div class="flex justify-between items-center py-1">
+<span class="font-body-md text-body-md text-on-surface-variant">رسوم التطبيق (عمولة)</span>
+<span class="font-body-md text-body-md text-on-surface">600 ج.س</span>
+</div>
+<div class="flex justify-between items-center py-1">
+<span class="font-body-md text-body-md text-on-surface-variant">قطع غيار (صمام مياه)</span>
+<span class="font-body-md text-body-md text-on-surface">3,500 ج.س</span>
+</div>
+<div class="border-t border-dashed border-outline-variant pt-3 mt-2 flex justify-between items-center">
+<span class="font-headline-md text-headline-md text-on-surface">الإجمالي مدفوع</span>
+<span class="font-headline-md text-headline-md text-primary">16,100 ج.س</span>
+</div>
+<div class="flex items-center gap-2 mt-4 bg-surface-container-low p-2 rounded text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]" data-icon="credit_card">credit_card</span>
+<span class="font-label-md text-label-md">تم الدفع عبر SyberPay</span>
+</div>
+</section>
+<!-- Primary Action -->
+<div class="pt-sm">
+<button class="w-full bg-primary hover:bg-primary-container text-on-primary font-headline-md text-headline-md py-4 rounded-xl flex items-center justify-center gap-2 transition-colors active:inner-shadow min-h-[48px]">
+<span class="material-symbols-outlined" data-icon="refresh">refresh</span>
+                إعادة الحجز
+            </button>
+</div>
+</main>
+<!-- BottomNavBar (Hidden on md, shown on mobile) -->
+<nav class="md:hidden bg-surface dark:bg-surface-container-lowest fixed bottom-0 w-full z-50 rounded-t-xl border-t border-outline-variant dark:border-outline shadow-sm">
+<div class="flex justify-around items-center h-[80px] pb-safe px-2">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:opacity-80 transition-opacity active:inner-shadow duration-150 p-2" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm">الرئيسية</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary rounded-full px-4 py-1 hover:opacity-80 transition-opacity active:inner-shadow duration-150" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="assignment" data-weight="fill">assignment</span>
+<span class="font-label-sm text-label-sm">طلباتي</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:opacity-80 transition-opacity active:inner-shadow duration-150 p-2" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="chat">chat</span>
+<span class="font-label-sm text-label-sm">المحادثات</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:opacity-80 transition-opacity active:inner-shadow duration-150 p-2" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">الحساب</span>
+</a>
+</div>
+</nav>
+</body></html>

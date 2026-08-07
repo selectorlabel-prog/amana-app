@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">أمانة - الإدارة</string>
+    <string name="dashboard">لوحة التحكم</string>
+    <string name="users">المستخدمون</string>
+    <string name="disputes">البلاغات</string>
+    <string name="recharge_codes">كروت الشحن</string>
+    <string name="generate_code">توليد كود</string>
+</resources>

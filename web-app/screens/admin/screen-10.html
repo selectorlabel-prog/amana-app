@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+
+<html class="light" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Amana - إدارة التقييمات والمراجعات</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=Noto+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-container": "#ffab69",
+                      "nile-blue-deep": "#0A2E4D",
+                      "error": "#ba1a1a",
+                      "secondary": "#8e4e14",
+                      "surface-variant": "#e5e2e1",
+                      "on-tertiary": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "surface-white": "#FFFFFF",
+                      "on-primary-fixed-variant": "#07497d",
+                      "warning-amber": "#FFBF00",
+                      "surface-dim": "#dcd9d9",
+                      "on-primary-fixed": "#001c37",
+                      "sand-accent": "#F4A261",
+                      "tertiary-container": "#00544b",
+                      "on-secondary-container": "#783d01",
+                      "on-primary-container": "#8ebdf9",
+                      "surface-container-low": "#f6f3f2",
+                      "on-secondary-fixed-variant": "#6f3800",
+                      "inverse-on-surface": "#f3f0ef",
+                      "surface-bright": "#fcf9f8",
+                      "success-green": "#27A745",
+                      "secondary-fixed": "#ffdcc4",
+                      "tertiary-fixed": "#8cf5e4",
+                      "primary": "#00355f",
+                      "on-tertiary-fixed": "#00201c",
+                      "on-secondary": "#ffffff",
+                      "surface-container": "#f0eded",
+                      "on-tertiary-fixed-variant": "#005048",
+                      "primary-fixed": "#d2e4ff",
+                      "error-red": "#D93025",
+                      "surface-container-high": "#eae7e7",
+                      "on-error": "#ffffff",
+                      "surface": "#fcf9f8",
+                      "tertiary": "#003b34",
+                      "surface-tint": "#2d6197",
+                      "background": "#fcf9f8",
+                      "on-secondary-fixed": "#2f1400",
+                      "inverse-surface": "#303030",
+                      "on-surface-variant": "#42474f",
+                      "tertiary-fixed-dim": "#6fd8c8",
+                      "primary-fixed-dim": "#a0c9ff",
+                      "error-container": "#ffdad6",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary-fixed-dim": "#ffb780",
+                      "outline-variant": "#c2c7d1",
+                      "on-surface": "#1b1c1c",
+                      "on-tertiary-container": "#61cbbc",
+                      "surface-gray-light": "#F8F9FA",
+                      "on-primary": "#ffffff",
+                      "surface-container-highest": "#e5e2e1",
+                      "primary-container": "#0f4c81",
+                      "outline": "#727780",
+                      "on-background": "#1b1c1c",
+                      "inverse-primary": "#a0c9ff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xl": "32px",
+                      "lg": "24px",
+                      "sm": "12px",
+                      "margin-mobile": "16px",
+                      "md": "16px",
+                      "xs": "8px",
+                      "gutter-mobile": "12px",
+                      "base": "4px"
+              },
+              "fontFamily": {
+                      "label-md": ["IBM Plex Sans"],
+                      "headline-lg": ["IBM Plex Sans"],
+                      "body-lg": ["Noto Sans"],
+                      "headline-md": ["IBM Plex Sans"],
+                      "body-md": ["Noto Sans"],
+                      "label-sm": ["IBM Plex Sans"],
+                      "headline-lg-mobile": ["IBM Plex Sans"]
+              },
+              "fontSize": {
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                      "headline-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                      "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}]
+              }
+            },
+          }
+        }
+    </script>
+<style>
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #c2c7d1;
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #727780;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background h-screen overflow-hidden flex font-body-md">
+<!-- Shared Component: NavigationDrawer (Desktop Only) -->
+<aside class="hidden md:flex flex-col bg-surface-bright dark:bg-surface-container-low h-full w-[280px] rounded-r-xl shadow-lg z-20 relative border-l border-surface-container">
+<!-- Header Profile Layout -->
+<div class="p-lg border-b border-surface-container dark:border-surface-container-highest flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden shrink-0 shadow-sm border border-outline-variant">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A professional headshot of a Sudanese male administrator in modern business attire, well-lit in a bright contemporary office setting, evoking trust and authority." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRr8-XfHZ-gPPxaiNbdlczTId-XUb8jujPDAW_xNUd6SqRaQicnghcQp-ctdP1WA9j2FLEpCiy3b8pgXPjBUxF8Jyna3wkbWugvrjxjYfg28KpvPWiXU9Z7ip1ZJ2VCOzNJgUV1wSPHTfonQTEOHne5w_Tm0r1opexMpW1Wj-6eqGuM9CPHFgCDJ-5Vu9hOW4XqGyCZz-6s4RA_Qlg0IKKUste9BdsMFHbWFGzA1qj9NZEtkrT4V-FAfipBYpiNKC4PY6uT_OaAXFx"/>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-md text-primary dark:text-primary-fixed">أحمد محمد</span>
+<span class="font-label-sm text-on-surface-variant">مزود خدمة معتمد</span>
+<span class="font-label-sm text-outline mt-1 text-[10px]">الخرطوم، السودان</span>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="flex flex-col py-lg px-md h-full gap-2 overflow-y-auto">
+<!-- Active State: Dashboard (لوحة التحكم) -->
+<a class="flex items-center gap-4 px-4 py-3 bg-primary-container text-on-primary-container font-bold rounded-lg transition-all active:bg-primary-fixed-dim" href="#">
+<span class="material-symbols-outlined icon-fill">dashboard</span>
+<span class="font-label-md">لوحة التحكم</span>
+</a>
+<!-- Inactive States -->
+<a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant dark:text-outline-variant hover:bg-surface-variant dark:hover:bg-surface-dim transition-all rounded-lg active:scale-95 duration-100" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="font-label-md">المحفظة</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant dark:text-outline-variant hover:bg-surface-variant dark:hover:bg-surface-dim transition-all rounded-lg active:scale-95 duration-100" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md">الإعدادات</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant dark:text-outline-variant hover:bg-surface-variant dark:hover:bg-surface-dim transition-all rounded-lg active:scale-95 duration-100" href="#">
+<span class="material-symbols-outlined">support_agent</span>
+<span class="font-label-md">الدعم الفني</span>
+</a>
+<div class="mt-auto pt-4 border-t border-surface-container">
+<a class="flex items-center gap-4 px-4 py-3 text-error hover:bg-error-container hover:text-on-error-container transition-all rounded-lg active:scale-95 duration-100" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-label-md">تسجيل الخروج</span>
+</a>
+</div>
+</nav>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col h-full w-full relative">
+<!-- Shared Component: TopAppBar -->
+<header class="bg-surface dark:bg-surface-dim w-full top-0 sticky z-10 border-b border-outline-variant dark:border-outline flex justify-between items-center px-margin-mobile h-[64px] shrink-0">
+<!-- Leading: Avatar (Mobile mainly, or structural element) -->
+<div class="md:hidden w-8 h-8 rounded-full overflow-hidden shrink-0 border border-outline-variant hover:opacity-80 transition-opacity cursor-pointer">
+<img alt="User Profile Avatar" class="w-full h-full object-cover" data-alt="A professional headshot of a Sudanese male administrator in modern business attire, well-lit in a bright contemporary office setting, evoking trust and authority." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNiB-t4qSPbKcEQikUBmWN4Wwh5SHAXp7lagZsxGkHH9r877vztPVAKd3d6X0oXREjxp_41BtH7ONW_gSjGASpOipWMr98nmsryfU-BCycIP-56IPkC621EfaAHHNpNDqkKea8Lih85IXqO4Ed2aK-dRCmO24nDQIqcv4-DUmODskqRXzvHoTNT_ARC1NnVCcfh5rVrCaurXd_SFJBklOmP17xz8aUNkIRNw7nJbdaSSVmxrp89DCkYn0j_DTP1oXc6ymeSYAsyo5_"/>
+</div>
+<!-- Headline / Brand -->
+<div class="flex-1 flex md:justify-start justify-center">
+<h1 class="font-headline-md-mobile text-headline-md-mobile font-bold text-primary dark:text-primary-fixed tracking-tight">Amana</h1>
+</div>
+<!-- Trailing: Icon -->
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant dark:text-outline hover:bg-surface-container-high transition-colors active:scale-95 duration-100 relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border border-surface"></span>
+</button>
+</header>
+<!-- Scrollable Canvas -->
+<div class="flex-1 overflow-y-auto bg-surface-gray-light pb-24 md:pb-8">
+<div class="max-w-7xl mx-auto p-4 md:p-8 flex flex-col gap-8">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+<div>
+<h2 class="font-headline-lg text-headline-lg md:font-headline-lg md:text-headline-lg text-nile-blue-deep mb-1">إدارة التقييمات والمراجعات</h2>
+<p class="font-body-md text-outline">راقب وتفاعل مع آراء العملاء لضمان جودة الخدمة.</p>
+</div>
+<button class="flex items-center gap-2 bg-primary text-on-primary px-4 py-2 rounded-lg font-label-md hover:bg-primary-container hover:text-on-primary-container transition-colors shadow-sm active:scale-95 duration-150">
+<span class="material-symbols-outlined text-[20px]">download</span>
+                        تصدير التقرير
+                    </button>
+</div>
+<!-- Analytics Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+<!-- Average Rating -->
+<div class="bg-surface-white rounded-xl p-6 border border-outline-variant shadow-sm flex flex-col items-center justify-center relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-secondary-container/20 rounded-full blur-xl group-hover:bg-secondary-container/30 transition-colors"></div>
+<span class="font-label-md text-on-surface-variant mb-2">متوسط التقييم العام</span>
+<div class="flex items-end gap-2 mb-2">
+<span class="text-[48px] font-headline-lg font-bold text-primary leading-none">4.7</span>
+<span class="font-body-md text-outline mb-2">/ 5.0</span>
+</div>
+<div class="flex text-warning-amber">
+<span class="material-symbols-outlined icon-fill">star</span>
+<span class="material-symbols-outlined icon-fill">star</span>
+<span class="material-symbols-outlined icon-fill">star</span>
+<span class="material-symbols-outlined icon-fill">star</span>
+<span class="material-symbols-outlined">star_half</span>
+</div>
+</div>
+<!-- Total Reviews -->
+<div class="bg-surface-white rounded-xl p-6 border border-outline-variant shadow-sm flex flex-col justify-between">
+<div class="flex justify-between items-start mb-4">
+<span class="font-label-md text-on-surface-variant">إجمالي المراجعات</span>
+<span class="material-symbols-outlined text-tertiary-container bg-tertiary-fixed/30 p-2 rounded-lg">forum</span>
+</div>
+<div>
+<span class="text-[36px] font-headline-lg font-bold text-nile-blue-deep block mb-1">1,248</span>
+<div class="flex items-center gap-1 text-success-green font-label-sm">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+<span>+12% هذا الشهر</span>
+</div>
+</div>
+</div>
+<!-- Needs Attention Widget -->
+<div class="bg-error-container border border-error/20 rounded-xl p-6 shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="absolute top-0 right-0 w-1 h-full bg-error"></div>
+<div class="flex justify-between items-start mb-4">
+<span class="font-label-md text-on-error-container font-bold">تتطلب انتباه عاجل</span>
+<span class="material-symbols-outlined text-error bg-surface-white/50 p-2 rounded-lg">warning</span>
+</div>
+<div>
+<span class="text-[36px] font-headline-lg font-bold text-on-error-container block mb-1">14</span>
+<p class="font-label-sm text-error">تقييمات سلبية (1-2 نجوم) لم يتم الرد عليها</p>
+</div>
+</div>
+</section>
+<!-- Filters & Search -->
+<div class="bg-surface-white p-4 rounded-xl border border-outline-variant shadow-sm flex flex-col md:flex-row gap-4 items-center justify-between sticky top-4 z-10">
+<div class="relative w-full md:w-96">
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-4 pr-10 py-2.5 bg-surface-container-low border-none rounded-lg font-body-md text-on-surface focus:ring-2 focus:ring-primary-fixed-dim transition-shadow placeholder:text-outline-variant h-[48px]" placeholder="ابحث في المراجعات، اسم العميل..." type="text"/>
+</div>
+<div class="flex gap-2 w-full md:w-auto overflow-x-auto pb-2 md:pb-0 hide-scrollbar">
+<button class="shrink-0 px-4 py-2 h-[48px] rounded-lg border border-primary text-primary font-label-md bg-primary-fixed/20 active:scale-95 transition-all">الكل</button>
+<button class="shrink-0 px-4 py-2 h-[48px] rounded-lg border border-outline-variant text-on-surface-variant font-label-md hover:bg-surface-container transition-all">بانتظار الرد <span class="bg-error text-white text-[10px] px-1.5 py-0.5 rounded-full mr-1">14</span></button>
+<button class="shrink-0 px-4 py-2 h-[48px] rounded-lg border border-outline-variant text-on-surface-variant font-label-md hover:bg-surface-container transition-all">التقييمات الإيجابية</button>
+<button class="shrink-0 px-4 py-2 h-[48px] rounded-lg border border-outline-variant text-on-surface-variant font-label-md hover:bg-surface-container transition-all flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+                            المزيد
+                        </button>
+</div>
+</div>
+<!-- Reviews List -->
+<div class="flex flex-col gap-4">
+<!-- CRITICAL REVIEW CARD (Needs Attention) -->
+<article class="bg-surface-white border-l-4 border-l-error border border-outline-variant rounded-xl p-4 md:p-6 shadow-sm hover:shadow-md transition-shadow relative">
+<div class="flex flex-col md:flex-row gap-4 md:gap-6">
+<!-- User Info -->
+<div class="flex items-start gap-3 md:w-1/4 shrink-0">
+<div class="w-12 h-12 rounded-full bg-surface-container overflow-hidden">
+<img alt="User" class="w-full h-full object-cover" data-alt="A portrait of a displeased middle-aged Sudanese woman, wearing a traditional elegant toub, shot outdoors with natural harsh lighting casting slight shadows, conveying dissatisfaction." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGBwWRKG-x8yMBaxSt4TJvBjD0EKacBZmN4A6mqONDCLpfOnL8k5TtmPsAar2ktl8IpVItgnxvaEP9kfD8tW9NAmBbKgm_bhUdPVUQojAOmIgh_xxBskJScVmeuKaONF7Gauwdc63X4yVnIwVKypHaXivs12u7BK-P1kVJ_X13gtQkrxgStpJCG4tTD_nsSqiTwtfBLDaJ5E-RUd_6O6B1spzxruL8SdgLH-2MIQS-TNJ2bIFs9x91yB_TupNAKTN444vnyoePCDcM"/>
+</div>
+<div>
+<h3 class="font-headline-md text-on-surface text-[16px] mb-1">فاطمة عثمان</h3>
+<div class="font-label-sm text-outline flex items-center gap-1 mb-1">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+                                        منذ ساعتين
+                                    </div>
+<span class="inline-block px-2 py-0.5 rounded bg-error-container text-error text-[10px] font-bold">شكوى نشطة</span>
+</div>
+</div>
+<!-- Review Content -->
+<div class="flex-1">
+<div class="flex items-center justify-between mb-2">
+<div class="flex text-warning-amber">
+<span class="material-symbols-outlined icon-fill">star</span>
+<span class="material-symbols-outlined text-outline-variant">star</span>
+<span class="material-symbols-outlined text-outline-variant">star</span>
+<span class="material-symbols-outlined text-outline-variant">star</span>
+<span class="material-symbols-outlined text-outline-variant">star</span>
+</div>
+<span class="font-label-sm text-outline">خدمة: تنظيف منازل</span>
+</div>
+<h4 class="font-headline-md text-[16px] text-nile-blue-deep mb-2">تأخير غير مقبول وسوء في التعامل</h4>
+<p class="font-body-md text-on-surface-variant leading-relaxed">
+                                    للأسف كانت التجربة سيئة جداً. الفني تأخر عن الموعد المحدد بأكثر من ساعتين دون أي اعتذار مسبق، وعندما وصل لم يقم بإكمال العمل بالشكل المطلوب. أتوقع تعويضاً عن هذا التأخير وسوء الخدمة.
+                                </p>
+</div>
+<!-- Actions -->
+<div class="md:w-auto shrink-0 flex flex-row md:flex-col gap-2 mt-4 md:mt-0 justify-end md:justify-start border-t md:border-t-0 md:border-r border-outline-variant pt-4 md:pt-0 md:pr-6">
+<button class="flex-1 md:flex-none h-[48px] px-4 flex items-center justify-center gap-2 bg-error text-on-error rounded-lg font-label-md hover:bg-error-red transition-colors active:scale-95 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">reply</span>
+                                    رد سريع
+                                </button>
+<button class="flex-1 md:flex-none h-[48px] px-4 flex items-center justify-center gap-2 border border-outline text-on-surface-variant rounded-lg font-label-md hover:bg-surface-container transition-colors active:scale-95">
+<span class="material-symbols-outlined text-[18px]">visibility_off</span>
+                                    إخفاء مؤقت
+                                </button>
+</div>
+</div>
+</article>
+<!-- FEATURED REVIEW CARD -->
+<article class="bg-surface-bright border border-secondary-container/50 rounded-xl p-4 md:p-6 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden">
+<div class="absolute top-0 right-0 bg-secondary-container text-on-secondary-container px-3 py-1 rounded-bl-lg font-label-sm flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[14px] icon-fill">workspace_premium</span>
+                            مراجعة مميزة
+                        </div>
+<div class="flex flex-col md:flex-row gap-4 md:gap-6 mt-4 md:mt-0">
+<!-- User Info -->
+<div class="flex items-start gap-3 md:w-1/4 shrink-0">
+<div class="w-12 h-12 rounded-full bg-surface-container overflow-hidden border-2 border-secondary-container">
+<img alt="User" class="w-full h-full object-cover" data-alt="A portrait of a happy young Sudanese man, casual modern attire, outdoors in a bustling Khartoum market, warm sunset lighting, smiling brightly." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLAGV3FXuVDmnZ-sr9JiCgL_0i2qg39LRwN5ESNUMYKb1M9Xq_bwsGiQTm7a21d5R5WZeWZJOspz3coUakn2gFHH3HNfczmQGdP5gaPoDt2gfoC4rOFEsDL5LEUSNdX_DZH9-Yqa4XDkNYpBUqR__p0qbMbedwS5fXn1-WRisPgDEGiYMBJI8THLwdoFU0fSDh2Rs8a_Xo-YU9NFk9hB_znyqRRo0_6KJlkRmyBRA5Uuefth4KHmxcXuRoHvvRxyrOUgXRNSC5XgTx"/>
+</div>
+<div>
+<h3 class="font-headline-md text-on-surface text-[16px] mb-1">عمر عبدالرحمن</h3>
+<div class="font-label-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+                                        منذ 3 أيام
+                                    </div>
+</div>
+</div>
+<!-- Review Content -->
+<div class="flex-1">
+<div class="flex items-center justify-between mb-2">
+<div class="flex text-warning-amber">
+<span class="material-symbols-outlined icon-fill">star</span>
+<span class="material-symbols-outlined icon-fill">star</span>
+<span class="material-symbols-outlined icon-fill">star</span>
+<span class="material-symbols-outlined icon-fill">star</span>
+<span class="material-symbols-outlined icon-fill">star</span>
+</div>
+<span class="font-label-sm text-outline">خدمة: صيانة كهرباء</span>
+</div>
+<h4 class="font-headline-md text-[16px] text-nile-blue-deep mb-2">احترافية عالية وأمانة في العمل</h4>
+<p class="font-body-md text-on-surface-variant leading-relaxed">
+                                    من أفضل التطبيقات التي استخدمتها في السودان. الفني كان محترفاً جداً، اكتشف العطل في دقائق وقام بإصلاحه بتكلفة معقولة جداً. الأمانة والشفافية هي ما يميزكم حقاً. شكراً أمانة!
+                                </p>
+</div>
+<!-- Actions -->
+<div class="md:w-auto shrink-0 flex flex-row md:flex-col gap-2 mt-4 md:mt-0 justify-end md:justify-start border-t md:border-t-0 md:border-r border-outline-variant pt-4 md:pt-0 md:pr-6">
+<button class="flex-1 md:flex-none h-[48px] px-4 flex items-center justify-center gap-2 border border-outline text-on-surface-variant rounded-lg font-label-md hover:bg-surface-container transition-colors active:scale-95">
+<span class="material-symbols-outlined text-[18px]">reply</span>
+                                    رد
+                                </button>
+<button class="flex-1 md:flex-none h-[48px] px-4 flex items-center justify-center gap-2 border border-outline text-on-surface-variant rounded-lg font-label-md hover:bg-surface-container transition-colors active:scale-95 group">
+<span class="material-symbols-outlined text-[18px] group-hover:text-error transition-colors">delete</span>
+</button>
+</div>
+</div>
+</article>
+<!-- STANDARD REVIEW CARD -->
+<article class="bg-surface-white border border-outline-variant rounded-xl p-4 md:p-6 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex flex-col md:flex-row gap-4 md:gap-6">
+<!-- User Info -->
+<div class="flex items-start gap-3 md:w-1/4 shrink-0">
+<div class="w-12 h-12 rounded-full bg-surface-container overflow-hidden flex items-center justify-center text-primary-container font-headline-md">
+                                    م
+                                </div>
+<div>
+<h3 class="font-headline-md text-on-surface text-[16px] mb-1">محمد الحسن</h3>
+<div class="font-label-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+                                        منذ أسبوع
+                                    </div>
+</div>
+</div>
+<!-- Review Content -->
+<div class="flex-1">
+<div class="flex items-center justify-between mb-2">
+<div class="flex text-warning-amber">
+<span class="material-symbols-outlined icon-fill">star</span>
+<span class="material-symbols-outlined icon-fill">star</span>
+<span class="material-symbols-outlined icon-fill">star</span>
+<span class="material-symbols-outlined icon-fill">star</span>
+<span class="material-symbols-outlined text-outline-variant">star</span>
+</div>
+<span class="font-label-sm text-outline">خدمة: نقل أثاث</span>
+</div>
+<p class="font-body-md text-on-surface-variant leading-relaxed">
+                                    الخدمة جيدة بشكل عام، فريق النقل كان متعاوناً ولكن السعر كان أعلى قليلاً من المتوقع. التطبيق سهل الاستخدام وسريع الاستجابة.
+                                </p>
+</div>
+<!-- Actions -->
+<div class="md:w-auto shrink-0 flex flex-row md:flex-col gap-2 mt-4 md:mt-0 justify-end md:justify-start border-t md:border-t-0 md:border-r border-outline-variant pt-4 md:pt-0 md:pr-6">
+<button class="flex-1 md:flex-none h-[48px] px-4 flex items-center justify-center gap-2 border border-outline text-on-surface-variant rounded-lg font-label-md hover:bg-surface-container transition-colors active:scale-95">
+<span class="material-symbols-outlined text-[18px]">reply</span>
+                                    رد
+                                </button>
+<button class="flex-1 md:flex-none h-[48px] px-4 flex items-center justify-center gap-2 bg-surface-container text-primary rounded-lg font-label-md hover:bg-surface-variant transition-colors active:scale-95">
+<span class="material-symbols-outlined text-[18px]">push_pin</span>
+                                    تمييز
+                                </button>
+</div>
+</div>
+</article>
+</div>
+<!-- Pagination -->
+<div class="flex justify-center items-center gap-2 mt-4">
+<button class="w-10 h-10 rounded-lg border border-outline-variant flex items-center justify-center text-outline hover:bg-surface-container transition-colors disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+<button class="w-10 h-10 rounded-lg bg-primary text-on-primary font-label-md flex items-center justify-center shadow-sm">1</button>
+<button class="w-10 h-10 rounded-lg border border-outline-variant text-on-surface-variant font-label-md flex items-center justify-center hover:bg-surface-container transition-colors">2</button>
+<button class="w-10 h-10 rounded-lg border border-outline-variant text-on-surface-variant font-label-md flex items-center justify-center hover:bg-surface-container transition-colors">3</button>
+<span class="text-outline">...</span>
+<button class="w-10 h-10 rounded-lg border border-outline-variant flex items-center justify-center text-outline hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<style>
+        /* Hide scrollbar utility class */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</body></html>

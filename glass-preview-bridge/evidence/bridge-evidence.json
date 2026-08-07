@@ -1,0 +1,40 @@
+[
+  {
+    "name": "market",
+    "port": 8100,
+    "ok": true,
+    "bytes": 14195,
+    "status": {
+      "name": "market",
+      "flutterUrl": "http://127.0.0.1:8095",
+      "bridgePort": 8100,
+      "hasFrame": true,
+      "firstFrameReady": false,
+      "captureCount": 6,
+      "lastCaptureAt": "2026-07-31T03:20:36.613Z",
+      "status": "timeout-capturing-anyway",
+      "error": "pageerror: Assertion failed: org-dartlang-sdk:///lib/_engine/engine/configuration.dart:172:9\n!_usedLegacyConfigStyle\n\"Use engineInitializer.initializeEngine(config) only. Using the (deprecated) window.flutterConfiguration and initializeEngi",
+      "bytes": 14195
+    },
+    "out": "C:\\Users\\Administrator.user-HP\\AndroidStudioProjects\\amana\\glass-preview-bridge\\evidence\\bridge-market-visible.png"
+  },
+  {
+    "name": "admin",
+    "port": 8101,
+    "ok": true,
+    "bytes": 15002,
+    "status": {
+      "name": "admin",
+      "flutterUrl": "http://127.0.0.1:7400",
+      "bridgePort": 8101,
+      "hasFrame": true,
+      "firstFrameReady": false,
+      "captureCount": 7,
+      "lastCaptureAt": "2026-07-31T03:20:37.678Z",
+      "status": "timeout-capturing-anyway",
+      "error": null,
+      "bytes": 15002
+    },
+    "out": "C:\\Users\\Administrator.user-HP\\AndroidStudioProjects\\amana\\glass-preview-bridge\\evidence\\bridge-admin-visible.png"
+  }
+]

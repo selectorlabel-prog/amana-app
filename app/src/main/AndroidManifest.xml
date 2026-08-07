@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <permission
+        android:name="amana.example.com.permission.ACCESS_AMANA_DB"
+        android:protectionLevel="normal" />
+
+    <application
+        android:name=".AmanaApp"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Amana"
+        tools:targetApi="31">
+
+        <provider
+            android:name="amana.core.data.AmanaProvider"
+            android:authorities="amana.example.com.provider"
+            android:exported="true"
+            android:grantUriPermissions="true"
+            android:readPermission="amana.example.com.permission.ACCESS_AMANA_DB"
+            android:writePermission="amana.example.com.permission.ACCESS_AMANA_DB" />
+
+        <activity
+            android:name=".ui.auth.PhoneAuthActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Amana.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ui.gateway.GatewayActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Amana.NoActionBar" />
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Amana.NoActionBar" />
+
+        <activity
+            android:name=".ui.chat.ChatActivity"
+            android:exported="false"
+            android:label="المحادثة"
+            android:theme="@style/Theme.Amana.NoActionBar"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".ui.tracking.TrackingActivity"
+            android:exported="false"
+            android:label="تتبع الخدمة"
+            android:theme="@style/Theme.Amana.NoActionBar" />
+
+        <activity
+            android:name=".ui.invoice.InvoiceActivity"
+            android:exported="false"
+            android:label="الفاتورة"
+            android:theme="@style/Theme.Amana.NoActionBar" />
+
+        <activity
+            android:name=".ui.auth.CustomerRegistrationActivity"
+            android:exported="false"
+            android:label="تسجيل العميل"
+            android:theme="@style/Theme.Amana.NoActionBar" />
+
+        <activity
+            android:name=".ui.payment.PaymentConfirmationActivity"
+            android:exported="false"
+            android:label="تأكيد الدفع"
+            android:theme="@style/Theme.Amana.NoActionBar" />
+
+        <activity
+            android:name=".ui.wallet.InsufficientBalanceActivity"
+            android:exported="false"
+            android:label="رصيد غير كافٍ"
+            android:theme="@style/Theme.Amana.NoActionBar" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="${MAPS_API_KEY}" />
+    </application>
+
+</manifest>

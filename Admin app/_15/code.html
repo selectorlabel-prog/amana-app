@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=Noto+Sans:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        body {
+            font-family: 'Noto Sans', sans-serif;
+            background-color: #fcf9f8;
+        }
+        .font-headline { font-family: 'IBM Plex Sans', sans-serif; }
+        .inner-shadow:active {
+            box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+        }
+        /* Custom scrollbar for clean tabular look */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f0eded;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #c2c7d1;
+            border-radius: 10px;
+        }
+    </style>
+<title>سجل العمليات الإدارية - أمانة</title>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-surface bg-background min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-50 bg-surface dark:bg-surface-dim border-b border-outline-variant dark:border-outline flex justify-between items-center px-margin-mobile h-[64px] transition-colors">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A professional corporate portrait of a Sudanese administrative official in a clean, modern office environment. The lighting is soft and natural, emphasizing a trustworthy and professional persona. The overall aesthetic is bright and high-contrast, matching a professional service marketplace theme with subtle blue and white tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnGDy6ZwwE84Xtj266Zw4Rbgm__6BuPi5xqqGgxDaIhVMIuEvflvXMWygNpx0zoLtUdwM1ONse-9A9wh3_N7Yb1FC861yCBlddMVW8eLXDkGF9w9sat545lA4Jjg4oMX_TCxcrHMPhC6Tn056cW51uEh1kazBmPjOoCOQCKxJpt0Asi4s82O_qm7rtfIbIkV-hkAORP5kxYSDBMkF8NsnljYrK2-m_Wdfkt8MhfG3w_O562IN4QWRLz4Hc55YrusGDmXJWvpyP7eCo"/>
+</div>
+<h1 class="font-headline-md-mobile text-headline-md-mobile font-bold text-primary dark:text-primary-fixed">أمانة</h1>
+</div>
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-primary dark:text-primary-fixed p-2 hover:bg-surface-container-high transition-colors rounded-full active:scale-95 duration-100">notifications</button>
+</div>
+</header>
+<main class="max-w-5xl mx-auto px-margin-mobile pt-lg">
+<!-- Header Section -->
+<div class="mb-lg">
+<h2 class="font-headline text-headline-lg-mobile text-on-surface mb-xs">سجل العمليات الإدارية</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">مراقبة وتتبع جميع الإجراءات التي يتخذها فريق الإشراف.</p>
+</div>
+<!-- Filters Section -->
+<div class="bg-surface-container-low rounded-xl p-md mb-lg border border-outline-variant flex flex-wrap gap-md items-end">
+<div class="flex-1 min-w-[200px]">
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-xs">نوع الإجراء</label>
+<select class="w-full h-12 rounded-lg border-outline-variant bg-surface-white font-body-md text-body-md px-sm focus:ring-primary focus:border-primary">
+<option>كل الإجراءات</option>
+<option>تعديل الحسابات</option>
+<option>تغيير العمولات</option>
+<option>حل النزاعات</option>
+<option>إيقاف حساب</option>
+</select>
+</div>
+<div class="flex-1 min-w-[200px]">
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-xs">المسؤول</label>
+<select class="w-full h-12 rounded-lg border-outline-variant bg-surface-white font-body-md text-body-md px-sm focus:ring-primary focus:border-primary">
+<option>جميع المسؤولين</option>
+<option>أحمد محمد</option>
+<option>سارة إبراهيم</option>
+<option>ياسر عثمان</option>
+</select>
+</div>
+<button class="h-12 px-lg bg-primary text-on-primary font-label-md text-label-md rounded-lg flex items-center gap-xs hover:opacity-90 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[20px]">filter_list</span>
+                تطبيق الفلاتر
+            </button>
+</div>
+<!-- Audit Log List (Bento-inspired list) -->
+<div class="flex flex-col gap-sm">
+<!-- Log Entry 1 -->
+<div class="bg-surface-white border border-outline-variant rounded-xl p-md flex flex-col md:flex-row md:items-center justify-between gap-md hover:bg-surface-container transition-colors shadow-sm">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close-up portrait of a Sudanese male professional in business attire, looking confident and approachable. The background is a blurred corporate setting with warm, sandy orange and cool blue accents. High-quality digital photography with sharp focus on the face, embodying the Amana brand values of trust and reliability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAOwi-uGXcSnADoJWk3mPt_s6KuZjeVbAJ0_AnMS04E-DcXFKDZbVaYnRH1F0qbsajkAR2TagnvV4fVk2Hoj6SiME-p8oazeXuzLFCKeEBBN2DhizmyimAfcsNR36FxeuLQKQdf4xfo7WpQYBHdA4mhRkqrNEUEL-sRgvaG-9f9uxT0zydUMuvL98RVcKyE_G5f0ATbInhE9yIlhV2qpmbSQIo3BSdChCRF35skutjwPw2GXl6QG_fl32KejYzoGcBWsLWtPHbF3xg"/>
+</div>
+<div>
+<div class="flex items-center gap-xs">
+<span class="font-label-md text-label-md text-on-surface">أحمد محمد</span>
+<span class="px-xs py-[2px] bg-surface-container-highest text-on-surface-variant font-label-sm text-[10px] rounded uppercase">مشرف</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">قام بـ <span class="text-primary font-semibold">إلغاء تجميد الحساب</span></p>
+</div>
+</div>
+<div class="flex flex-col md:items-end gap-xs border-t md:border-t-0 pt-sm md:pt-0 border-outline-variant">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px] text-outline">person</span>
+<span class="font-body-md text-body-md text-on-surface">المستهدف: محمد علي (ID: 8821)</span>
+</div>
+<div class="flex items-center gap-xs text-outline">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span class="font-label-sm text-label-sm">منذ ١٥ دقيقة (١٢:٣٠ م)</span>
+</div>
+</div>
+</div>
+<!-- Log Entry 2 -->
+<div class="bg-surface-white border border-outline-variant rounded-xl p-md flex flex-col md:flex-row md:items-center justify-between gap-md hover:bg-surface-container transition-colors shadow-sm">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of a Sudanese female administrator with a professional headscarf, smiling warmly in a bright modern office. Soft morning light enters from a large window. The color palette is composed of soft grays, whites, and corporate blues. The visual style is clean, airy, and professional, reflecting a trustworthy service atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcQi9DpPnN3RWuq5xJd0ouolOnGJ0sB5yemurnqupLuCYOG0WoqVO7Uz7RQ2qIIIZ93UE3WuVUuK8TA0MVH89xyvA6wSuZKtW0oALyJBEe5NLaOjGMPBF2NOxiXedIkrwjOhvp1BmNmeXkEW9RwVMWMC2TKWLiTa5ZB_RngBcLlSDt_VR9NOmaCo3I0kRDb5-MSA7GB0UVb85rs0YOVnJh4UDbumLYEPZg6v7VYOazuJDs0FcVUEkJlM5KdxVEP-pAdK5I3DNF7LS1"/>
+</div>
+<div>
+<div class="flex items-center gap-xs">
+<span class="font-label-md text-label-md text-on-surface">سارة إبراهيم</span>
+<span class="px-xs py-[2px] bg-surface-container-highest text-on-surface-variant font-label-sm text-[10px] rounded uppercase">إدارة مالية</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">قامت بـ <span class="text-secondary font-semibold">تغيير نسبة العمولات</span></p>
+</div>
+</div>
+<div class="flex flex-col md:items-end gap-xs border-t md:border-t-0 pt-sm md:pt-0 border-outline-variant">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px] text-outline">trending_up</span>
+<span class="font-body-md text-body-md text-on-surface">الفئة: خدمات التنظيف (١٥٪ ➔ ١٢٪)</span>
+</div>
+<div class="flex items-center gap-xs text-outline">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span class="font-label-sm text-label-sm">منذ ساعة (١١:٤٥ ص)</span>
+</div>
+</div>
+</div>
+<!-- Log Entry 3 -->
+<div class="bg-surface-white border border-outline-variant rounded-xl p-md flex flex-col md:flex-row md:items-center justify-between gap-md hover:bg-surface-container transition-colors shadow-sm">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">support_agent</span>
+</div>
+<div>
+<div class="flex items-center gap-xs">
+<span class="font-label-md text-label-md text-on-surface">ياسر عثمان</span>
+<span class="px-xs py-[2px] bg-surface-container-highest text-on-surface-variant font-label-sm text-[10px] rounded uppercase">دعم فني</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">قام بـ <span class="text-success-green font-semibold">حل نزاع قائم</span></p>
+</div>
+</div>
+<div class="flex flex-col md:items-end gap-xs border-t md:border-t-0 pt-sm md:pt-0 border-outline-variant">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px] text-outline">gavel</span>
+<span class="font-body-md text-body-md text-on-surface">طلب رقم #TR-9902 (لصالح المزود)</span>
+</div>
+<div class="flex items-center gap-xs text-outline">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span class="font-label-sm text-label-sm">منذ ساعتين (١٠:١٥ ص)</span>
+</div>
+</div>
+</div>
+<!-- Log Entry 4 (Critical/Error themed) -->
+<div class="bg-error-container/20 border border-error/20 rounded-xl p-md flex flex-col md:flex-row md:items-center justify-between gap-md hover:bg-error-container/30 transition-colors shadow-sm">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full bg-error-container flex items-center justify-center text-on-error-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of a mature Sudanese senior administrator, graying hair, wearing a white thobe and a blue formal vest. Serious yet fair expression. Background is a sophisticated wood-paneled office in Khartoum. High-key lighting, sharp detail, corporate Sudanese professional style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtQBZKdevu7QCEO5VbmKU8W6ywJnIl-wsCdgwr0u1zcoqhR7YiLnz2JyAO6NVqRz5zuyMaO5rekoud01fBohQnCGPxNxzoFJb-bT9CDV2d_oHCiUsL7f1KbkY61i6pVvHGZQLpztQQ8GPTVsNBWGYwil1Uh7sjSlEPdkSZ223bU71Q74qx3ap1KYcMYA4R35HjBzckmyUHASDyABEXE2SYnGVqrMQfatQZUKhkjvzoAxFIbM6tTRYL9YilcLkFEX0nVWhUdU7odbsC"/>
+</div>
+<div>
+<div class="flex items-center gap-xs">
+<span class="font-label-md text-label-md text-on-surface">عبد الله إدريس</span>
+<span class="px-xs py-[2px] bg-error-red text-white font-label-sm text-[10px] rounded uppercase">مدير نظام</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">قام بـ <span class="text-error font-semibold">تجميد حساب نهائي</span></p>
+</div>
+</div>
+<div class="flex flex-col md:items-end gap-xs border-t md:border-t-0 pt-sm md:pt-0 border-outline-variant">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px] text-error">warning</span>
+<span class="font-body-md text-body-md text-on-surface">المستهدف: ورشة النيل (ID: 4410)</span>
+</div>
+<div class="flex items-center gap-xs text-outline">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span class="font-label-sm text-label-sm">اليوم (٠٩:٠٠ ص)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-xl flex items-center justify-between border-t border-outline-variant pt-md">
+<button class="flex items-center gap-xs font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors disabled:opacity-30" disabled="">
+<span class="material-symbols-outlined">chevron_right</span>
+                السابق
+            </button>
+<div class="flex items-center gap-sm">
+<span class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-md text-label-md">١</span>
+<span class="w-8 h-8 rounded-full hover:bg-surface-container flex items-center justify-center font-label-md text-label-md cursor-pointer transition-colors">٢</span>
+<span class="w-8 h-8 rounded-full hover:bg-surface-container flex items-center justify-center font-label-md text-label-md cursor-pointer transition-colors">٣</span>
+</div>
+<button class="flex items-center gap-xs font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors">
+                التالي
+                <span class="material-symbols-outlined">chevron_left</span>
+</button>
+</div>
+</main>
+<!-- Bottom Navigation Shell -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl bg-surface dark:bg-surface-container-lowest border-t border-outline-variant dark:border-outline shadow-sm flex justify-around items-center h-[80px] pb-safe">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:opacity-80 transition-opacity active:inner-shadow duration-150" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm">الرئيسية</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary rounded-full px-4 py-1 hover:opacity-80 transition-opacity active:inner-shadow duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">assignment</span>
+<span class="font-label-sm text-label-sm">طلباتي</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:opacity-80 transition-opacity active:inner-shadow duration-150" href="#">
+<span class="material-symbols-outlined">chat</span>
+<span class="font-label-sm text-label-sm">المحادثات</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:opacity-80 transition-opacity active:inner-shadow duration-150" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm">الحساب</span>
+</a>
+</nav>
+<script>
+        // Simple micro-interaction for filter toggles
+        document.querySelectorAll('select').forEach(select => {
+            select.addEventListener('change', function() {
+                this.classList.add('ring-2', 'ring-primary-container');
+                setTimeout(() => {
+                    this.classList.remove('ring-2', 'ring-primary-container');
+                }, 400);
+            });
+        });
+    </script>
+</body></html>

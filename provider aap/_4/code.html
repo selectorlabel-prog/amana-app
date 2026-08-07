@@ -1,0 +1,188 @@
+<!DOCTYPE html><html dir="rtl" lang="ar"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Amana - Provider Onboarding Step 3</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=Noto+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#005048",
+                        "on-secondary-fixed-variant": "#6f3800",
+                        "tertiary": "#003b34",
+                        "on-background": "#1b1c1c",
+                        "tertiary-fixed-dim": "#6fd8c8",
+                        "surface-container-highest": "#e5e2e1",
+                        "surface-variant": "#e5e2e1",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-on-surface": "#f3f0ef",
+                        "surface-gray-light": "#F8F9FA",
+                        "on-error-container": "#93000a",
+                        "surface": "#fcf9f8",
+                        "nile-blue-deep": "#0A2E4D",
+                        "on-primary-fixed": "#001c37",
+                        "warning-amber": "#FFBF00",
+                        "on-surface-variant": "#42474f",
+                        "on-tertiary-container": "#61cbbc",
+                        "error": "#ba1a1a",
+                        "surface-white": "#FFFFFF",
+                        "on-secondary-container": "#783d01",
+                        "background": "#fcf9f8",
+                        "outline": "#727780",
+                        "on-secondary-fixed": "#2f1400",
+                        "primary-container": "#0f4c81",
+                        "on-surface": "#1b1c1c",
+                        "on-tertiary-fixed": "#00201c",
+                        "on-primary-fixed-variant": "#07497d",
+                        "inverse-primary": "#a0c9ff",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed": "#d2e4ff",
+                        "secondary": "#8e4e14",
+                        "surface-container": "#f0eded",
+                        "error-container": "#ffdad6",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#00544b",
+                        "inverse-surface": "#303030",
+                        "secondary-container": "#ffab69",
+                        "on-error": "#ffffff",
+                        "error-red": "#D93025",
+                        "on-primary-container": "#8ebdf9",
+                        "outline-variant": "#c2c7d1",
+                        "primary-fixed-dim": "#a0c9ff",
+                        "surface-dim": "#dcd9d9",
+                        "sand-accent": "#F4A261",
+                        "success-green": "#27A745",
+                        "secondary-fixed": "#ffdcc4",
+                        "surface-tint": "#2d6197",
+                        "tertiary-fixed": "#8cf5e4",
+                        "primary": "#00355f",
+                        "secondary-fixed-dim": "#ffb780",
+                        "surface-bright": "#fcf9f8",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#f6f3f2",
+                        "surface-container-high": "#eae7e7"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "sm": "12px",
+                        "base": "4px",
+                        "xs": "8px",
+                        "lg": "24px",
+                        "md": "16px",
+                        "margin-mobile": "16px",
+                        "gutter-mobile": "12px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["IBM Plex Sans"],
+                        "headline-lg-mobile": ["IBM Plex Sans"],
+                        "body-lg": ["Noto Sans"],
+                        "headline-md": ["IBM Plex Sans"],
+                        "body-md": ["Noto Sans"],
+                        "headline-lg": ["IBM Plex Sans"],
+                        "label-sm": ["IBM Plex Sans"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Inner shadow for active button state */
+        .active\:inner-shadow:active {
+            box-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.15);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background antialiased h-screen flex flex-col font-body-md">
+<!-- Top App Bar (Simplified for transactional flow - suppress global nav elements) -->
+<header class="bg-surface border-b border-outline-variant w-full top-0 sticky z-50 px-margin-mobile h-[64px] flex justify-between items-center">
+<div class="flex items-center gap-xs cursor-pointer hover:bg-surface-container-high transition-colors p-xs rounded-full active:scale-95 duration-100 text-on-surface-variant">
+<span class="material-symbols-outlined text-[24px]">arrow_forward</span> <!-- RTL Back arrow -->
+</div>
+<div class="font-headline-md-mobile text-headline-md-mobile font-bold text-primary">Amana</div>
+<div class="w-[40px]"></div> <!-- Spacer for center alignment -->
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 overflow-y-auto px-margin-mobile py-lg pb-[100px] max-w-md mx-auto w-full">
+<!-- Progress Indicator -->
+<div class="mb-lg">
+<div class="flex justify-between items-center mb-xs px-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant">الخطوة 1</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">الخطوة 2</span>
+<span class="font-label-md text-label-md text-primary font-bold">الخطوة 3</span>
+</div>
+<div class="flex items-center gap-base">
+<div class="h-2 flex-1 rounded-full bg-success-green"></div>
+<div class="h-2 flex-1 rounded-full bg-success-green"></div>
+<div class="h-2 flex-1 rounded-full bg-primary relative overflow-hidden">
+<!-- Pulsing ring effect for active step -->
+<div class="absolute inset-0 bg-white/30 animate-pulse"></div>
+</div>
+</div>
+</div>
+<!-- Heading -->
+<div class="mb-lg">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-background mb-base">توثيق الحساب</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">الرجاء إرفاق المستندات المطلوبة لتفعيل حسابك كمزود خدمة معتمد.</p>
+</div>
+<!-- Upload Sections Container -->
+<div class="flex flex-col gap-md">
+<!-- National ID Upload -->
+<div class="bg-surface-white border border-outline-variant rounded-xl p-md shadow-sm">
+<div class="flex items-center justify-between mb-sm">
+<h2 class="font-headline-md text-headline-md text-on-background">البطاقة القومية</h2>
+<span class="bg-surface-container-high text-on-surface-variant px-xs py-base rounded-full font-label-sm text-label-sm">مطلوب</span>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant mb-md">صورة واضحة للبطاقة القومية أو جواز السفر.</p>
+<label class="block border-2 border-dashed border-outline-variant rounded-lg p-lg text-center cursor-pointer hover:bg-surface-container-low transition-colors duration-200">
+<input accept="image/*,.pdf" class="hidden" type="file">
+<span class="material-symbols-outlined text-[48px] text-primary mb-sm block">cloud_upload</span>
+<span class="font-label-md text-label-md text-on-surface block mb-xs">اضغط هنا لرفع الملف</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">أو قم بسحب وإفلات الملف هنا (Max: 5MB)</span>
+</label>
+</div>
+<!-- Professional Certificate Upload -->
+
+</div>
+</main>
+<!-- Fixed Bottom Action Area -->
+<div class="fixed bottom-0 left-0 w-full bg-surface border-t border-outline-variant p-margin-mobile z-40 pb-safe">
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md rounded-full py-sm px-md flex items-center justify-center gap-xs hover:bg-on-primary-fixed transition-colors active:inner-shadow duration-150 h-[48px]">
+<span class="">تقديم الطلب</span>
+<span class="material-symbols-outlined filled text-[20px]">check_circle</span>
+</button>
+</div>
+
+
+</body></html>

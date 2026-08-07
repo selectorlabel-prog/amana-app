@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Amana - تسجيل بيانات العميل</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100..900&family=Noto+Sans+Arabic:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed": "#8cf5e4",
+                    "outline": "#727780",
+                    "on-secondary-fixed": "#2f1400",
+                    "on-surface": "#1b1c1c",
+                    "tertiary": "#003b34",
+                    "error": "#ba1a1a",
+                    "surface-container-low": "#f6f3f2",
+                    "on-secondary-fixed-variant": "#6f3800",
+                    "surface": "#fcf9f8",
+                    "sand-accent": "#F4A261",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "outline-variant": "#c2c7d1",
+                    "on-primary-fixed-variant": "#07497d",
+                    "surface-variant": "#e5e2e1",
+                    "inverse-on-surface": "#f3f0ef",
+                    "warning-amber": "#FFBF00",
+                    "surface-container-highest": "#e5e2e1",
+                    "surface-gray-light": "#F8F9FA",
+                    "on-tertiary-container": "#61cbbc",
+                    "primary-container": "#0f4c81",
+                    "primary-fixed": "#d2e4ff",
+                    "secondary-fixed-dim": "#ffb780",
+                    "error-red": "#D93025",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed": "#ffdcc4",
+                    "surface-container": "#f0eded",
+                    "on-tertiary-fixed": "#00201c",
+                    "on-background": "#1b1c1c",
+                    "tertiary-container": "#00544b",
+                    "surface-dim": "#dcd9d9",
+                    "primary-fixed-dim": "#a0c9ff",
+                    "on-tertiary-fixed-variant": "#005048",
+                    "primary": "#00355f",
+                    "secondary-container": "#ffab69",
+                    "tertiary-fixed-dim": "#6fd8c8",
+                    "on-secondary-container": "#783d01",
+                    "nile-blue-deep": "#0A2E4D",
+                    "surface-container-high": "#eae7e7",
+                    "success-green": "#27A745",
+                    "surface-white": "#FFFFFF",
+                    "on-surface-variant": "#42474f",
+                    "on-primary-container": "#8ebdf9",
+                    "on-error": "#ffffff",
+                    "surface-bright": "#fcf9f8",
+                    "inverse-primary": "#a0c9ff",
+                    "secondary": "#8e4e14",
+                    "surface-tint": "#2d6197",
+                    "background": "#fcf9f8",
+                    "on-secondary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed": "#001c37",
+                    "inverse-surface": "#303030"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sm": "12px",
+                    "xl": "32px",
+                    "md": "16px",
+                    "gutter-mobile": "12px",
+                    "margin-mobile": "16px",
+                    "lg": "24px",
+                    "xs": "8px",
+                    "base": "4px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["IBM Plex Sans Arabic"],
+                    "body-lg": ["Noto Sans Arabic"],
+                    "label-md": ["IBM Plex Sans Arabic"],
+                    "body-md": ["Noto Sans Arabic"],
+                    "label-sm": ["IBM Plex Sans Arabic"],
+                    "headline-md": ["IBM Plex Sans Arabic"],
+                    "headline-lg": ["IBM Plex Sans Arabic"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "headline-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Noto Sans Arabic', sans-serif;
+            background-color: #fcf9f8;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .bento-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .bento-card:active {
+            transform: scale(0.98);
+            opacity: 0.9;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="bg-surface flex justify-between items-center px-margin-mobile h-14 w-full z-50 border-b border-outline-variant sticky top-0">
+<div class="flex items-center gap-4">
+<button aria-label="Go Back" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-colors active:scale-90">
+<span class="material-symbols-outlined text-primary">arrow_forward</span>
+</button>
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Amana</span>
+</div>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-on-surface-variant">more_vert</span>
+</div>
+</header>
+<main class="flex-1 w-full max-w-md mx-auto px-margin-mobile py-lg">
+<!-- Hero Illustration Area (Bento-style visual anchor) -->
+<div class="relative overflow-hidden rounded-xl bg-primary-container mb-lg p-6 flex flex-col justify-end min-h-[160px] shadow-sm">
+<div class="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none">
+<div class="absolute -right-10 -top-10 w-40 h-40 bg-sand-accent rounded-full blur-3xl"></div>
+<div class="absolute -left-10 -bottom-10 w-40 h-40 bg-on-primary-container rounded-full blur-3xl"></div>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-primary relative z-10">تسجيل بيانات العميل</h1>
+<p class="font-body-md text-body-md text-on-primary-container relative z-10 mt-1">انضم إلى مجتمع أمانة الموثوق في السودان</p>
+</div>
+<!-- Registration Form -->
+<form class="space-y-md" id="registrationForm">
+<!-- Full Name -->
+<div class="space-y-base">
+<label class="font-label-md text-label-md text-on-surface-variant block mr-1" for="fullName">الاسم بالكامل</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">person</span>
+<input class="w-full h-14 pr-11 pl-4 rounded-xl border border-outline-variant bg-surface-white focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all font-body-md" id="fullName" name="fullName" placeholder="مثال: أحمد محمد علي" required="" type="text"/>
+</div>
+</div>
+<!-- Phone Number -->
+<div class="space-y-base">
+<label class="font-label-md text-label-md text-on-surface-variant block mr-1" for="phoneNumber">رقم الهاتف</label>
+<div class="flex items-center gap-2">
+<div class="flex items-center gap-2 h-14 px-3 rounded-xl border border-outline-variant bg-surface-container-low shrink-0">
+<div class="w-6 h-4 bg-cover bg-center rounded-sm" data-alt="Close-up of the Sudanese national flag with its green, white, black, and red horizontal stripes and green triangle on the left, rendered with a slight fabric texture in a bright, clean professional studio setting. The lighting is balanced, highlighting the vibrant primary colors of the flag, consistent with a high-end corporate identity for a Sudanese brand." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAyTl2iXcBhlM92Sd9TzXA1rdimm-1emIPwwSi6-0eOfdSpVAjURTyxry12hNyqgjrQ6z1NgPxG8Hno7NFvlF5ut_GOuVPoCQiX-5-_WnD0SQCXM1538X_bT3_Wf46C3c0zAcEckpgsazyVySetuDDxWsfo7xqqh_JdEEnJKgW6I9cMjio-rOLPCDGnPYyMUO-R00TDySv1bUSXVDzb90HAy29S9ULX0yx15yRLT449zBPcL6ZTK2hr7Hgh9GubMA8FdIb_DZ5nhPQR')"></div>
+<span class="font-label-md text-on-surface dir-ltr" dir="ltr">+249</span>
+</div>
+<div class="relative flex-1 group">
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">call</span>
+<input class="w-full h-14 pr-11 pl-4 rounded-xl border border-outline-variant bg-surface-white focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all font-body-md dir-ltr" dir="ltr" id="phoneNumber" name="phoneNumber" placeholder="912 345 678" required="" type="tel"/>
+</div>
+</div>
+</div>
+<!-- City Selection -->
+<div class="grid grid-cols-2 gap-md">
+<div class="space-y-base">
+<label class="font-label-md text-label-md text-on-surface-variant block mr-1" for="city">المدينة</label>
+<div class="relative">
+<select class="w-full h-14 pr-4 pl-10 rounded-xl border border-outline-variant bg-surface-white focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all font-body-md appearance-none" id="city" name="city" required="">
+<option disabled="" selected="" value="">اختر المدينة</option>
+<option value="khartoum">الخرطوم</option>
+<option value="bahri">الخرطوم بحري</option>
+<option value="omdurman">أم درمان</option>
+<option value="wadmadani">ود مدني</option>
+<option value="portsudan">بورتسودان</option>
+</select>
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Neighborhood -->
+<div class="space-y-base">
+<label class="font-label-md text-label-md text-on-surface-variant block mr-1" for="neighborhood">الحي</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">location_on</span>
+<input class="w-full h-14 pr-11 pl-4 rounded-xl border border-outline-variant bg-surface-white focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all font-body-md" id="neighborhood" name="neighborhood" placeholder="اسم الحي" required="" type="text"/>
+</div>
+</div>
+</div>
+<!-- Privacy Policy Checkbox -->
+<div class="flex items-start gap-3 pt-sm">
+<input class="mt-1 w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" id="terms" name="terms" required="" type="checkbox"/>
+<label class="font-label-md text-label-md text-on-surface-variant leading-tight" for="terms">
+                    أوافق على <a class="text-primary font-bold hover:underline" href="#">شروط الخدمة</a> و <a class="text-primary font-bold hover:underline" href="#">سياسة الخصوصية</a> الخاصة بمنصة أمانة.
+                </label>
+</div>
+<!-- Action Button -->
+<button class="w-full h-14 bg-primary text-on-primary font-headline-md text-headline-md rounded-xl shadow-sm hover:bg-nile-blue-deep transition-all active:scale-95 flex items-center justify-center gap-2 mt-lg" type="submit">
+<span>إنشاء حساب</span>
+<span class="material-symbols-outlined">person_add</span>
+</button>
+</form>
+<!-- Social Proof/Trust Indicator -->
+<div class="mt-xl text-center">
+<p class="font-label-sm text-label-sm text-outline mb-md">موثوق من قبل الآلاف في السودان</p>
+<div class="flex justify-center -space-x-2 space-x-reverse overflow-hidden">
+<div class="inline-block h-10 w-10 rounded-full ring-2 ring-surface bg-cover bg-center" data-alt="Professional studio portrait of a young Sudanese professional man wearing a white shirt, smiling warmly at the camera. The background is a soft, blurred corporate environment with light-mode aesthetics. High-quality photography focusing on trust and approachability." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBe1HJEBSd9vo-Ozh5laSkF9eEkn336wtl3PjlWKJEt7Kd_XLnrGPufhft1pO6QtbRBdc8kotn6Ly5HVJxpG6LHY89fU12yyaMymusOB_pgFCLQKRFRBV7dSqgmkeziAxhF1tPXII_idftbm68S-DGBDW2a-GmKAjPZKP7ZEgOw7i1SUnIeyS92YaQ0HcyWTm6R3HcXRs4-bcRQBR4SXk-bNozsTp-9zxdUUL1vRTGBtZ8CzZReTAv1keyNammO-qstrt60v7LTxbPK')"></div>
+<div class="inline-block h-10 w-10 rounded-full ring-2 ring-surface bg-cover bg-center" data-alt="Close-up portrait of a Sudanese woman in modern modest professional attire, smiling with confidence. Set against a clean, bright minimalist background. The image evokes a sense of reliability and community membership, reflecting the modern Sudanese marketplace identity." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCOTON0IUlcLsk-woFBs7ilAMyZvkyT0PMkIT2ScP6ba7xQj_57yVUpf08a8jZ25CLkorJO0nB0uiW9mBY7P7AvPvHGTRWHLxXn8ZHhksUf9nRmTGMKMO9BHOsi5ieqh61NkuBOe-HFN7xfondrTl1M6nGBfwrDLIaA8W4X_wT7wmtrJWWyv1pnajAcWNxwEspdnWLoZfHaRmLh20b5tH_XNMlsjkias69b-FgfIpdXfdfqMSmqaEkMPrmwqU07MnWwZhZnazkPL_kv')"></div>
+<div class="inline-block h-10 w-10 rounded-full ring-2 ring-surface bg-cover bg-center" data-alt="Portrait of an elderly Sudanese gentleman with a kind expression and traditional white scarf, representing wisdom and heritage. High-definition lighting with a focus on clear skin textures and professional color grading. Soft white and light gray background." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDLdpu-l8hD7yGN7byEmvNbWgC4VnzOZI-XleQtJsqBIFQjK2f3jtLOQZ-3__KeB6OWdGWmkXQ9JzAGYhA3y2IKbUUzc_5PmRIqJjeRP5Pt-8Yw_rhw-ArQHre6yolAHJiQMZ8eeKvgw8AzZ8CXehkEFwFVCZtxwchKLGfly6apw_OxAxi7KXLX16AxSrIxMtJxw9z6NGKn26hQh6OHYobuIx-Eqg5AYKXKDXJztSjvD3Z2wBRF6KwCRxQfDg3egdviaL_5h46Qncwu')"></div>
+<div class="flex items-center justify-center h-10 w-10 rounded-full ring-2 ring-surface bg-surface-container-high">
+<span class="text-label-sm font-bold text-on-surface-variant">+10k</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Success Modal (Hidden by default) -->
+<div class="fixed inset-0 z-[100] flex items-center justify-center p-md bg-black/40 backdrop-blur-sm hidden" id="successModal">
+<div class="bg-surface-white w-full max-w-xs rounded-2xl p-lg text-center shadow-xl transform transition-all scale-90 opacity-0" id="modalContent">
+<div class="w-16 h-16 bg-success-green/20 text-success-green rounded-full flex items-center justify-center mx-auto mb-md">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'wght' 700;">check</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-sm">تم بنجاح!</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-lg">مرحباً بك في أمانة. تم إنشاء حسابك بنجاح.</p>
+<button class="w-full h-12 bg-primary text-on-primary rounded-lg font-label-md" onclick="hideModal()">البدء الآن</button>
+</div>
+</div>
+<script>
+        const form = document.getElementById('registrationForm');
+        const modal = document.getElementById('successModal');
+        const modalContent = document.getElementById('modalContent');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Show success modal
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modalContent.classList.remove('scale-90', 'opacity-0');
+                modalContent.classList.add('scale-100', 'opacity-100');
+            }, 10);
+        });
+
+        function hideModal() {
+            modalContent.classList.add('scale-90', 'opacity-0');
+            modalContent.classList.remove('scale-100', 'opacity-100');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+
+        // Ripple/Scale effect for the bento card
+        const heroCard = document.querySelector('.relative.overflow-hidden.rounded-xl.bg-primary-container');
+        heroCard.addEventListener('touchstart', () => {
+            heroCard.style.transform = 'scale(0.98)';
+        });
+        heroCard.addEventListener('touchend', () => {
+            heroCard.style.transform = 'scale(1)';
+        });
+    </script>
+</body></html>

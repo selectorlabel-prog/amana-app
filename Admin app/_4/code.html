@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>لوحة تحكم المشرف - أمانة</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=Noto+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary": "#8e4e14",
+                        "surface-container": "#f0eded",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed": "#d2e4ff",
+                        "inverse-primary": "#a0c9ff",
+                        "on-primary-fixed-variant": "#07497d",
+                        "error-red": "#D93025",
+                        "secondary-container": "#ffab69",
+                        "on-error": "#ffffff",
+                        "tertiary-container": "#00544b",
+                        "inverse-surface": "#303030",
+                        "error-container": "#ffdad6",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#a0c9ff",
+                        "surface-dim": "#dcd9d9",
+                        "sand-accent": "#F4A261",
+                        "on-primary-container": "#8ebdf9",
+                        "outline-variant": "#c2c7d1",
+                        "surface-container-high": "#eae7e7",
+                        "surface-bright": "#fcf9f8",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#f6f3f2",
+                        "tertiary-fixed": "#8cf5e4",
+                        "primary": "#00355f",
+                        "secondary-fixed-dim": "#ffb780",
+                        "success-green": "#27A745",
+                        "secondary-fixed": "#ffdcc4",
+                        "surface-tint": "#2d6197",
+                        "tertiary": "#003b34",
+                        "on-background": "#1b1c1c",
+                        "tertiary-fixed-dim": "#6fd8c8",
+                        "surface-container-highest": "#e5e2e1",
+                        "surface-variant": "#e5e2e1",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#6f3800",
+                        "on-tertiary-fixed-variant": "#005048",
+                        "nile-blue-deep": "#0A2E4D",
+                        "on-primary-fixed": "#001c37",
+                        "inverse-on-surface": "#f3f0ef",
+                        "surface-gray-light": "#F8F9FA",
+                        "on-error-container": "#93000a",
+                        "surface": "#fcf9f8",
+                        "surface-white": "#FFFFFF",
+                        "on-secondary-container": "#783d01",
+                        "on-surface-variant": "#42474f",
+                        "on-tertiary-container": "#61cbbc",
+                        "error": "#ba1a1a",
+                        "warning-amber": "#FFBF00",
+                        "on-tertiary-fixed": "#00201c",
+                        "outline": "#727780",
+                        "on-secondary-fixed": "#2f1400",
+                        "primary-container": "#0f4c81",
+                        "on-surface": "#1b1c1c",
+                        "background": "#fcf9f8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "margin-mobile": "16px",
+                        "gutter-mobile": "12px",
+                        "lg": "24px",
+                        "xl": "32px",
+                        "sm": "12px",
+                        "base": "4px",
+                        "xs": "8px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["IBM Plex Sans"],
+                        "headline-lg": ["IBM Plex Sans"],
+                        "headline-md": ["IBM Plex Sans"],
+                        "body-md": ["Noto Sans"],
+                        "label-md": ["IBM Plex Sans"],
+                        "headline-lg-mobile": ["IBM Plex Sans"],
+                        "body-lg": ["Noto Sans"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+                        "headline-lg": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Noto Sans', sans-serif; }
+        h1, h2, h3, h4, h5, h6, .font-headline { font-family: 'IBM Plex Sans', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .material-symbols-outlined.fill { font-variation-settings: 'FILL' 1; }
+        .glass-card { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.3); }
+        .pb-safe { padding-bottom: env(safe-area-inset-bottom, 20px); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface flex flex-col min-h-screen">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky bg-surface dark:bg-surface-dim z-40">
+<div class="flex justify-between items-center px-margin-mobile h-[64px] border-b border-outline-variant dark:border-outline">
+<div class="flex items-center gap-xs">
+<img class="w-8 h-8 rounded-full object-cover" data-alt="A small, professional avatar portrait of an administrative user in a corporate setting. The lighting is soft and studio-quality. Clean, minimal background to emphasize the professional role." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLpKQF0P3WfBruJTTCWP2WrRQufiUPQi4A4AG0oXRyl_CqoLmb4RBFY7m-VyN3RkQNaN2oAzxTPQIa_eRYx2f95xMvL0pRctQz68X0Er3NogldMelKKpeHaa0pfx4eOJXxrDYBWLGSIb9t8WYSa8qHIf1Il4WlVwvewWCGGCHnLvj4ahgS1p6iNaQ_2LomgcSho2MnzG62qpjBHAPlM15snNIkIjj2mGmxaIZqfURLi4hBzwzYtLKyPu_-YpPG59MP5oYy6cZnHRF5"/>
+<h1 class="font-headline-md-mobile text-headline-md-mobile font-bold text-primary dark:text-primary-fixed">Amana</h1>
+</div>
+<button class="text-primary dark:text-primary-fixed hover:bg-surface-container-high transition-colors p-2 rounded-full active:scale-95 duration-100">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 overflow-y-auto px-margin-mobile py-lg pb-32">
+<!-- Welcome Section -->
+<div class="mb-lg">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-xs">نظرة عامة على النظام</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">مرحباً بك في لوحة تحكم المشرف. إليك ملخص الأداء اليوم.</p>
+</div>
+<!-- High-level Stats (Bento Grid) -->
+<div class="grid grid-cols-2 gap-sm mb-lg">
+<!-- Users Stat -->
+<div class="glass-card rounded-xl p-md flex flex-col justify-between shadow-sm">
+<div class="flex items-center gap-xs mb-md">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">group</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">إجمالي المستخدمين</span>
+</div>
+<div>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">12,450</h3>
+<div class="flex items-center gap-base mt-1 text-success-green">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+<span class="font-label-sm text-label-sm">+5.2% هذا الأسبوع</span>
+</div>
+</div>
+</div>
+<!-- Active Orders Stat -->
+<div class="glass-card rounded-xl p-md flex flex-col justify-between shadow-sm">
+<div class="flex items-center gap-xs mb-md">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">assignment</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">الطلبات النشطة</span>
+</div>
+<div>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-secondary">342</h3>
+<div class="flex items-center gap-base mt-1 text-on-surface-variant">
+<span class="font-label-sm text-label-sm">قيد التنفيذ حالياً</span>
+</div>
+</div>
+</div>
+<!-- Revenue Stat (Full Width) -->
+<div class="col-span-2 glass-card rounded-xl p-md flex flex-row items-center justify-between shadow-sm">
+<div class="flex flex-col">
+<div class="flex items-center gap-xs mb-sm">
+<div class="w-8 h-8 rounded-full bg-tertiary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">payments</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">إيرادات اليوم (جنيه سوداني)</span>
+</div>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-tertiary">450,000</h3>
+</div>
+<!-- Sparkline Chart Placeholder -->
+<div class="w-32 h-16 bg-surface-container rounded-lg flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">show_chart</span>
+</div>
+</div>
+</div>
+<!-- Quick Actions -->
+<div class="mb-lg">
+<h3 class="font-headline-md text-headline-md text-primary mb-md">إجراءات سريعة</h3>
+<div class="grid grid-cols-2 gap-sm">
+<button class="bg-primary-container text-on-primary-container rounded-lg p-sm flex items-center justify-center gap-xs hover:opacity-90 active:scale-95 transition-all shadow-sm">
+<span class="material-symbols-outlined">verified_user</span>
+<span class="font-label-md text-label-md font-bold">اعتماد المزودين</span>
+</button>
+<button class="bg-error-container text-on-error-container rounded-lg p-sm flex items-center justify-center gap-xs hover:opacity-90 active:scale-95 transition-all shadow-sm">
+<span class="material-symbols-outlined">gavel</span>
+<span class="font-label-md text-label-md font-bold">مراجعة النزاعات</span>
+</button>
+</div>
+</div>
+<!-- Recent Alerts Feed -->
+<div>
+<div class="flex justify-between items-center mb-md">
+<h3 class="font-headline-md text-headline-md text-primary">أحدث التنبيهات</h3>
+<button class="text-primary font-label-sm text-label-sm hover:underline">عرض الكل</button>
+</div>
+<div class="flex flex-col gap-sm">
+<!-- Alert Item 1 (Warning) -->
+<div class="bg-surface-container rounded-lg p-md flex items-start gap-md border-r-4 border-warning-amber">
+<div class="bg-surface-white p-2 rounded-full shadow-sm mt-1">
+<span class="material-symbols-outlined text-warning-amber">warning</span>
+</div>
+<div class="flex-1">
+<h4 class="font-label-md text-label-md text-on-surface font-bold">زيادة غير طبيعية في طلبات الصيانة</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mt-1">تم رصد ارتفاع بنسبة 20% في طلبات صيانة التكييف في منطقة الخرطوم بحري خلال الساعتين الماضيتين.</p>
+<span class="font-label-sm text-label-sm text-outline mt-2 block">منذ 15 دقيقة</span>
+</div>
+</div>
+<!-- Alert Item 2 (Action Required) -->
+<div class="bg-surface-container rounded-lg p-md flex items-start gap-md border-r-4 border-primary">
+<div class="bg-surface-white p-2 rounded-full shadow-sm mt-1">
+<span class="material-symbols-outlined text-primary">person_add</span>
+</div>
+<div class="flex-1">
+<h4 class="font-label-md text-label-md text-on-surface font-bold">5 مزودين جدد بانتظار الاعتماد</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mt-1">يرجى مراجعة المستندات المرفقة للمزودين الجدد في قسم السباكة والكهرباء.</p>
+<span class="font-label-sm text-label-sm text-outline mt-2 block">منذ 45 دقيقة</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl bg-surface dark:bg-surface-container-lowest border-t border-outline-variant dark:border-outline shadow-sm">
+<div class="flex justify-around items-center h-[80px] pb-safe">
+<!-- Tab 1: الرئيسية (Active) -->
+<button class="flex flex-col items-center justify-center hover:opacity-80 transition-opacity active:inner-shadow duration-150 w-full">
+<div class="flex flex-col items-center justify-center bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary rounded-full px-4 py-1">
+<span class="material-symbols-outlined fill">home</span>
+</div>
+<span class="font-label-sm text-label-sm mt-1 text-on-secondary-container font-bold">الرئيسية</span>
+</button>
+<!-- Tab 2: طلباتي (Inactive, mapped to Admin Orders/Management view) -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:opacity-80 transition-opacity active:inner-shadow duration-150 w-full">
+<div class="flex flex-col items-center justify-center px-4 py-1">
+<span class="material-symbols-outlined">assignment</span>
+</div>
+<span class="font-label-sm text-label-sm mt-1">إدارة</span>
+</button>
+<!-- Tab 3: المحادثات (Inactive) -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:opacity-80 transition-opacity active:inner-shadow duration-150 w-full relative">
+<div class="flex flex-col items-center justify-center px-4 py-1">
+<span class="material-symbols-outlined">chat</span>
+<!-- Unread Badge -->
+<span class="absolute top-1 right-8 w-2 h-2 bg-error-red rounded-full"></span>
+</div>
+<span class="font-label-sm text-label-sm mt-1">المحادثات</span>
+</button>
+<!-- Tab 4: الحساب (Inactive) -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:opacity-80 transition-opacity active:inner-shadow duration-150 w-full">
+<div class="flex flex-col items-center justify-center px-4 py-1">
+<span class="material-symbols-outlined">person</span>
+</div>
+<span class="font-label-sm text-label-sm mt-1">الحساب</span>
+</button>
+</div>
+</nav>
+</body></html>

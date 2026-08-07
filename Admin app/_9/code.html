@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Amana - Admin Disputes</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with Forms and Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "error": "#ba1a1a",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#783d01",
+                        "primary-fixed-dim": "#a0c9ff",
+                        "on-tertiary-container": "#61cbbc",
+                        "nile-blue-deep": "#0A2E4D",
+                        "on-tertiary-fixed": "#00201c",
+                        "surface-dim": "#dcd9d9",
+                        "on-primary-fixed": "#001c37",
+                        "surface-white": "#FFFFFF",
+                        "on-tertiary-fixed-variant": "#005048",
+                        "background": "#fcf9f8",
+                        "on-surface-variant": "#42474f",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#8cf5e4",
+                        "on-primary-container": "#8ebdf9",
+                        "surface-variant": "#e5e2e1",
+                        "secondary-fixed-dim": "#ffb780",
+                        "success-green": "#27A745",
+                        "inverse-surface": "#303030",
+                        "error-red": "#D93025",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#eae7e7",
+                        "primary-container": "#0f4c81",
+                        "primary": "#00355f",
+                        "surface-container-highest": "#e5e2e1",
+                        "sand-accent": "#F4A261",
+                        "primary-fixed": "#d2e4ff",
+                        "surface-container-low": "#f6f3f2",
+                        "tertiary": "#003b34",
+                        "on-secondary-fixed": "#2f1400",
+                        "secondary-fixed": "#ffdcc4",
+                        "tertiary-fixed-dim": "#6fd8c8",
+                        "surface-tint": "#2d6197",
+                        "surface-container": "#f0eded",
+                        "secondary-container": "#ffab69",
+                        "secondary": "#8e4e14",
+                        "on-secondary-fixed-variant": "#6f3800",
+                        "inverse-on-surface": "#f3f0ef",
+                        "on-background": "#1b1c1c",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface": "#1b1c1c",
+                        "surface": "#fcf9f8",
+                        "on-error-container": "#93000a",
+                        "outline-variant": "#c2c7d1",
+                        "tertiary-container": "#00544b",
+                        "surface-bright": "#fcf9f8",
+                        "inverse-primary": "#a0c9ff",
+                        "warning-amber": "#FFBF00",
+                        "surface-gray-light": "#F8F9FA",
+                        "on-primary-fixed-variant": "#07497d",
+                        "outline": "#727780",
+                        "on-error": "#ffffff",
+                        "on-primary": "#ffffff"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "xl": "32px",
+                        "margin-mobile": "16px",
+                        "base": "4px",
+                        "lg": "24px",
+                        "md": "16px",
+                        "sm": "12px",
+                        "gutter-mobile": "12px",
+                        "xs": "8px"
+                    },
+                    fontFamily: {
+                        "label-sm": ["IBM Plex Sans", "sans-serif"],
+                        "headline-lg-mobile": ["IBM Plex Sans", "sans-serif"],
+                        "headline-lg": ["IBM Plex Sans", "sans-serif"],
+                        "body-md": ["Noto Sans", "sans-serif"],
+                        "body-lg": ["Noto Sans", "sans-serif"],
+                        "label-md": ["IBM Plex Sans", "sans-serif"],
+                        "headline-md": ["IBM Plex Sans", "sans-serif"]
+                    },
+                    fontSize: {
+                        "label-sm": ["12px", { lineHeight: "16px", fontWeight: "600" }],
+                        "headline-lg-mobile": ["24px", { lineHeight: "32px", fontWeight: "700" }],
+                        "headline-lg": ["30px", { lineHeight: "38px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+                        "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "500" }],
+                        "headline-md": ["20px", { lineHeight: "28px", fontWeight: "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Noto Sans', sans-serif;
+            background-color: theme('colors.background');
+        }
+        
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: theme('colors.surface-container-low'); 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: theme('colors.outline-variant'); 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: theme('colors.outline'); 
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-background flex h-screen overflow-hidden antialiased">
+<!-- Sidebar Navigation Drawer (Desktop) -->
+<aside class="hidden md:flex flex-col py-lg px-md h-full w-[280px] rounded-l-xl bg-surface-bright dark:bg-surface-container-low shadow-lg bg-surface-container dark:bg-surface-container-highest z-50 shrink-0">
+<!-- Header -->
+<div class="flex items-center gap-sm mb-lg border-b border-outline-variant pb-md">
+<div class="w-12 h-12 rounded-full overflow-hidden shrink-0 border-2 border-primary-fixed">
+<img class="w-full h-full object-cover" data-alt="A professional portrait of an administrative manager in a modern, well-lit office setting. The individual has a welcoming but authoritative expression, dressed in business casual attire. The background is a softly blurred modern workspace with natural daylight, conveying a sense of trust and professional competence suitable for a high-level admin dashboard." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCt5gFSzkw8yuCJh9iWMIG7ScGvwtL7iad9ckPJVYm9rtYYDBfQJOXIKcl_tpeyOdy6ajbkK0A0ZajFjU_FgKximVmMIm0kzaFNjOmNyPz4br9lRbxWNWUbX92h4Q7OqwRv6O1QjwXbUFixqUrML0lLYRsAkwvOSs0NfYd-oUmTi3hFhsKv5bYe_mGHzLtP4pkAA_ANTEUUgWuxxkHa955bJrKm0xaMQ-zcfw5JZPqFYjbrXIKisBEB-CrwwKxMXHKdXSkofnFZwnFT"/>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-lg-mobile text-primary font-bold">أحمد محمد</h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant">مزود خدمة معتمد</span>
+<span class="font-label-sm text-label-sm text-outline mt-base">الخرطوم، السودان</span>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="flex flex-col gap-base flex-1 overflow-y-auto">
+<!-- Inactive -->
+<a class="flex items-center gap-sm px-4 py-3 rounded-lg text-on-surface-variant dark:text-outline-variant hover:bg-surface-variant dark:hover:bg-surface-dim transition-all active:bg-primary-fixed-dim" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body-md text-body-md">لوحة التحكم</span>
+</a>
+<!-- Inactive -->
+<a class="flex items-center gap-sm px-4 py-3 rounded-lg text-on-surface-variant dark:text-outline-variant hover:bg-surface-variant dark:hover:bg-surface-dim transition-all active:bg-primary-fixed-dim" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="font-body-md text-body-md">المحفظة</span>
+</a>
+<!-- Inactive -->
+<a class="flex items-center gap-sm px-4 py-3 rounded-lg text-on-surface-variant dark:text-outline-variant hover:bg-surface-variant dark:hover:bg-surface-dim transition-all active:bg-primary-fixed-dim" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-body-md text-body-md">الإعدادات</span>
+</a>
+<!-- Active State (Technical Support / Disputes) -->
+<a class="flex items-center gap-sm px-4 py-3 bg-primary-container text-on-primary-container font-bold rounded-lg transition-all active:bg-primary-fixed-dim" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">support_agent</span>
+<span class="font-body-md text-body-md font-bold">الدعم الفني</span>
+</a>
+</nav>
+<!-- Footer Action -->
+<div class="mt-auto pt-md border-t border-outline-variant">
+<button class="w-full flex items-center gap-sm px-4 py-3 rounded-lg text-error hover:bg-error-container transition-all active:bg-error/20">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-body-md text-body-md">تسجيل الخروج</span>
+</button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col h-full overflow-hidden bg-background relative">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky bg-surface dark:bg-surface-dim border-b border-outline-variant dark:border-outline flex justify-between items-center px-margin-mobile h-[64px] z-40 shrink-0">
+<div class="flex items-center gap-md">
+<button class="md:hidden p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors active:scale-95 duration-100">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="font-headline-md-mobile text-headline-md-mobile font-bold text-primary dark:text-primary-fixed">Amana</h1>
+</div>
+<div class="flex items-center gap-sm">
+<button class="p-2 text-primary dark:text-primary-fixed hover:bg-surface-container-high transition-colors active:scale-95 duration-100 rounded-full relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-error rounded-full border-2 border-surface"></span>
+</button>
+</div>
+</header>
+<!-- Scrollable Canvas -->
+<div class="flex-1 overflow-y-auto p-margin-mobile md:p-xl scroll-smooth">
+<!-- Page Header & Breadcrumb -->
+<div class="mb-lg">
+<a class="inline-flex items-center gap-xs text-on-surface-variant hover:text-primary transition-colors mb-sm" href="#">
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+<span class="font-label-md text-label-md">العودة للوحة التحكم</span>
+</a>
+<h2 class="font-headline-lg text-headline-lg text-on-background">إدارة البلاغات والنزاعات</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-base">مراجعة ومعالجة الشكاوى النشطة من العملاء ومزودي الخدمة.</p>
+</div>
+<!-- Bento Grid Stats -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-sm md:gap-md mb-xl">
+<!-- Stat 1 -->
+<div class="bg-surface-white border border-outline-variant rounded-xl p-md flex flex-col shadow-sm relative overflow-hidden">
+<div class="absolute -right-4 -top-4 w-16 h-16 bg-primary/5 rounded-full blur-xl"></div>
+<span class="font-label-md text-label-md text-on-surface-variant">إجمالي النشطة</span>
+<div class="flex items-end gap-sm mt-sm">
+<span class="font-headline-lg text-headline-lg text-primary">124</span>
+<span class="material-symbols-outlined text-primary mb-1">monitoring</span>
+</div>
+</div>
+<!-- Stat 2 -->
+<div class="bg-surface-white border border-outline-variant rounded-xl p-md flex flex-col shadow-sm">
+<span class="font-label-md text-label-md text-on-surface-variant">ذات أولوية عالية</span>
+<div class="flex items-end gap-sm mt-sm">
+<span class="font-headline-lg text-headline-lg text-error">12</span>
+<span class="material-symbols-outlined text-error mb-1">warning</span>
+</div>
+</div>
+<!-- Stat 3 -->
+<div class="bg-surface-white border border-outline-variant rounded-xl p-md flex flex-col shadow-sm">
+<span class="font-label-md text-label-md text-on-surface-variant">شكاوى العملاء</span>
+<div class="flex items-end gap-sm mt-sm">
+<span class="font-headline-lg text-headline-lg text-sand-accent">86</span>
+<span class="material-symbols-outlined text-sand-accent mb-1">person</span>
+</div>
+</div>
+<!-- Stat 4 -->
+<div class="bg-surface-white border border-outline-variant rounded-xl p-md flex flex-col shadow-sm">
+<span class="font-label-md text-label-md text-on-surface-variant">شكاوى المزودين</span>
+<div class="flex items-end gap-sm mt-sm">
+<span class="font-headline-lg text-headline-lg text-tertiary-fixed-dim">38</span>
+<span class="material-symbols-outlined text-tertiary-fixed-dim mb-1">engineering</span>
+</div>
+</div>
+</div>
+<!-- Toolbar: Search & Filters -->
+<div class="bg-surface-white border border-outline-variant rounded-xl p-sm mb-lg flex flex-col md:flex-row gap-md items-center shadow-sm">
+<!-- Quick Search -->
+<div class="relative w-full md:w-96">
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full bg-surface-container-low border-outline-variant rounded-lg pl-4 pr-10 py-2 focus:ring-2 focus:ring-primary focus:border-primary font-body-md text-body-md transition-all" placeholder="بحث برقم الطلب، اسم المستخدم..." type="text"/>
+</div>
+<!-- Filters Container -->
+<div class="flex flex-wrap items-center gap-sm w-full md:w-auto md:mr-auto">
+<!-- Status Filter -->
+<div class="relative flex-1 md:flex-none min-w-[140px]">
+<select class="w-full bg-surface-container-low border-outline-variant rounded-lg px-3 py-2 appearance-none focus:ring-2 focus:ring-primary font-body-md text-body-md text-on-surface-variant cursor-pointer">
+<option value="">جميع الحالات</option>
+<option value="pending">قيد الانتظار</option>
+<option value="in_progress">قيد المعالجة</option>
+<option value="resolved">تم الحل</option>
+</select>
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline pointer-events-none">expand_more</span>
+</div>
+<!-- Priority Filter -->
+<div class="relative flex-1 md:flex-none min-w-[140px]">
+<select class="w-full bg-surface-container-low border-outline-variant rounded-lg px-3 py-2 appearance-none focus:ring-2 focus:ring-primary font-body-md text-body-md text-on-surface-variant cursor-pointer">
+<option value="">كل الأولويات</option>
+<option value="high">عالية</option>
+<option value="medium">متوسطة</option>
+<option value="low">منخفضة</option>
+</select>
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline pointer-events-none">expand_more</span>
+</div>
+<!-- Category Filter -->
+<div class="relative flex-1 md:flex-none min-w-[140px]">
+<select class="w-full bg-surface-container-low border-outline-variant rounded-lg px-3 py-2 appearance-none focus:ring-2 focus:ring-primary font-body-md text-body-md text-on-surface-variant cursor-pointer">
+<option value="">كل الأقسام</option>
+<option value="plumbing">سباكة</option>
+<option value="electrical">كهرباء</option>
+<option value="cleaning">تنظيف</option>
+</select>
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline pointer-events-none">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Reports List Container -->
+<div class="flex flex-col gap-sm">
+<!-- List Item 1: High Priority, Pending -->
+<div class="bg-surface-white border border-outline-variant rounded-xl p-md flex flex-col md:flex-row gap-md items-start md:items-center hover:border-primary-fixed-dim transition-colors shadow-sm group cursor-pointer">
+<!-- Reporter Info -->
+<div class="flex items-center gap-sm min-w-[200px]">
+<div class="w-10 h-10 rounded-full bg-surface-container overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="A casual portrait photograph of an everyday consumer user. The individual appears slightly frustrated but composed, standing outdoors in a bright, sunlit urban setting in Khartoum. The lighting highlights their facial features softly against a slightly blurred background of sandy-toned buildings." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZy-3Nc3XJ1524qjscpBxzUOM0dhKCDgdV2S3L8znTNpueDYyFjXT5OKUAHA-b6nzRePbKW5rO4tJI5x1-Bum4bL7ZdYXmKXOf9X25fGn7Wa53KVeCTqzIIpQu4NuYxy2stKOvRvgR-To6iVZ2qxF_kcy4mPV0ZyqQIO748fr7pwc17MvHShuWcpAB_l9796sZp9ACFRpA1o3Bc2GjgpQ0RJ53DMlWiU8PwHnfgz8KPvfpG43X4qys9u-Xqj-rFVdw4eXAnvrkbiEx"/>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-background font-bold">سارة عثمان</p>
+<div class="flex items-center gap-xs mt-0.5">
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant">person</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">عميل</span>
+</div>
+</div>
+</div>
+<!-- Issue Details -->
+<div class="flex-1 flex flex-col gap-xs">
+<div class="flex items-center gap-sm">
+<h3 class="font-headline-md text-headline-md text-on-background group-hover:text-primary transition-colors">تسرب مياه حاد بعد صيانة الأنابيب</h3>
+<span class="bg-error-container text-on-error-container font-label-sm text-label-sm px-2 py-0.5 rounded-sm">أولوية عالية</span>
+</div>
+<div class="flex items-center gap-sm text-on-surface-variant font-body-md text-body-md text-sm">
+<span class="font-mono bg-surface-container px-2 py-0.5 rounded text-xs">#ORD-9921A</span>
+<span>•</span>
+<span>قسم السباكة</span>
+</div>
+</div>
+<!-- Status & Time -->
+<div class="flex flex-row md:flex-col items-center md:items-end justify-between w-full md:w-auto gap-sm mt-sm md:mt-0">
+<div class="flex items-center gap-xs bg-surface-container-high text-on-surface-variant px-3 py-1 rounded-full">
+<span class="material-symbols-outlined text-[16px]">pending_actions</span>
+<span class="font-label-sm text-label-sm">قيد الانتظار</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+                            منذ 15 دقيقة
+                        </span>
+</div>
+</div>
+<!-- List Item 2: Medium Priority, In Progress -->
+<div class="bg-surface-white border border-outline-variant rounded-xl p-md flex flex-col md:flex-row gap-md items-start md:items-center hover:border-primary-fixed-dim transition-colors shadow-sm group cursor-pointer">
+<div class="flex items-center gap-sm min-w-[200px]">
+<div class="w-10 h-10 rounded-full bg-surface-container overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="A portrait of a service provider in a professional uniform. The person looks serious and attentive, situated in a brightly lit indoor environment with subtle industrial elements in the background, like tools or shelving, softly blurred to keep focus on the subject." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjYX-rP1vfsJ1tyVkDYye0-TuIXFUKsyzdp-GZYjXRtFm_y2vyHUhbUeDq4CxZx0i1F1AbZf7dQgU1oyW1eDQ-yKSpD8TvDA3u6lBJVKlpDEVTNENT7GjSXvCQk-6Zl8Ipyu05mki9b_-mN_UH3bphqf558PPeIXTmYjLNxVvduZXYbwU9qcgQy46B3KMFyRkBPc8S0WmfGjENHSFQPaKnE_CWijpn7SClG1Wquo-o8xSJovCdf6_P_U81iRiovy-mmk7Es3grdvFd"/>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-background font-bold">مصطفى حسن</p>
+<div class="flex items-center gap-xs mt-0.5">
+<span class="material-symbols-outlined text-[14px] text-tertiary-fixed-dim">engineering</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">مزود خدمة</span>
+</div>
+</div>
+</div>
+<div class="flex-1 flex flex-col gap-xs">
+<div class="flex items-center gap-sm">
+<h3 class="font-headline-md text-headline-md text-on-background group-hover:text-primary transition-colors">العميل يرفض دفع المبلغ الإضافي للمواد</h3>
+<span class="bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm px-2 py-0.5 rounded-sm">متوسطة</span>
+</div>
+<div class="flex items-center gap-sm text-on-surface-variant font-body-md text-body-md text-sm">
+<span class="font-mono bg-surface-container px-2 py-0.5 rounded text-xs">#ORD-8842B</span>
+<span>•</span>
+<span>قسم الكهرباء</span>
+</div>
+</div>
+<div class="flex flex-row md:flex-col items-center md:items-end justify-between w-full md:w-auto gap-sm mt-sm md:mt-0">
+<div class="flex items-center gap-xs bg-primary-fixed text-on-primary-fixed px-3 py-1 rounded-full">
+<span class="material-symbols-outlined text-[16px]">autorenew</span>
+<span class="font-label-sm text-label-sm">قيد المعالجة</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+                            منذ ساعتين
+                        </span>
+</div>
+</div>
+<!-- List Item 3: Low Priority, Pending -->
+<div class="bg-surface-white border border-outline-variant rounded-xl p-md flex flex-col md:flex-row gap-md items-start md:items-center hover:border-primary-fixed-dim transition-colors shadow-sm group cursor-pointer">
+<div class="flex items-center gap-sm min-w-[200px]">
+<div class="w-10 h-10 rounded-full bg-surface-container overflow-hidden shrink-0 flex items-center justify-center bg-secondary-container text-on-secondary-container font-bold text-lg">
+                            م
+                        </div>
+<div>
+<p class="font-label-md text-label-md text-on-background font-bold">محمد علي</p>
+<div class="flex items-center gap-xs mt-0.5">
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant">person</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">عميل</span>
+</div>
+</div>
+</div>
+<div class="flex-1 flex flex-col gap-xs">
+<div class="flex items-center gap-sm">
+<h3 class="font-headline-md text-headline-md text-on-background group-hover:text-primary transition-colors">تأخر الفني عن الموعد المحدد بـ 30 دقيقة</h3>
+<span class="bg-surface-variant text-on-surface-variant font-label-sm text-label-sm px-2 py-0.5 rounded-sm">منخفضة</span>
+</div>
+<div class="flex items-center gap-sm text-on-surface-variant font-body-md text-body-md text-sm">
+<span class="font-mono bg-surface-container px-2 py-0.5 rounded text-xs">#ORD-1029C</span>
+<span>•</span>
+<span>قسم التنظيف</span>
+</div>
+</div>
+<div class="flex flex-row md:flex-col items-center md:items-end justify-between w-full md:w-auto gap-sm mt-sm md:mt-0">
+<div class="flex items-center gap-xs bg-surface-container-high text-on-surface-variant px-3 py-1 rounded-full">
+<span class="material-symbols-outlined text-[16px]">pending_actions</span>
+<span class="font-label-sm text-label-sm">قيد الانتظار</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+                            منذ 5 ساعات
+                        </span>
+</div>
+</div>
+</div>
+<!-- Pagination (Simple) -->
+<div class="flex justify-center mt-lg pb-xl">
+<nav class="flex items-center gap-xs">
+<button class="p-2 rounded-lg border border-outline-variant text-on-surface-variant hover:bg-surface-variant disabled:opacity-50">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+<button class="w-10 h-10 rounded-lg bg-primary text-on-primary font-label-md flex items-center justify-center">1</button>
+<button class="w-10 h-10 rounded-lg border border-outline-variant text-on-surface-variant hover:bg-surface-container-high font-label-md flex items-center justify-center">2</button>
+<button class="w-10 h-10 rounded-lg border border-outline-variant text-on-surface-variant hover:bg-surface-container-high font-label-md flex items-center justify-center">3</button>
+<button class="p-2 rounded-lg border border-outline-variant text-on-surface-variant hover:bg-surface-variant">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+</nav>
+</div>
+</div>
+</main>
+</body></html>

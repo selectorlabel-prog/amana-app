@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_customer_home">
+
+    <fragment
+        android:id="@+id/nav_customer_home"
+        android:name="amana.example.com.ui.home.CustomerHomeFragment"
+        android:label="الرئيسية"
+        tools:layout="@layout/fragment_customer_home" />
+
+    <fragment
+        android:id="@+id/nav_customer_orders"
+        android:name="amana.example.com.ui.orders.CustomerOrdersFragment"
+        android:label="طلباتي"
+        tools:layout="@layout/fragment_customer_orders" />
+
+    <fragment
+        android:id="@+id/nav_notifications"
+        android:name="amana.example.com.ui.notifications.NotificationsFragment"
+        android:label="الإشعارات"
+        tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="amana.example.com.ui.profile.ProfileFragment"
+        android:label="حسابي"
+        tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/nav_provider_home"
+        android:name="amana.example.com.ui.home.ProviderHomeFragment"
+        android:label="لوحة التحكم"
+        tools:layout="@layout/fragment_provider_home" />
+
+    <fragment
+        android:id="@+id/nav_provider_orders"
+        android:name="amana.example.com.ui.orders.ProviderOrdersFragment"
+        android:label="الطلبات"
+        tools:layout="@layout/fragment_provider_orders" />
+
+    <fragment
+        android:id="@+id/nav_wallet"
+        android:name="amana.example.com.ui.wallet.WalletFragment"
+        android:label="المحفظة"
+        tools:layout="@layout/fragment_wallet" />
+
+    <fragment
+        android:id="@+id/nav_search"
+        android:name="amana.example.com.ui.search.SearchFragment"
+        android:label="البحث"
+        tools:layout="@layout/fragment_search" />
+
+    <fragment
+        android:id="@+id/nav_service_detail"
+        android:name="amana.example.com.ui.service.ServiceDetailFragment"
+        android:label="تفاصيل الخدمة"
+        tools:layout="@layout/fragment_service_detail">
+        <argument
+            android:name="serviceId"
+            app:argType="string"
+            android:defaultValue="" />
+        <argument
+            android:name="providerId"
+            app:argType="string"
+            android:defaultValue="" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_support"
+        android:name="amana.example.com.ui.support.SupportFragment"
+        android:label="الدعم الفني"
+        tools:layout="@layout/fragment_support" />
+
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="amana.example.com.ui.settings.SettingsFragment"
+        android:label="الإعدادات"
+        tools:layout="@layout/fragment_settings" />
+
+    <fragment
+        android:id="@+id/nav_provider_earnings"
+        android:name="amana.example.com.ui.earnings.ProviderEarningsFragment"
+        android:label="الأرباح"
+        tools:layout="@layout/fragment_provider_earnings" />
+
+    <fragment
+        android:id="@+id/nav_provider_onboarding"
+        android:name="amana.example.com.ui.onboarding.ProviderOnboardingFragment"
+        android:label="إعداد الحساب"
+        tools:layout="@layout/fragment_provider_onboarding" />
+</navigation>

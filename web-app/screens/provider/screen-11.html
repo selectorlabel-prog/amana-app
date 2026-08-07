@@ -1,0 +1,228 @@
+<!DOCTYPE html><html dir="rtl" lang="ar"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Amana - Provider Onboarding</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=Noto+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#005048",
+                        "on-secondary-fixed-variant": "#6f3800",
+                        "tertiary": "#003b34",
+                        "on-background": "#1b1c1c",
+                        "tertiary-fixed-dim": "#6fd8c8",
+                        "surface-container-highest": "#e5e2e1",
+                        "surface-variant": "#e5e2e1",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-on-surface": "#f3f0ef",
+                        "surface-gray-light": "#F8F9FA",
+                        "on-error-container": "#93000a",
+                        "surface": "#fcf9f8",
+                        "nile-blue-deep": "#0A2E4D",
+                        "on-primary-fixed": "#001c37",
+                        "warning-amber": "#FFBF00",
+                        "on-surface-variant": "#42474f",
+                        "on-tertiary-container": "#61cbbc",
+                        "error": "#ba1a1a",
+                        "surface-white": "#FFFFFF",
+                        "on-secondary-container": "#783d01",
+                        "background": "#fcf9f8",
+                        "outline": "#727780",
+                        "on-secondary-fixed": "#2f1400",
+                        "primary-container": "#0f4c81",
+                        "on-surface": "#1b1c1c",
+                        "on-tertiary-fixed": "#00201c",
+                        "on-primary-fixed-variant": "#07497d",
+                        "inverse-primary": "#a0c9ff",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed": "#d2e4ff",
+                        "secondary": "#8e4e14",
+                        "surface-container": "#f0eded",
+                        "error-container": "#ffdad6",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#00544b",
+                        "inverse-surface": "#303030",
+                        "secondary-container": "#ffab69",
+                        "on-error": "#ffffff",
+                        "error-red": "#D93025",
+                        "on-primary-container": "#8ebdf9",
+                        "outline-variant": "#c2c7d1",
+                        "primary-fixed-dim": "#a0c9ff",
+                        "surface-dim": "#dcd9d9",
+                        "sand-accent": "#F4A261",
+                        "success-green": "#27A745",
+                        "secondary-fixed": "#ffdcc4",
+                        "surface-tint": "#2d6197",
+                        "tertiary-fixed": "#8cf5e4",
+                        "primary": "#00355f",
+                        "secondary-fixed-dim": "#ffb780",
+                        "surface-bright": "#fcf9f8",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#f6f3f2",
+                        "surface-container-high": "#eae7e7"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "sm": "12px",
+                        "base": "4px",
+                        "xs": "8px",
+                        "lg": "24px",
+                        "md": "16px",
+                        "margin-mobile": "16px",
+                        "gutter-mobile": "12px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["IBM Plex Sans"],
+                        "headline-lg-mobile": ["IBM Plex Sans"],
+                        "body-lg": ["Noto Sans"],
+                        "headline-md": ["IBM Plex Sans"],
+                        "body-md": ["Noto Sans"],
+                        "headline-lg": ["IBM Plex Sans"],
+                        "label-sm": ["IBM Plex Sans"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Noto Sans', sans-serif; }
+        h1, h2, h3, h4, h5, h6, .font-headline { font-family: 'IBM Plex Sans', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .step-active { background-color: theme('colors.primary'); border-color: theme('colors.primary'); color: white; }
+        .step-inactive { background-color: transparent; border-color: theme('colors.outline-variant'); color: theme('colors.on-surface-variant'); }
+        .step-line-active { background-color: theme('colors.primary'); }
+        .step-line-inactive { background-color: theme('colors.outline-variant'); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top AppBar (Back Navigation Only) -->
+<header class="w-full top-0 sticky bg-surface z-10 border-b border-outline-variant flex items-center px-margin-mobile h-[64px]">
+<button class="p-2 rounded-full hover:bg-surface-container-high transition-colors active:scale-95 duration-100 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<div class="flex-1"></div>
+<!-- Progress Indicator -->
+<div class="flex items-center space-x-2 space-x-reverse text-sm font-label-md text-primary">
+            الخطوة 1 من 3
+        </div>
+</header>
+<main class="flex-1 flex flex-col max-w-lg w-full mx-auto p-margin-mobile pt-lg pb-xl">
+<!-- Header Section -->
+<div class="mb-xl text-center md:text-right">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-xs">انضم كشريك نجاح</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                ابدأ رحلتك معنا بتقديم بياناتك الأساسية. نحن هنا لدعمك في كل خطوة.
+            </p>
+</div>
+<!-- Progress Steps (Visual) -->
+<div class="flex items-center justify-center mb-xl w-full max-w-xs mx-auto">
+<div class="flex flex-col items-center">
+<div class="w-10 h-10 rounded-full border-2 flex items-center justify-center step-active font-label-md transition-all duration-300">1</div>
+</div>
+<div class="flex-1 h-1 mx-2 rounded-full step-line-inactive transition-all duration-300"></div>
+<div class="flex flex-col items-center">
+<div class="w-10 h-10 rounded-full border-2 flex items-center justify-center step-inactive font-label-md transition-all duration-300">2</div>
+</div>
+<div class="flex-1 h-1 mx-2 rounded-full step-line-inactive transition-all duration-300"></div>
+<div class="flex flex-col items-center">
+<div class="w-10 h-10 rounded-full border-2 flex items-center justify-center step-inactive font-label-md transition-all duration-300">3</div>
+</div>
+</div>
+<!-- Form Section -->
+<form class="flex-1 flex flex-col gap-lg bg-surface-white p-lg rounded-xl shadow-sm border border-outline-variant">
+<!-- Full Name -->
+<div class="flex flex-col gap-base">
+<label class="font-label-md text-label-md text-on-surface" for="fullName">الاسم الرباعي</label>
+<div class="relative">
+<span class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-outline">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</span>
+<input class="w-full pl-4 pr-10 py-3 rounded-lg border border-outline-variant bg-surface focus:ring-2 focus:ring-primary focus:border-primary transition-colors font-body-md text-body-md text-on-surface placeholder-outline" id="fullName" placeholder="أدخل اسمك الكامل" required="" type="text">
+</div>
+</div>
+<!-- Phone Number -->
+<div class="flex flex-col gap-base">
+<label class="font-label-md text-label-md text-on-surface" for="phone">رقم الهاتف</label>
+<div class="flex" dir="ltr">
+<div class="flex items-center px-4 bg-surface-container-high border border-r-0 border-outline-variant rounded-l-lg font-label-md text-on-surface-variant">
+                        +249
+                    </div>
+<input class="w-full px-4 py-3 rounded-r-lg border border-outline-variant bg-surface focus:ring-2 focus:ring-primary focus:border-primary transition-colors font-body-md text-body-md text-on-surface placeholder-outline" dir="ltr" id="phone" placeholder="9X XXX XXXX" required="" type="tel">
+</div>
+<p class="text-xs text-outline font-body-md mt-1">سيتم إرسال رمز التحقق إلى هذا الرقم.</p>
+</div>
+<!-- City Selection -->
+<div class="flex flex-col gap-base">
+<label class="font-label-md text-label-md text-on-surface" for="city">المدينة</label>
+<div class="relative">
+<span class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-outline">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+</span>
+<select class="w-full pl-10 pr-10 py-3 rounded-lg border border-outline-variant bg-surface appearance-none focus:ring-2 focus:ring-primary focus:border-primary transition-colors font-body-md text-body-md text-on-surface" id="city" required="">
+<option disabled="" selected="" value="">اختر مدينتك</option>
+<option value="khartoum">الخرطوم</option>
+<option value="omdurman">أم درمان</option>
+<option value="bahri">بحري</option>
+</select>
+<span class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-outline">
+<span class="material-symbols-outlined" data-icon="expand_more">expand_more</span>
+</span>
+</div>
+</div><div class="flex flex-col gap-base">
+<label class="font-label-md text-label-md text-on-surface" for="neighborhood">الحي</label>
+<div class="relative">
+<span class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-outline">
+<span class="material-symbols-outlined">home</span>
+</span>
+<input class="w-full pl-4 pr-10 py-3 rounded-lg border border-outline-variant bg-surface focus:ring-2 focus:ring-primary focus:border-primary transition-colors font-body-md text-body-md text-on-surface placeholder-outline" id="neighborhood" placeholder="أدخل اسم الحي" required="" type="text">
+</div>
+</div>
+<div class="flex-1"></div> <!-- Spacer to push button to bottom -->
+<!-- Next Button -->
+<button class="w-full mt-xl bg-primary text-on-primary py-4 rounded-lg font-headline-md text-headline-md flex items-center justify-center gap-2 hover:bg-nile-blue-deep active:scale-[0.98] transition-all duration-200 shadow-sm" type="button">
+<span class="">التالي</span>
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+</form>
+</main>
+<script>
+        // Simple micro-interaction for input fields to show focus state more dynamically
+        const inputs = document.querySelectorAll('input, select');
+        inputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.classList.add('shadow-sm');
+            });
+            input.addEventListener('blur', () => {
+                input.parentElement.classList.remove('shadow-sm');
+            });
+        });
+    </script>
+
+
+</body></html>

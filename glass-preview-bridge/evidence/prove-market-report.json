@@ -1,0 +1,25 @@
+{
+  "name": "market",
+  "url": "http://127.0.0.1:8095/",
+  "httpProbe": {
+    "ok": true,
+    "status": 200,
+    "len": 5002,
+    "sample": "<!DOCTYPE html>\r\n<html>\r\n<head>\r\n  <base href=\"/\">\r\n\r\n  <meta charset=\"UTF-8\">\r\n  <meta content=\"IE=edge\" http-equiv=\"X-UA-Compatible\">\r\n  <meta name=\"description\" content=\"Amana customer app\">\r\n  <me"
+  },
+  "navError": null,
+  "consoleSample": [
+    "[debug] Injecting <script> tag. Using callback.",
+    "[info] DDC is about to load 1/2 scripts with pool size = 1000",
+    "[info] DDC is about to load 955/955 scripts with pool size = 1000"
+  ],
+  "pageErrors": [],
+  "chromiumShot": "C:\\Users\\Administrator.user-HP\\AndroidStudioProjects\\amana\\glass-preview-bridge\\evidence\\prove-market-chromium.png",
+  "chromiumBytes": 5563,
+  "whiteHeuristic": {
+    "bytes": 5563,
+    "note": "inspect PNG visually; white CanvasKit fail often still >10KB"
+  },
+  "swiftshaderShot": "C:\\Users\\Administrator.user-HP\\AndroidStudioProjects\\amana\\glass-preview-bridge\\evidence\\prove-market-swiftshader.png",
+  "glassNote": "Cursor Glass Simple Browser often fails CanvasKit/WASM (blank white) even when HTTP 200. Chromium (Playwright) below is the engine that CAN paint; bridge serves PNG HTML to Glass."
+}

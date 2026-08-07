@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>تفاصيل المستخدم - Amana Admin</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=Noto+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#93000a",
+                        "surface-dim": "#dcd9d9",
+                        "background": "#fcf9f8",
+                        "success-green": "#27A745",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-container-high": "#eae7e7",
+                        "secondary-fixed": "#ffdcc4",
+                        "on-primary-fixed": "#001c37",
+                        "on-secondary-container": "#783d01",
+                        "on-primary-container": "#8ebdf9",
+                        "error-red": "#D93025",
+                        "on-tertiary-container": "#61cbbc",
+                        "primary-fixed": "#d2e4ff",
+                        "on-background": "#1b1c1c",
+                        "inverse-surface": "#303030",
+                        "on-secondary-fixed": "#2f1400",
+                        "on-tertiary-fixed": "#00201c",
+                        "tertiary-fixed-dim": "#6fd8c8",
+                        "surface-variant": "#e5e2e1",
+                        "surface": "#fcf9f8",
+                        "tertiary": "#003b34",
+                        "surface-white": "#FFFFFF",
+                        "secondary": "#8e4e14",
+                        "outline-variant": "#c2c7d1",
+                        "secondary-container": "#ffab69",
+                        "primary": "#00355f",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#a0c9ff",
+                        "surface-tint": "#2d6197",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#ffb780",
+                        "surface-container-low": "#f6f3f2",
+                        "on-surface": "#1b1c1c",
+                        "sand-accent": "#F4A261",
+                        "surface-container": "#f0eded",
+                        "inverse-primary": "#a0c9ff",
+                        "on-error": "#ffffff",
+                        "tertiary-container": "#00544b",
+                        "surface-bright": "#fcf9f8",
+                        "tertiary-fixed": "#8cf5e4",
+                        "surface-gray-light": "#F8F9FA",
+                        "on-secondary-fixed-variant": "#6f3800",
+                        "surface-container-lowest": "#ffffff",
+                        "warning-amber": "#FFBF00",
+                        "on-surface-variant": "#42474f",
+                        "primary-container": "#0f4c81",
+                        "on-tertiary-fixed-variant": "#005048",
+                        "on-tertiary": "#ffffff",
+                        "inverse-on-surface": "#f3f0ef",
+                        "outline": "#727780",
+                        "nile-blue-deep": "#0A2E4D",
+                        "surface-container-highest": "#e5e2e1",
+                        "on-primary-fixed-variant": "#07497d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "base": "4px",
+                        "xs": "8px",
+                        "xl": "32px",
+                        "gutter-mobile": "12px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["IBM Plex Sans"],
+                        "body-md": ["Noto Sans"],
+                        "body-lg": ["Noto Sans"],
+                        "label-md": ["IBM Plex Sans"],
+                        "headline-md": ["IBM Plex Sans"],
+                        "headline-lg-mobile": ["IBM Plex Sans"],
+                        "headline-lg": ["IBM Plex Sans"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "headline-lg": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Custom Toggle Switch Styles */
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #D93025;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #D93025;
+        }
+        .toggle-checkbox {
+            right: 0;
+            z-index: 1;
+            border-color: #e5e2e1;
+            transition: all 0.3s;
+        }
+        .toggle-label {
+            width: 3rem;
+            height: 1.5rem;
+            background-color: #c2c7d1;
+            border-radius: 9999px;
+            transition: all 0.3s;
+        }
+        .toggle-checkbox:not(:checked) {
+            transform: translateX(-1.5rem);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md antialiased pb-lg">
+<!-- Top App Bar (Adapted for detail screen, navigation suppressed as per rules) -->
+<header class="bg-surface w-full top-0 sticky border-b border-outline-variant flex justify-between items-center px-margin-mobile h-[64px] z-50">
+<!-- Leading Icon (Back in RTL is arrow_forward) -->
+<button class="text-on-surface-variant hover:bg-surface-container-high transition-colors active:scale-95 duration-100 p-2 -ml-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</button>
+<!-- Headline -->
+<h1 class="font-headline-md-mobile text-headline-md-mobile font-bold text-primary">تفاصيل المستخدم</h1>
+<!-- Trailing Empty for flex balance, or contextual action -->
+<div class="w-10"></div>
+</header>
+<main class="p-margin-mobile flex flex-col gap-md">
+<!-- Profile Header Card -->
+<section class="bg-surface-white rounded-xl border border-outline-variant shadow-sm p-lg flex flex-col items-center text-center relative overflow-hidden">
+<!-- Subtle background pattern -->
+<div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, #00355f 1px, transparent 0); background-size: 16px 16px;"></div>
+<div class="relative z-10">
+<div class="relative w-24 h-24 mb-sm mx-auto">
+<img class="w-full h-full rounded-full object-cover border-4 border-surface shadow-sm" data-alt="A professional portrait of a young Sudanese man wearing a modern casual shirt, well-lit with soft natural light, set against a clean, light-mode minimal studio background. The mood is approachable and dependable, fitting for a verified service provider on a professional platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjPqOZU5j-0OpVlGLUZ9i_DdeHfpBmqmQ21UeRsejM9CPY3xHlGj-UJpWyb2CyEsMRRsNXu-dCwXupy22gEnMzTU6N5rVg-I-LVUNLIg57MeKqAy9R7PqNZISvUWyQbNXLoFlvzbV39gY5twg8JdglDTAFR0KogAKtQum8LiTXv9v95AZkOwz32XB4MI5DMpMmyDJv_gjJqbDJb6xZ_tnBnLkVrsAPjTlWQnCl7K-xea-dXblnNbhZeV-xH9BicPCDVdvesPRY4HgJ"/>
+<!-- Status Indicator Dot -->
+<div class="absolute bottom-1 right-1 w-5 h-5 bg-success-green border-2 border-surface-white rounded-full"></div>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-base">عمر حسن عبدالرحمن</h2>
+<div class="flex justify-center items-center gap-xs">
+<span class="bg-[#E8F5E9] text-success-green px-xs py-1 rounded-full font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                        حساب نشط
+                    </span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">|</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">عميل</span>
+</div>
+</div>
+</section>
+<!-- Basic Information Card -->
+<section class="bg-surface-white rounded-xl border border-outline-variant shadow-sm p-md">
+<h3 class="font-headline-md text-headline-md text-primary mb-md flex items-center gap-2">
+<span class="material-symbols-outlined text-surface-tint" style="font-variation-settings: 'FILL' 1;">person</span>
+                المعلومات الأساسية
+            </h3>
+<div class="flex flex-col gap-sm">
+<div class="flex items-start gap-md pb-sm border-b border-surface-container-highest last:border-0 last:pb-0">
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-surface-variant">phone_iphone</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">رقم الهاتف</p>
+<p class="font-body-md text-body-md text-on-surface" dir="ltr">+249 91 234 5678</p>
+</div>
+</div>
+<div class="flex items-start gap-md pb-sm border-b border-surface-container-highest last:border-0 last:pb-0">
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-surface-variant">mail</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">البريد الإلكتروني</p>
+<p class="font-body-md text-body-md text-on-surface">omar.hassan@example.com</p>
+</div>
+</div>
+<div class="flex items-start gap-md pb-sm border-b border-surface-container-highest last:border-0 last:pb-0">
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-surface-variant">calendar_today</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">تاريخ التسجيل</p>
+<p class="font-body-md text-body-md text-on-surface">12 مارس 2023</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Activity Summary Card -->
+<section class="bg-surface-white rounded-xl border border-outline-variant shadow-sm p-md">
+<h3 class="font-headline-md text-headline-md text-primary mb-md flex items-center gap-2">
+<span class="material-symbols-outlined text-surface-tint" style="font-variation-settings: 'FILL' 1;">monitoring</span>
+                ملخص النشاط
+            </h3>
+<div class="grid grid-cols-2 gap-sm">
+<!-- Stat Block 1 -->
+<div class="bg-surface-container-low rounded-lg p-sm border border-surface-container-highest">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-primary text-[18px]">shopping_bag</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">إجمالي الطلبات</p>
+</div>
+<p class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">42</p>
+</div>
+<!-- Stat Block 2 -->
+<div class="bg-surface-container-low rounded-lg p-sm border border-surface-container-highest">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-warning-amber text-[18px]">star</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">متوسط التقييم</p>
+</div>
+<p class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface flex items-baseline gap-1">
+                        4.8 <span class="font-label-sm text-label-sm text-on-surface-variant">/ 5</span>
+</p>
+</div>
+<!-- Stat Block 3 (Full width) -->
+<div class="col-span-2 bg-primary-fixed rounded-lg p-sm border border-primary-fixed-dim">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-primary-fixed text-[18px]">payments</span>
+<p class="font-label-sm text-label-sm text-on-primary-fixed">إجمالي المدفوعات</p>
+</div>
+<p class="font-headline-md text-headline-md text-on-primary-fixed" dir="ltr">SDG 145,000</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Administrative Actions Card -->
+<section class="bg-surface-white rounded-xl border border-outline-variant shadow-sm overflow-hidden mb-lg">
+<div class="p-md border-b border-surface-container-highest">
+<h3 class="font-headline-md text-headline-md text-primary mb-xs flex items-center gap-2">
+<span class="material-symbols-outlined text-surface-tint" style="font-variation-settings: 'FILL' 1;">admin_panel_settings</span>
+                    الإجراءات الإدارية
+                </h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">إدارة حالة الحساب ومراجعة السجلات</p>
+</div>
+<div class="p-md flex flex-col gap-lg">
+<!-- Action: View Logs -->
+<button class="w-full flex items-center justify-center gap-2 py-sm px-md rounded-lg border border-outline text-on-surface font-label-md text-label-md hover:bg-surface-container-low transition-colors active:scale-[0.98]">
+<span class="material-symbols-outlined">history</span>
+                    سجل النشاط
+                </button>
+<hr class="border-surface-container-highest"/>
+<!-- Action: Suspend Account Form -->
+<div class="bg-error-container/30 rounded-lg p-md border border-error-container">
+<div class="flex justify-between items-center mb-md">
+<div>
+<h4 class="font-label-md text-label-md text-on-error-container">تجميد الحساب</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">إيقاف وصول المستخدم للمنصة مؤقتاً</p>
+</div>
+<!-- Toggle Switch -->
+<div class="relative inline-block w-12 align-middle select-none transition duration-200 ease-in">
+<input class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-surface-white border-4 appearance-none cursor-pointer" id="suspend-toggle" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-outline-variant cursor-pointer" for="suspend-toggle"></label>
+</div>
+</div>
+<!-- Reason Field (Visually present for admin context) -->
+<div class="flex flex-col gap-xs mt-sm">
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="suspend-reason">سبب التجميد (مطلوب)</label>
+<textarea class="w-full rounded-lg border-outline-variant bg-surface-white text-on-surface font-body-md text-body-md p-sm focus:ring-error-red focus:border-error-red" id="suspend-reason" placeholder="اكتب سبب الإيقاف هنا..." rows="2"></textarea>
+</div>
+<button class="w-full mt-md flex items-center justify-center gap-2 py-sm px-md rounded-lg bg-error-red text-on-error font-label-md text-label-md hover:opacity-90 transition-opacity active:scale-[0.98]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">block</span>
+                        تأكيد التجميد
+                    </button>
+</div>
+</div>
+</section>
+</main>
+</body></html>

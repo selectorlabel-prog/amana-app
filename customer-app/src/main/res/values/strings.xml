@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">أمانة - العملاء</string>
+    <string name="welcome">مرحباً بك في أمانة</string>
+    <string name="phone_number">رقم الهاتف</string>
+    <string name="full_name">الاسم الكامل</string>
+    <string name="city">المدينة</string>
+    <string name="district">الحي</string>
+    <string name="login">تسجيل الدخول</string>
+    <string name="register">تسجيل حساب جديد</string>
+    <string name="home">الرئيسية</string>
+    <string name="my_orders">طلباتي</string>
+    <string name="profile">الملف الشخصي</string>
+    <string name="search_services">ابحث عن خدمة</string>
+    <string name="service_categories">تصنيفات الخدمات</string>
+    <string name="select_service">اختر الخدمة</string>
+    <string name="send">إرسال</string>
+    <string name="order_now">اطلب الآن</string>
+    <string name="price">السعر</string>
+    <string name="status">الحالة</string>
+    <string name="accept">قبول</string>
+    <string name="reject">رفض</string>
+    <string name="rate_provider">تقييم مقدم الخدمة</string>
+</resources>

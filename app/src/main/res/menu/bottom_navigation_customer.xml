@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/nav_customer_home" android:icon="@drawable/ic_nav_home" android:title="الرئيسية" />
+    <item android:id="@+id/nav_customer_orders" android:icon="@drawable/ic_nav_orders" android:title="طلباتي" />
+    <item android:id="@+id/nav_notifications" android:icon="@drawable/ic_nav_notifications" android:title="الإشعارات" />
+    <item android:id="@+id/nav_profile" android:icon="@drawable/ic_nav_profile" android:title="حسابي" />
+</menu>

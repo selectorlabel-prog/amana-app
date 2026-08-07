@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>أمانة · market preview bridge</title>
+  <style>
+    :root { color-scheme: dark; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; font-family: "Segoe UI", Tahoma, sans-serif;
+      background: #0f1419; color: #e7ecf1; min-height: 100vh;
+    }
+    header {
+      padding: 10px 14px; border-bottom: 1px solid #243041;
+      display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: baseline;
+      background: #151b24;
+    }
+    h1 { font-size: 15px; margin: 0; font-weight: 600; }
+    .meta { font-size: 12px; color: #9aa8b8; }
+    .ok { color: #6ddea8; }
+    .err { color: #ff8f8f; }
+    main { display: flex; justify-content: center; padding: 12px; }
+    .frame {
+      position: relative;
+      width: min(100%, 390px);
+      background: #000;
+      border: 1px solid #2a3648;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 8px 28px rgba(0,0,0,.35);
+    }
+    img {
+      display: block; width: 100%; height: auto;
+      background: #111; min-height: 200px;
+    }
+    .hint {
+      padding: 8px 12px; font-size: 11px; color: #8b9aab;
+      border-top: 1px solid #243041; background: #121820;
+    }
+    a { color: #7eb6ff; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>أمانة · market preview bridge</h1>
+    <span class="meta err" id="status">ERROR: pageerror: Assertion failed: org-dartlang-sdk:///lib/_engine/engine/configuration.dart:172:9
+!_usedLegacyConfigStyle
+"Use engineInitializer.initializeEngine(config) only. Using the (deprecated) window.flutterConfiguration and initializeEngi</span>
+    <span class="meta">مصدر Flutter: <a href="http://127.0.0.1:8095">http://127.0.0.1:8095</a></span>
+  </header>
+  <main>
+    <div class="frame">
+      <img id="shot" src="/frame.png?t=1785468038016" alt="Flutter preview frame" />
+      <div class="hint">
+        HTML عادي بدون Flutter/WASM — يعمل في لوحة Cursor الجانبية.
+        لقطة حية كل ~2ث من Chromium الحقيقي.
+        للتفاعل الكامل لاحقاً: http://127.0.0.1:8095
+      </div>
+    </div>
+  </main>
+  <script>
+    const img = document.getElementById("shot");
+    const statusEl = document.getElementById("status");
+    async function tick() {
+      try {
+        const r = await fetch("/status.json", { cache: "no-store" });
+        const j = await r.json();
+        statusEl.textContent = j.error
+          ? ("ERROR: " + j.error)
+          : ("Live · frame #" + j.captureCount + " · " + (j.status || "") + " · " + (j.lastCaptureAt || "…"));
+        statusEl.className = "meta " + (j.error ? "err" : "ok");
+        if (j.hasFrame) img.src = "/frame.png?t=" + Date.now();
+      } catch (e) {
+        statusEl.textContent = "bridge unreachable";
+        statusEl.className = "meta err";
+      }
+    }
+    setInterval(tick, 800);
+    tick();
+  </script>
+</body>
+</html>

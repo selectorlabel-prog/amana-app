@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Amana - Push Notification</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=Noto+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#00544b",
+                    "sand-accent": "#F4A261",
+                    "primary-fixed": "#d2e4ff",
+                    "surface-container-highest": "#e5e2e1",
+                    "surface": "#fcf9f8",
+                    "surface-variant": "#e5e2e1",
+                    "inverse-primary": "#a0c9ff",
+                    "outline": "#727780",
+                    "nile-blue-deep": "#0A2E4D",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary": "#8e4e14",
+                    "tertiary-fixed-dim": "#6fd8c8",
+                    "surface-tint": "#2d6197",
+                    "on-background": "#1b1c1c",
+                    "inverse-on-surface": "#f3f0ef",
+                    "primary-container": "#0f4c81",
+                    "on-secondary-container": "#783d01",
+                    "error": "#ba1a1a",
+                    "success-green": "#27A745",
+                    "surface-white": "#FFFFFF",
+                    "surface-dim": "#dcd9d9",
+                    "on-surface-variant": "#42474f",
+                    "on-primary-fixed": "#001c37",
+                    "surface-container-low": "#f6f3f2",
+                    "secondary-container": "#ffab69",
+                    "surface-gray-light": "#F8F9FA",
+                    "on-tertiary-fixed": "#00201c",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed-dim": "#ffb780",
+                    "secondary-fixed": "#ffdcc4",
+                    "error-red": "#D93025",
+                    "surface-bright": "#fcf9f8",
+                    "primary-fixed-dim": "#a0c9ff",
+                    "on-primary-fixed-variant": "#07497d",
+                    "tertiary-fixed": "#8cf5e4",
+                    "on-secondary-fixed": "#2f1400",
+                    "on-error": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "warning-amber": "#FFBF00",
+                    "on-tertiary-fixed-variant": "#005048",
+                    "background": "#fcf9f8",
+                    "on-secondary": "#ffffff",
+                    "on-surface": "#1b1c1c",
+                    "on-primary": "#ffffff",
+                    "inverse-surface": "#303030",
+                    "primary": "#00355f",
+                    "on-primary-container": "#8ebdf9",
+                    "tertiary": "#003b34",
+                    "surface-container-high": "#eae7e7",
+                    "surface-container": "#f0eded",
+                    "on-tertiary-container": "#61cbbc",
+                    "on-tertiary": "#ffffff",
+                    "outline-variant": "#c2c7d1",
+                    "on-secondary-fixed-variant": "#6f3800"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "base": "4px",
+                    "sm": "12px",
+                    "lg": "24px",
+                    "xs": "8px",
+                    "xl": "32px",
+                    "md": "16px",
+                    "gutter-mobile": "12px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": [
+                            "IBM Plex Sans"
+                    ],
+                    "label-md": [
+                            "IBM Plex Sans"
+                    ],
+                    "body-lg": [
+                            "Noto Sans"
+                    ],
+                    "headline-md": [
+                            "IBM Plex Sans"
+                    ],
+                    "headline-lg": [
+                            "IBM Plex Sans"
+                    ],
+                    "body-md": [
+                            "Noto Sans"
+                    ],
+                    "label-sm": [
+                            "IBM Plex Sans"
+                    ]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "label-md": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "letterSpacing": "0.01em",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-md": [
+                            "20px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-lg": [
+                            "30px",
+                            {
+                                    "lineHeight": "38px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-sm": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "fontWeight": "600"
+                            }
+                    ]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        /* Custom Animations for Notification Banner */
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .animate-slide-down {
+            animation: slideDown 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        /* Material Icon Base Class */
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body-md text-on-surface flex justify-center min-h-screen">
+<!-- Mobile Device Simulator Container -->
+<div class="relative w-full max-w-[400px] bg-background shadow-2xl overflow-hidden h-screen flex flex-col border-x border-outline-variant">
+<!-- TopAppBar (Simulated Background) -->
+<header class="w-full top-0 sticky bg-surface flex justify-between items-center px-margin-mobile h-[64px] border-b border-outline-variant z-10">
+<!-- Leading Avatar -->
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A portrait of a young Sudanese professional wearing a modern casual outfit. The image is taken outdoors in natural, bright daylight, reflecting a trustworthy and approachable persona suitable for a professional services marketplace avatar." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEdaLpd1aOJfn_nEbBMIYXS2CrMRE0h_tWz9OrrgPpCQiiu0eZZIeR4ymsj2m2KjE-Z8Ocbr9tfBGCmDBEY6rEOia01xBB5pASFC8toRBkIiYihEm_C5QQDNUjEa4S3i1YPUVu2hR6PHFR4NnkHtwBmxIkEIJXs_zKi0MKzdgKgAvA4lKtrvza-ZfnFYitBBOEQf_0k8vteCRbjuTvp7Fc3gzuYpCgePjDjSH3LfXZ5IEAo7DLNSGjBqLBMby_RGczRCEH2hP7R8BT"/>
+</div>
+<!-- Headline -->
+<h1 class="font-headline-md-mobile text-primary font-bold">Amana</h1>
+<!-- Trailing Icon -->
+<button class="text-primary active:scale-95 duration-100 p-2 hover:bg-surface-container-high transition-colors rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</header>
+<!-- Main Content Area (Background Context - Map/Tracking view) -->
+<main class="flex-grow relative z-0">
+<!-- Map Background -->
+<div class="absolute inset-0 bg-cover bg-center w-full h-full opacity-80" data-alt="A simplified, light-mode digital map interface showing the streets of Khartoum, Sudan. The map uses soft pastel colors like pale beige for landmasses and light grey for roads, adhering to a modern app aesthetic. A clean, minimal pin drops a shadow." data-location="Khartoum, Sudan" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDHFHFYPF-JZRHzLL7nxMTa_jsoxFwYeMlmQH44Rw18ulI8OTXdrlF58kRt0DJ7s_hXxujCwikCsGjrvQ5FfPZ5g8ZFNWDN7shMRv130A20TrUeULbe4q8S9EQml_NfnRyz4lwyma31_eQXSaDbawbJuJy-9xsUVYjl4OsJr64CCamDABvNZOVhl8A21sCrZvn5usOa3ibo-Ug3qfFxz3g9KkE-gXpG7PlJifMZxkLjMa8Q9lGOAgiV85ql4s-NUIM4KZnkM720d0OH')"></div>
+<!-- Tracking Card Details (Bottom of map) -->
+<div class="absolute bottom-0 w-full p-margin-mobile pb-6">
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm border border-outline-variant flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden border border-primary-container shrink-0">
+<img class="w-full h-full object-cover" data-alt="A close-up portrait of a male service provider, specifically an electrician or maintenance worker, smiling warmly. He is wearing a professional uniform in a well-lit environment. High quality, crisp focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDj6lqz9XeYbEHA5AM3L3ied2ElTVpurm118FpjelSnUUSDNlxhvdRs8gGWSAIAwcSB_sK1tFXfBbfF91ZwUU3ZPPG6leuKl90IOB9L_Chsq49pC3T5LlLXqlOWoL0dl3UrxnYTN135S4MqwbdkLdraNxM-KaVTkSCuNkFCZMNcqcJZmM4mjjn74rViazNPou08z5C8Q35P08xYxc3VDuyd3eV0mJAiPX5SbbXdjbSPviZw4qHMNxsinrGh9MNxw5kvj5t5vSTMMO_w"/>
+</div>
+<div class="flex-grow">
+<h4 class="font-label-md text-on-surface font-bold">عمر بابكر</h4>
+<p class="font-label-sm text-on-surface-variant flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[14px]">plumbing</span> فني سباكة
+                        </p>
+</div>
+<div class="text-center">
+<span class="block font-headline-md text-primary">0</span>
+<span class="block font-label-sm text-on-surface-variant">دقيقة</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Overlay to dim background when notification is active -->
+<div class="absolute inset-0 bg-nile-blue-deep/30 backdrop-blur-[2px] z-20"></div>
+<!-- In-App Notification Banner (The Core Task) -->
+<div class="absolute top-margin-mobile left-margin-mobile right-margin-mobile z-50 bg-surface-container-lowest rounded-xl shadow-lg border border-outline-variant p-sm flex flex-col gap-sm animate-slide-down">
+<div class="flex items-start gap-sm">
+<!-- Icon Container -->
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center shrink-0 shadow-inner">
+<span class="material-symbols-outlined icon-fill text-on-primary-container text-[24px]">person_pin_circle</span>
+</div>
+<!-- Text Content -->
+<div class="flex-grow pt-1">
+<h3 class="font-headline-md text-on-surface">وصل مقدم الخدمة!</h3>
+<p class="font-body-md text-on-surface-variant mt-1 leading-snug">عمر بابكر وصل إلى موقعك الآن</p>
+</div>
+<!-- Close Button -->
+<button aria-label="إغلاق" class="text-on-surface-variant hover:text-on-surface p-1 rounded-full hover:bg-surface-container transition-colors shrink-0 -mt-1 -mr-1">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Action Area -->
+<div class="flex justify-end mt-1">
+<button class="bg-primary text-on-primary font-label-md px-lg h-[48px] rounded-full flex items-center justify-center gap-2 hover:bg-primary-container hover:text-on-primary-container transition-colors shadow-sm active:shadow-inner active:scale-95 duration-150">
+<span class="material-symbols-outlined text-[20px]">call</span>
+                    تواصل معه
+                </button>
+</div>
+</div>
+<!-- BottomNavBar (Simulated Background) -->
+<nav class="w-full z-10 rounded-t-xl bg-surface border-t border-outline-variant shadow-sm flex justify-around items-center h-[80px] pb-safe relative">
+<!-- Active Tab: الرئيسية -->
+<button class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 hover:opacity-80 transition-opacity active:inner-shadow duration-150">
+<span class="material-symbols-outlined icon-fill">home</span>
+<span class="font-label-sm mt-1">الرئيسية</span>
+</button>
+<!-- Inactive Tabs -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:opacity-80 transition-opacity duration-150">
+<span class="material-symbols-outlined">assignment</span>
+<span class="font-label-sm mt-1">طلباتي</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:opacity-80 transition-opacity duration-150">
+<span class="material-symbols-outlined">chat</span>
+<span class="font-label-sm mt-1">المحادثات</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:opacity-80 transition-opacity duration-150">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm mt-1">الحساب</span>
+</button>
+</nav>
+</div>
+</body></html>

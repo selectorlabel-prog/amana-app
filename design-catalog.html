@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>أمانة — فهرس التصاميم المرفقة</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, sans-serif; margin: 0; background: #fcf9f8; color: #1b1c1c; }
+    header { background: #00355f; color: #fff; padding: 24px 32px; }
+    header h1 { margin: 0 0 8px; font-size: 28px; }
+    header p { margin: 0; opacity: .9; font-size: 15px; }
+    nav { background: #0f4c81; padding: 12px 32px; display: flex; flex-wrap: wrap; gap: 8px; position: sticky; top: 0; z-index: 10; }
+    nav a { color: #d2e4ff; text-decoration: none; padding: 6px 14px; border-radius: 999px; background: rgba(255,255,255,.1); font-size: 14px; }
+    nav a:hover { background: rgba(255,255,255,.2); }
+    main { padding: 24px 32px 64px; max-width: 1400px; margin: 0 auto; }
+    section { margin-bottom: 48px; }
+    section h2 { color: #00355f; border-bottom: 3px solid #8e4e14; padding-bottom: 8px; margin-bottom: 8px; }
+    section .count { color: #727780; font-size: 14px; margin-bottom: 20px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
+    .card { background: #fff; border: 1px solid #c2c7d1; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,.06); }
+    .card-head { padding: 14px 16px; background: #f6f3f2; border-bottom: 1px solid #e5e2e1; }
+    .card-head .num { color: #8e4e14; font-weight: 700; font-size: 13px; }
+    .card-head .title { font-weight: 600; font-size: 15px; margin-top: 4px; color: #00355f; }
+    .card-head .path { font-size: 11px; color: #727780; margin-top: 6px; word-break: break-all; direction: ltr; text-align: left; }
+    .preview { width: 100%; height: 520px; border: none; background: #fff; }
+    .card-actions { padding: 12px 16px; display: flex; gap: 8px; }
+    .card-actions a { flex: 1; text-align: center; padding: 10px; border-radius: 8px; text-decoration: none; font-size: 14px; font-weight: 600; }
+    .btn-open { background: #00355f; color: #fff; }
+    .btn-open:hover { background: #0A2E4D; }
+    .tokens { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; margin-bottom: 24px; }
+    .token { padding: 12px; border-radius: 8px; text-align: center; font-size: 12px; border: 1px solid rgba(0,0,0,.08); }
+    .token span { display: block; font-weight: 700; margin-top: 6px; direction: ltr; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>فهرس تصاميم أمانة المرفقة</h1>
+    <p>جميع ملفات HTML الموجودة في المشروع — افتح أي تصميم للمقارنة مع التطبيق</p>
+  </header>
+  <nav>
+    <a href="#gateway">البوابات</a>
+    <a href="#customer">تطبيق العميل (16)</a>
+    <a href="#provider">تطبيق المزود (15)</a>
+    <a href="#admin">تطبيق المشرف (16)</a>
+    <a href="#tokens">نظام الألوان</a>
+  </nav>
+  <main>
+    <section id="tokens">
+      <h2>نظام التصميم الموحد (Modern Sudanese Marketplace)</h2>
+      <p class="count">مستخرج من DESIGN.md في كل مجلد</p>
+      <div class="tokens">
+        <div class="token" style="background:#00355f;color:#fff">Primary<span>#00355f</span></div>
+        <div class="token" style="background:#8e4e14;color:#fff">Secondary<span>#8e4e14</span></div>
+        <div class="token" style="background:#0f4c81;color:#fff">Primary Container<span>#0f4c81</span></div>
+        <div class="token" style="background:#F4A261">Sand Accent<span>#F4A261</span></div>
+        <div class="token" style="background:#fcf9f8">Background<span>#fcf9f8</span></div>
+        <div class="token" style="background:#27A745;color:#fff">Success<span>#27A745</span></div>
+        <div class="token" style="background:#FFBF00">Warning<span>#FFBF00</span></div>
+        <div class="token" style="background:#D93025;color:#fff">Error Red<span>#D93025</span></div>
+      </div>
+    </section>
+
+    <section id="gateway">
+      <h2>البوابات</h2>
+      <p class="count">2 تصميم</p>
+      <div class="grid" id="grid-gateway"></div>
+    </section>
+
+    <section id="customer">
+      <h2>تطبيق العميل — customer app</h2>
+      <p class="count">16 تصميم (_1 إلى _16)</p>
+      <div class="grid" id="grid-customer"></div>
+    </section>
+
+    <section id="provider">
+      <h2>تطبيق المزود — provider aap</h2>
+      <p class="count">15 تصميم (_1 إلى _15)</p>
+      <div class="grid" id="grid-provider"></div>
+    </section>
+
+    <section id="admin">
+      <h2>تطبيق المشرف — Admin app</h2>
+      <p class="count">16 تصميم (_1 إلى _16)</p>
+      <div class="grid" id="grid-admin"></div>
+    </section>
+  </main>
+  <script>
+    const designs = {
+      gateway: [
+        { folder: 'amana Gateway', file: 'code.html', title: 'Amana - Choose Your Path', label: 'بوابة الدخول' },
+        { folder: 'amana Gateway Admin', file: 'code.html', title: 'أمانة - بوابة الإدارة', label: 'بوابة الإدارة' }
+      ],
+      customer: [
+        { n: 1, title: 'Amana - Settings', label: 'الإعدادات' },
+        { n: 2, title: 'Advanced Search - Amana', label: 'بحث متقدم' },
+        { n: 3, title: 'Amana - Service Details', label: 'تفاصيل الخدمة' },
+        { n: 4, title: 'الدعم الفني - أمانة', label: 'الدعم الفني' },
+        { n: 5, title: 'تقييم الخدمة - أمانة', label: 'تقييم الخدمة' },
+        { n: 6, title: 'Amana - Payment Confirmation', label: 'تأكيد الدفع' },
+        { n: 7, title: 'Amana - Push Notification', label: 'إشعار Push' },
+        { n: 8, title: 'Amana - Service Selection', label: 'اختيار الخدمة' },
+        { n: 9, title: 'لوحة التحكم | أمانة', label: 'لوحة التحكم' },
+        { n: 10, title: 'الملف الشخصي - عمر بابكر', label: 'الملف الشخصي' },
+        { n: 11, title: 'أمانة - الرئيسية', label: 'الرئيسية (رئيسية)' },
+        { n: 12, title: 'Amana - Live Tracking', label: 'تتبع مباشر' },
+        { n: 13, title: 'Amana - Notifications', label: 'الإشعارات' },
+        { n: 14, title: 'Chat Screen - Amana', label: 'المحادثة' },
+        { n: 15, title: 'Amana - الصفحة الرئيسية', label: 'الصفحة الرئيسية (بديل)' },
+        { n: 16, title: 'Amana - تسجيل بيانات العميل', label: 'تسجيل العميل' }
+      ],
+      provider: [
+        { n: 1, title: 'Service Provider Dashboard - Amana', label: 'لوحة التحكم' },
+        { n: 2, title: 'حدد تخصصك - أمانة', label: 'تحديد التخصص (خطوة 2)' },
+        { n: 3, title: 'المحفظة - Amana', label: 'المحفظة' },
+        { n: 4, title: 'Amana - Provider Onboarding Step 3', label: 'Onboarding خطوة 3' },
+        { n: 5, title: 'Service Provider Dashboard - Amana', label: 'لوحة التحكم (بديل)' },
+        { n: 6, title: 'الملف الشخصي - عمر بابكر', label: 'الملف الشخصي' },
+        { n: 7, title: 'Amana - Provider Work Mode', label: 'وضع العمل' },
+        { n: 8, title: 'Chat Screen - Amana', label: 'المحادثة' },
+        { n: 9, title: 'تنبيه رصيد غير كافٍ - أمانة', label: 'رصيد غير كافٍ' },
+        { n: 10, title: 'Service Provider Dashboard - Amana', label: 'لوحة التحكم (بديل 2)' },
+        { n: 11, title: 'Amana - Provider Onboarding', label: 'Onboarding خطوة 1' },
+        { n: 12, title: 'تقارير الأرباح', label: 'تقارير الأرباح' },
+        { n: 13, title: 'تتبع الموقع - Job Tracking', label: 'تتبع الموقع' },
+        { n: 14, title: 'قائمة الطلبات الجديدة - Amana Provider', label: 'طلبات جديدة' },
+        { n: 15, title: '(provider _15)', label: 'تصميم إضافي' }
+      ],
+      admin: [
+        { n: 1, title: 'Amana - تقرير الضرائب والعمولات', label: 'تقرير الضرائب' },
+        { n: 2, title: 'تفاصيل المستخدم - Amana Admin', label: 'تفاصيل المستخدم' },
+        { n: 3, title: 'لوحة الإدارة العليا - نظرة عامة', label: 'نظرة عامة عليا' },
+        { n: 4, title: 'لوحة تحكم المشرف - أمانة', label: 'لوحة تحكم المشرف' },
+        { n: 5, title: 'Amana Admin - Financial Reports', label: 'التقارير المالية' },
+        { n: 6, title: 'إدارة التقييم - Amana', label: 'إدارة التقييم' },
+        { n: 7, title: 'إدارة المستخدمين والعملاء', label: 'المستخدمون' },
+        { n: 8, title: 'إنشاء كود خصم جديد - أمانة', label: 'كود خصم' },
+        { n: 9, title: 'Amana - Admin Disputes', label: 'النزاعات' },
+        { n: 10, title: 'Amana - إدارة التقييمات والمراجعات', label: 'المراجعات' },
+        { n: 11, title: 'تفاصيل الطلب - رقابة إدارية', label: 'تفاصيل الطلب' },
+        { n: 12, title: 'إدارة مزودي الخدمة', label: 'المزودون' },
+        { n: 13, title: 'Amana - Admin Dashboard', label: 'Dashboard' },
+        { n: 14, title: 'تتبع العمولات والمالية', label: 'العمولات' },
+        { n: 15, title: 'سجل العمليات الإدارية - أمانة', label: 'السجلات' },
+        { n: 16, title: 'إعدادات النظام - أمانة', label: 'الإعدادات' }
+      ]
+    };
+
+    function relPath(item, group) {
+      if (group === 'gateway') return item.folder + '/' + item.file;
+      const folder = group === 'customer' ? 'customer app' : group === 'provider' ? 'provider aap' : 'Admin app';
+      return folder + '/_' + item.n + '/code.html';
+    }
+
+    function renderCard(item, group, index) {
+      const path = relPath(item, group);
+      const href = encodeURI(path);
+      const num = item.n || (index + 1);
+      return `<div class="card">
+        <div class="card-head">
+          <div class="num">${group === 'gateway' ? 'بوابة' : '#' + num}</div>
+          <div class="title">${item.label || item.title}</div>
+          <div class="path">${path}</div>
+        </div>
+        <iframe class="preview" src="${href}" title="${item.title}" loading="lazy"></iframe>
+        <div class="card-actions">
+          <a class="btn-open" href="${href}" target="_blank">فتح بملء الشاشة</a>
+        </div>
+      </div>`;
+    }
+
+    document.getElementById('grid-gateway').innerHTML = designs.gateway.map((d,i)=>renderCard(d,'gateway',i)).join('');
+    document.getElementById('grid-customer').innerHTML = designs.customer.map((d,i)=>renderCard(d,'customer',i)).join('');
+    document.getElementById('grid-provider').innerHTML = designs.provider.map((d,i)=>renderCard(d,'provider',i)).join('');
+    document.getElementById('grid-admin').innerHTML = designs.admin.map((d,i)=>renderCard(d,'admin',i)).join('');
+  </script>
+</body>
+</html>

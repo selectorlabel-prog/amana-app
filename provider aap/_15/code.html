@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=Noto+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed": "#00201c",
+                    "on-secondary-fixed": "#2f1400",
+                    "error-container": "#ffdad6",
+                    "on-error": "#ffffff",
+                    "tertiary": "#003b34",
+                    "nile-blue-deep": "#0A2E4D",
+                    "inverse-surface": "#303030",
+                    "on-secondary-fixed-variant": "#6f3800",
+                    "surface-container-highest": "#e5e2e1",
+                    "on-surface": "#1b1c1c",
+                    "on-primary-container": "#8ebdf9",
+                    "error-red": "#D93025",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed": "#001c37",
+                    "on-background": "#1b1c1c",
+                    "surface-container-high": "#eae7e7",
+                    "on-surface-variant": "#42474f",
+                    "surface-gray-light": "#F8F9FA",
+                    "on-tertiary": "#ffffff",
+                    "surface-dim": "#dcd9d9",
+                    "warning-amber": "#FFBF00",
+                    "tertiary-container": "#00544b",
+                    "success-green": "#27A745",
+                    "outline-variant": "#c2c7d1",
+                    "surface-container-low": "#f6f3f2",
+                    "on-secondary-container": "#783d01",
+                    "background": "#fcf9f8",
+                    "primary-fixed": "#d2e4ff",
+                    "surface-white": "#FFFFFF",
+                    "surface-container": "#f0eded",
+                    "primary": "#00355f",
+                    "secondary-fixed": "#ffdcc4",
+                    "surface-variant": "#e5e2e1",
+                    "surface": "#fcf9f8",
+                    "surface-tint": "#2d6197",
+                    "on-primary": "#ffffff",
+                    "primary-container": "#0f4c81",
+                    "tertiary-fixed": "#8cf5e4",
+                    "inverse-primary": "#a0c9ff",
+                    "secondary-fixed-dim": "#ffb780",
+                    "on-secondary": "#ffffff",
+                    "outline": "#727780",
+                    "on-error-container": "#93000a",
+                    "primary-fixed-dim": "#a0c9ff",
+                    "secondary": "#8e4e14",
+                    "tertiary-fixed-dim": "#6fd8c8",
+                    "on-tertiary-container": "#61cbbc",
+                    "on-primary-fixed-variant": "#07497d",
+                    "on-tertiary-fixed-variant": "#005048",
+                    "inverse-on-surface": "#f3f0ef",
+                    "surface-bright": "#fcf9f8",
+                    "secondary-container": "#ffab69",
+                    "sand-accent": "#F4A261"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sm": "12px",
+                    "lg": "24px",
+                    "xs": "8px",
+                    "xl": "32px",
+                    "md": "16px",
+                    "base": "4px",
+                    "margin-mobile": "16px",
+                    "gutter-mobile": "12px"
+            },
+            "fontFamily": {
+                    "label-sm": ["IBM Plex Sans"],
+                    "label-md": ["IBM Plex Sans"],
+                    "headline-lg-mobile": ["IBM Plex Sans"],
+                    "body-md": ["Noto Sans"],
+                    "headline-lg": ["IBM Plex Sans"],
+                    "headline-md": ["IBM Plex Sans"],
+                    "body-lg": ["Noto Sans"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      body {
+        font-family: 'Noto Sans', 'IBM Plex Sans', sans-serif;
+        background-color: #fcf9f8;
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .step-line-active {
+        background: linear-gradient(to left, #27A745 50%, #00355f 50%);
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(224, 224, 224, 0.5);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface">
+<!-- Top AppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface border-b border-outline-variant flex justify-between items-center h-16 px-margin-mobile">
+<div class="flex items-center gap-3">
+<button class="p-2 hover:bg-surface-container-low transition-colors rounded-full">
+<span class="material-symbols-outlined text-primary">arrow_forward</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary">تفاصيل الطلب النشط</h1>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a Sudanese service provider wearing a clean uniform, smiling warmly against a soft-focus Khartoum architectural background. The image has a clean, high-contrast aesthetic with natural bright lighting, emphasizing trust and professionalism within a modern service marketplace framework." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4aV8lzu1GxHEOLAcCfIx1O2A659x7zk5FJRnxXgb-udD_rvDYkUHTCg8CJlusm9EtPvqqB7Pv8MB15RWFXPw97YcN0ohISLP8Dh-zPZ6yq7o-b72rnu0EZ8HPKZ6ZU9XzuLRQU_bGWHqcwz-ON7FBjWdBgN8Zw3ocfwscQYscBkSICLAmnZHkbdIkhueHE2edf4vSmU8sq792Fv7W1E6C0sR0rrO5SHOGCEorzdX1B9J5kTx5H-unro2EXimGSImufpeGgiphyGP7"/>
+</div>
+</header>
+<main class="pt-20 pb-28 px-margin-mobile max-w-2xl mx-auto space-y-6">
+<!-- Job Status Tracker (Custom implementation based on "Status Tracking Steps" guidance) -->
+<section class="bg-surface-white p-6 rounded-xl border border-outline-variant shadow-sm">
+<div class="flex justify-between items-start relative">
+<!-- Step 1: Heading to Customer (Active) -->
+<div class="flex flex-col items-center z-10 w-1/3">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white ring-4 ring-primary-fixed mb-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">directions_car</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary text-center">في الطريق</span>
+</div>
+<!-- Connector Line 1 -->
+<div class="absolute top-5 right-[16%] left-[50%] h-0.5 bg-outline-variant -z-0"></div>
+<!-- Step 2: Started Work -->
+<div class="flex flex-col items-center z-10 w-1/3">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant mb-2">
+<span class="material-symbols-outlined">build</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant text-center">بدء العمل</span>
+</div>
+<!-- Connector Line 2 -->
+<div class="absolute top-5 left-[16%] right-[50%] h-0.5 bg-outline-variant -z-0"></div>
+<!-- Step 3: Completed -->
+<div class="flex flex-col items-center z-10 w-1/3">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant mb-2">
+<span class="material-symbols-outlined">check_circle</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant text-center">اكتمل</span>
+</div>
+</div>
+</section>
+<!-- Customer Profile Bento Section -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<!-- Customer Card -->
+<section class="md:col-span-2 glass-card p-5 rounded-xl flex items-center gap-4">
+<div class="w-16 h-16 rounded-2xl overflow-hidden shadow-sm">
+<img class="w-full h-full object-cover" data-alt="A close-up portrait of a Sudanese customer, a middle-aged man with a friendly expression, set against a bright, airy indoor Sudanese home environment. The lighting is soft and natural, reflecting a high-end light-mode UI style with clear details and a professional corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9z-4S9VQTmHBnMTBAAvJj9-3ZulmXCk5nH-c903XxGYrPBDlZnKaIuX_TLJK2SaSFBdE5KoCYPOfTGYatMSbIIWu4NcMY8EDJSDtQtjYyDzrnMpdf8mjemyJNed-liBoWHa79ZoZyZcssJ45zbZlwtBLuhWL82j5hkGX1Uek0mjsXogHuluW0jWZgonv_sUS8GduVFmokUxg_QMvVFh9AUqX7uk-wYjSbcn0AAC8p07SYIEa6B2a56B0mX2KTxnvSBa3jOEhAMbQE"/>
+</div>
+<div class="flex-1">
+<h2 class="font-headline-md text-headline-md text-on-surface">أحمد عثمان</h2>
+<div class="flex items-center gap-1 text-warning-amber">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md">4.9</span>
+<span class="text-on-surface-variant text-xs">(12 تقييم)</span>
+</div>
+</div>
+<button class="bg-primary text-white p-3 rounded-xl flex items-center justify-center shadow-md active:scale-95 transition-transform">
+<span class="material-symbols-outlined">chat</span>
+</button>
+</section>
+<!-- Price Card -->
+<section class="bg-primary-container text-white p-5 rounded-xl flex flex-col justify-center items-center">
+<span class="font-label-sm text-label-sm opacity-80">السعر المتفق عليه</span>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-lg text-headline-lg">15,000</span>
+<span class="font-label-md text-label-md">ج.س</span>
+</div>
+</section>
+</div>
+<!-- Job Location -->
+<section class="bg-surface-white rounded-xl border border-outline-variant overflow-hidden">
+<div class="p-4 border-b border-outline-variant flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<div>
+<h3 class="font-label-md text-label-md text-on-surface">موقع العمل</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">الخرطوم، حي الرياض، شارع مشتل، منزل رقم 42</p>
+</div>
+</div>
+<div class="h-40 bg-surface-container w-full relative">
+<!-- Static Map Placeholder -->
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A clean, minimalist vector map view of the Riyadh district in Khartoum, Sudan, showing street layouts and block structures in a professional light-mode aesthetic. The map uses a soft palette of grays and blues with a distinct primary-blue marker indicating a specific job location." data-location="Khartoum, Riyadh District" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAcyha3Y1HV9U6SzncgVE0824HC9bhNgGtwTCIzOBrnIZ6WVLCSMtcPJ_9Y5teDchc_z2aA8fgBClBHUPDJUnsCTKi5Nd2WT9nfeodEIGQlHuEYwfEAJQuUZuyYhYQWk3dw445LUizwHzvRSU6Y7yqIIf__RS4dX8qI9_ScVNHoTWt-ZpI4AHKjfmLV2JpvXPmDaVmRhwIU6pHB_SPpIv_fEmLKTdZuvcc78gPqts3wWYyAYEwwFTxvkiWo-37ebvo3EX2diLwUu4xS')"></div>
+<div class="absolute bottom-3 left-3 bg-surface-white px-3 py-1 rounded-full shadow-sm border border-outline-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">navigation</span>
+<span class="font-label-sm text-label-sm text-primary">فتح في الخرائط</span>
+</div>
+</div>
+</section>
+<!-- Service Description & Attachments -->
+<section class="space-y-4">
+<div class="bg-surface-white p-5 rounded-xl border border-outline-variant">
+<h3 class="font-headline-md text-headline-md text-primary mb-3">وصف الخدمة</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                    صيانة مكيف نسمة 18 ألف وحدة. الجهاز يعمل ولكن التبريد ضعيف جداً. يرجى فحص غاز الفريون وتنظيف الفلاتر الداخلية والخارجية. يفضل الحضور قبل الساعة 4 عصراً.
+                </p>
+<div class="mt-2 inline-flex items-center gap-2 px-3 py-1 bg-secondary-fixed text-on-secondary-fixed rounded-full">
+<span class="material-symbols-outlined text-[16px]">ac_unit</span>
+<span class="font-label-sm text-label-sm">تبريد وتكييف</span>
+</div>
+</div>
+<!-- Photos Grid -->
+<div class="grid grid-cols-2 gap-3">
+<div class="aspect-square rounded-xl overflow-hidden border border-outline-variant group relative">
+<img class="w-full h-full object-cover" data-alt="A high-resolution photo of a split-unit air conditioner mounted on a white wall inside a modern Sudanese home. The unit shows some dust on the vents, indicating a need for cleaning. The lighting is bright and realistic, maintaining the professional service marketplace aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_h8Ei8bF0ux7rPiQbXVFPEGMovGnnVAmYekf_Vanvh3BbJR4srp4RxiO-xUc1lWvkhbWU9YxNrm7ZkJPdPnPqvPNt9_VMXlMd0HTY_bjdNsJIEsW9F4L3qASz4PDqUHF9IM-NhYS_Ipq-buYtdZErq1s91sAil_LJM_aRPUlpW5ELTYkOfHZPmMXkn26-DIycMI4Z347glgDEfuT-fOaEwCDVu0kMZkJooSvcuZcedscT0N1e-WbJpkLaYgsUyMpvObtgLuLBf7at"/>
+<div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-white">zoom_in</span>
+</div>
+</div>
+<div class="aspect-square rounded-xl overflow-hidden border border-outline-variant group relative">
+<img class="w-full h-full object-cover" data-alt="A detailed shot of an outdoor AC compressor unit located on a balcony overlooking Khartoum streets. The sun is shining brightly, creating realistic shadows and highlighting the metallic textures of the machine. The style is clean and functional, consistent with a professional service log." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD30eOao-H4A9-8wWXIXCxsj-bspJErS7yc9JqDsuOzHqH2HSucd7HCv71VjJZ0HJqycy3R5zcHxZlwzhh5okjN_eEXo0PNRPpxNyQh3mYNLFO32M3LOI8aVjZtC-02VNwpYGkgwdJzC5_1fMu_moo-Cov-MkbxHArSZx40yGLadnfyPcX9_stW7xdAYntka7_f-QXOHE03WqkyKsaa7FbvCoq2ZVfXrx_-Nlc8LRbjZuiw7TDepToM5oVyfIuU5utBa6Vi0dlPwyq1"/>
+<div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-white">zoom_in</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Action Area -->
+<section class="space-y-3">
+<button class="w-full h-14 bg-success-green text-white rounded-xl font-headline-md flex items-center justify-center gap-3 shadow-lg active:scale-[0.98] transition-transform">
+<span class="material-symbols-outlined">play_circle</span>
+                بدء العمل الآن
+            </button>
+<button class="w-full h-14 border-2 border-error text-error rounded-xl font-headline-md flex items-center justify-center gap-3 active:bg-error-container/20 transition-colors">
+<span class="material-symbols-outlined">cancel</span>
+                إلغاء الطلب
+            </button>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Mandatory Shell) -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface border-t border-outline-variant shadow-sm flex justify-around items-center h-20 px-2 pb-safe">
+<!-- Dashboard -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-sm text-label-sm">الرئيسية</span>
+</a>
+<!-- Leads (Active because this is a Job Detail from a lead) -->
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl px-3 py-1 scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="campaign" style="font-variation-settings: 'FILL' 1;">campaign</span>
+<span class="font-label-sm text-label-sm">الطلبات</span>
+</a>
+<!-- Earnings -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-label-sm text-label-sm">الأرباح</span>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">الملف</span>
+</a>
+</nav>
+<script>
+        // Micro-interaction for the status pulse
+        const activeStep = document.querySelector('.ring-primary-fixed');
+        if (activeStep) {
+            let scale = 1;
+            let growing = true;
+            setInterval(() => {
+                if (growing) {
+                    scale += 0.01;
+                    if (scale >= 1.1) growing = false;
+                } else {
+                    scale -= 0.01;
+                    if (scale <= 1) growing = true;
+                }
+                activeStep.style.boxShadow = `0 0 0 ${8 * (scale - 1) * 10}px rgba(210, 228, 255, 0.5)`;
+            }, 50);
+        }
+    </script>
+</body></html>

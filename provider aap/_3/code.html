@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>المحفظة - Amana</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=Noto+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#ffab69",
+                        "primary-container": "#0f4c81",
+                        "primary": "#00355f",
+                        "background": "#fcf9f8",
+                        "secondary-fixed-dim": "#ffb780",
+                        "surface-container": "#f0eded",
+                        "surface-gray-light": "#F8F9FA",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#07497d",
+                        "secondary": "#8e4e14",
+                        "nile-blue-deep": "#0A2E4D",
+                        "on-secondary-fixed-variant": "#6f3800",
+                        "surface-tint": "#2d6197",
+                        "surface-bright": "#fcf9f8",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed": "#ffdcc4",
+                        "outline-variant": "#c2c7d1",
+                        "surface-dim": "#dcd9d9",
+                        "inverse-on-surface": "#f3f0ef",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#727780",
+                        "success-green": "#27A745",
+                        "surface": "#fcf9f8",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#2f1400",
+                        "primary-fixed": "#d2e4ff",
+                        "surface-container-low": "#f6f3f2",
+                        "primary-fixed-dim": "#a0c9ff",
+                        "tertiary": "#003b34",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "inverse-primary": "#a0c9ff",
+                        "on-background": "#1b1c1c",
+                        "tertiary-fixed": "#8cf5e4",
+                        "warning-amber": "#FFBF00",
+                        "tertiary-fixed-dim": "#6fd8c8",
+                        "tertiary-container": "#00544b",
+                        "sand-accent": "#F4A261",
+                        "on-tertiary-fixed": "#00201c",
+                        "surface-container-highest": "#e5e2e1",
+                        "surface-white": "#FFFFFF",
+                        "on-tertiary-fixed-variant": "#005048",
+                        "error-red": "#D93025",
+                        "on-surface": "#1b1c1c",
+                        "on-surface-variant": "#42474f",
+                        "error-container": "#ffdad6",
+                        "on-error-container": "#93000a",
+                        "surface-variant": "#e5e2e1",
+                        "on-secondary-container": "#783d01",
+                        "surface-container-high": "#eae7e7",
+                        "on-primary-container": "#8ebdf9",
+                        "on-primary-fixed": "#001c37",
+                        "on-tertiary-container": "#61cbbc",
+                        "inverse-surface": "#303030"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "md": "16px",
+                        "base": "4px",
+                        "margin-mobile": "16px",
+                        "gutter-mobile": "12px",
+                        "xs": "8px",
+                        "lg": "24px",
+                        "xl": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["IBM Plex Sans"],
+                        "body-lg": ["Noto Sans"],
+                        "label-sm": ["IBM Plex Sans"],
+                        "body-md": ["Noto Sans"],
+                        "headline-md": ["IBM Plex Sans"],
+                        "label-md": ["IBM Plex Sans"],
+                        "headline-lg-mobile": ["IBM Plex Sans"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col md:flex-row pb-[80px] md:pb-0">
+<!-- TopAppBar (Mobile & Web Header) -->
+<header class="w-full top-0 sticky z-40 bg-surface border-b border-outline-variant flat no shadows flex justify-between items-center px-margin-mobile h-[64px]">
+<div class="flex items-center gap-xs">
+<button aria-label="Menu" class="p-xs text-on-surface-variant hover:bg-surface-container-high transition-colors active:scale-95 duration-100 rounded-full md:hidden">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container-highest border border-outline-variant flex items-center justify-center">
+<img alt="User Profile Avatar" class="w-full h-full object-cover" data-alt="A professional headshot of a Sudanese service provider, softly lit outdoors with a clean, modern aesthetic, reflecting dependability and trust. The background is a slightly blurred cityscape of Khartoum in light mode. 50 words minimum description." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCP6pBRj-h-i2CqLnA_o75tifZZM_nyqPZPLbQXFGiSI-RUVUqu_KSx9sLZ8cDN9B5nb_7rUbti2kf1xA0NG_RsVFTcMoC_i6zEPj02w9zy_G60c2sRayqZeLzdsQ5k_3K77HQZ0u5970itpChqgxwhrX6g0KmzmTuVg7nOGQfyLLcTdAMBEAe4y0gSpPoLhL2w1mbGyTFvgvP4rLSEs3lhT2GlFrMq9fEOG6UeBhdDsioVXa9wtChJSsz8kJ5pOnGy-cAj20S3Aetr"/>
+</div>
+<span class="font-headline-md-mobile text-headline-md-mobile font-bold text-primary mr-sm">Amana</span>
+</div>
+<button aria-label="Notifications" class="p-xs text-on-surface-variant hover:bg-surface-container-high transition-colors active:scale-95 duration-100 rounded-full">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</header>
+<!-- NavigationDrawer (Web Sidebar) -->
+<aside class="hidden md:flex flex-col py-lg px-md h-full bg-surface-bright h-full w-[280px] rounded-r-xl bg-surface-container shadow-lg fixed top-[64px] right-0 bottom-0 z-30 border-l border-outline-variant">
+<div class="mb-xl flex items-center gap-md">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container-highest">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A professional headshot of a Sudanese service provider, softly lit outdoors with a clean, modern aesthetic, reflecting dependability and trust. The background is a slightly blurred cityscape of Khartoum in light mode. 50 words minimum description." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-Ix2RJNVQmyOmYQyC1Vz7C9UzQmZM203JD7MgsPYIeWl3hiZ_cvLu0oViCl7FCY1HcotzAfkQv9Ajk6e9Pux15sohomc5xZd5rlj3lnRXTiPdftZiHJzyxSAbLFmMdWhq3uERgmaKbJ5E5u7hrsmZx2Tl_wB179ico-ABG3gvfkfK6K-JZMfuUlP48L2UTsa2WDgi94muPKOvIxEzlKI6Zx3UGvVrLM4Zg7a0671IdZYDNYfh5uUZwm4Ff2p0UDfnF7sX8iSfJj42"/>
+</div>
+<div>
+<div class="font-headline-md text-primary font-bold">أحمد محمد</div>
+<div class="font-body-md text-body-md text-on-surface-variant">مزود خدمة معتمد</div>
+<div class="font-label-sm text-label-sm text-outline mt-1">الخرطوم، السودان</div>
+</div>
+</div>
+<nav class="flex flex-col gap-xs flex-grow">
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-variant transition-all active:bg-primary-fixed-dim rounded-lg" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body-md text-body-md">لوحة التحكم</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm bg-primary-container text-on-primary-container font-bold rounded-lg hover:bg-surface-variant transition-all active:bg-primary-fixed-dim" href="#">
+<span class="material-symbols-outlined filled" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+<span class="font-body-md text-body-md">المحفظة</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-variant transition-all active:bg-primary-fixed-dim rounded-lg" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-body-md text-body-md">الإعدادات</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-variant transition-all active:bg-primary-fixed-dim rounded-lg" href="#">
+<span class="material-symbols-outlined">support_agent</span>
+<span class="font-body-md text-body-md">الدعم الفني</span>
+</a>
+</nav>
+<div class="mt-auto">
+<a class="flex items-center gap-md px-md py-sm text-error hover:bg-error-container transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-body-md text-body-md">تسجيل الخروج</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-grow p-margin-mobile md:pr-[280px] w-full max-w-5xl mx-auto">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary mb-xl">المحفظة</h1>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-md md:gap-lg">
+<!-- Balance Card -->
+<section class="md:col-span-5 bg-primary text-on-primary rounded-xl p-lg shadow-sm border border-outline-variant/20 relative overflow-hidden flex flex-col justify-between min-h-[200px]">
+<!-- Subtle decorative pattern -->
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 24px 24px;"></div>
+<div class="relative z-10">
+<div class="flex justify-between items-center mb-sm">
+<span class="font-body-md text-body-md text-on-primary/80">الرصيد الحالي</span>
+<span class="material-symbols-outlined">account_balance</span>
+</div>
+<div class="font-headline-lg-mobile text-headline-lg-mobile text-4xl mb-xs" dir="ltr">SDG 15,450.00</div>
+<div class="font-label-sm text-label-sm text-success-green bg-success-green/20 inline-flex items-center px-sm py-1 rounded-full gap-1">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+<span>آخر تحديث: اليوم، 10:30 ص</span>
+</div>
+</div>
+</section>
+<!-- Recharge Section -->
+<section class="md:col-span-7 bg-surface rounded-xl p-lg shadow-sm border border-outline-variant flex flex-col justify-center">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-sm flex items-center gap-xs">
+<span class="material-symbols-outlined text-secondary">add_circle</span>
+                    شحن المحفظة
+                </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">أدخل رمز الشحن لإضافة رصيد إلى محفظتك.</p>
+<form class="flex flex-col gap-sm relative">
+<label class="sr-only" for="recharge-code">رمز الشحن</label>
+<div class="relative">
+<input class="w-full h-12 px-md border-2 border-outline-variant focus:border-sand-accent focus:ring-0 rounded-lg font-body-lg text-body-lg text-center tracking-widest bg-surface text-on-surface placeholder-on-surface-variant/50 transition-colors" dir="ltr" id="recharge-code" maxlength="14" name="recharge-code" placeholder="أدخل الرمز المكون من 12 رقماً" type="text"/>
+<span class="absolute right-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline-variant">qr_code</span>
+</div>
+<button class="h-12 bg-secondary-container hover:bg-secondary-fixed-dim text-on-secondary-container font-headline-md text-headline-md rounded-lg shadow-sm transition-all active:scale-95 flex items-center justify-center gap-xs" type="button">
+<span class="material-symbols-outlined">bolt</span>
+                        شحن الآن
+                    </button>
+</form>
+</section>
+<!-- Transaction History -->
+<section class="md:col-span-12 bg-surface rounded-xl p-lg shadow-sm border border-outline-variant mt-sm">
+<div class="flex justify-between items-center mb-md pb-sm border-b border-outline-variant">
+<h2 class="font-headline-md text-headline-md text-on-surface">سجل العمليات</h2>
+<button class="text-primary font-label-md text-label-md hover:underline flex items-center gap-1">
+                        تصفية
+                        <span class="material-symbols-outlined text-[18px]">filter_list</span>
+</button>
+</div>
+<div class="flex flex-col gap-sm">
+<!-- Transaction Item: Code Purchase -->
+<div class="flex items-center justify-between p-sm hover:bg-surface-container-low rounded-lg transition-colors">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-success-green/10 flex items-center justify-center text-success-green">
+<span class="material-symbols-outlined">add</span>
+</div>
+<div>
+<div class="font-body-md text-body-md font-semibold text-on-surface">شحن رصيد - رمز ترويجي</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">15 مايو 2024 - 09:45 ص</div>
+</div>
+</div>
+<div class="font-headline-md text-headline-md text-success-green text-left" dir="ltr">+ SDG 5,000</div>
+</div>
+<!-- Transaction Item: Spent Credit -->
+<div class="flex items-center justify-between p-sm hover:bg-surface-container-low rounded-lg transition-colors">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-error/10 flex items-center justify-center text-error">
+<span class="material-symbols-outlined">arrow_outward</span>
+</div>
+<div>
+<div class="font-body-md text-body-md font-semibold text-on-surface">دفع رسوم خدمة - صيانة</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">12 مايو 2024 - 14:20 م</div>
+</div>
+</div>
+<div class="font-headline-md text-headline-md text-on-surface text-left" dir="ltr">- SDG 2,500</div>
+</div>
+<!-- Transaction Item: Spent Credit -->
+<div class="flex items-center justify-between p-sm hover:bg-surface-container-low rounded-lg transition-colors">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-error/10 flex items-center justify-center text-error">
+<span class="material-symbols-outlined">arrow_outward</span>
+</div>
+<div>
+<div class="font-body-md text-body-md font-semibold text-on-surface">دفع رسوم خدمة - تنظيف</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">10 مايو 2024 - 11:00 ص</div>
+</div>
+</div>
+<div class="font-headline-md text-headline-md text-on-surface text-left" dir="ltr">- SDG 1,200</div>
+</div>
+</div>
+<div class="mt-md text-center">
+<button class="font-label-md text-label-md text-secondary hover:text-secondary-fixed-dim transition-colors py-sm px-md border border-secondary/30 rounded-full">
+                        عرض المزيد
+                    </button>
+</div>
+</section>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Footer) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-xl bg-surface border-t border-outline-variant shadow-sm flex justify-around items-center h-[80px] pb-safe">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:opacity-80 transition-opacity active:inner-shadow duration-150 w-full h-full" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-label-sm text-label-sm">الرئيسية</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:opacity-80 transition-opacity active:inner-shadow duration-150 w-full h-full" href="#">
+<span class="material-symbols-outlined mb-1">assignment</span>
+<span class="font-label-sm text-label-sm">طلباتي</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:opacity-80 transition-opacity active:inner-shadow duration-150 w-full h-full" href="#">
+<span class="material-symbols-outlined mb-1">chat</span>
+<span class="font-label-sm text-label-sm">المحادثات</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 hover:opacity-80 transition-opacity active:inner-shadow duration-150 mx-2" href="#">
+<span class="material-symbols-outlined mb-1 filled" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-label-sm text-label-sm">الحساب</span>
+</a>
+</nav>
+<script>
+        // Simple script to format code input
+        const codeInput = document.getElementById('recharge-code');
+        if (codeInput) {
+            codeInput.addEventListener('input', function(e) {
+                let val = e.target.value.replace(/\D/g, '');
+                if (val.length > 0) {
+                    val = val.match(/.{1,4}/g).join('-');
+                }
+                e.target.value = val;
+            });
+        }
+    </script>
+</body></html>

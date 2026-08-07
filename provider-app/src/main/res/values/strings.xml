@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">أمانة - مقدمو الخدمات</string>
+    <string name="welcome">مرحباً بك في أمانة للمزودين</string>
+    <string name="wallet_balance">رصيد المحفظة</string>
+    <string name="recharge_wallet">شحن المحفظة</string>
+    <string name="new_orders">طلبات جديدة</string>
+    <string name="my_earnings">أرباحي</string>
+    <string name="send_offer">إرسال عرض سعر</string>
+    <string name="insufficient_balance">الرصيد غير كافٍ</string>
+    <string name="enter_recharge_code">أدخل كود الشحن</string>
+</resources>

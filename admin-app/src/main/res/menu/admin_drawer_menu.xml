@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/adminDashboardFragment" android:icon="@drawable/ic_menu_admin" android:title="@string/menu_dashboard" />
+        <item android:id="@+id/adminUsersFragment" android:icon="@drawable/ic_menu_admin" android:title="@string/menu_users" />
+        <item android:id="@+id/adminProvidersFragment" android:icon="@drawable/ic_menu_admin" android:title="@string/menu_providers" />
+        <item android:id="@+id/adminOrdersFragment" android:icon="@drawable/ic_menu_admin" android:title="@string/menu_orders" />
+        <item android:id="@+id/adminRechargeFragment" android:icon="@drawable/ic_menu_admin" android:title="@string/menu_recharge" />
+        <item android:id="@+id/adminDisputesFragment" android:icon="@drawable/ic_menu_admin" android:title="@string/menu_disputes" />
+        <item android:id="@+id/adminCommissionsFragment" android:icon="@drawable/ic_menu_admin" android:title="@string/menu_commissions" />
+        <item android:id="@+id/adminReviewsFragment" android:icon="@drawable/ic_menu_admin" android:title="@string/menu_reviews" />
+        <item android:id="@+id/adminReportsFragment" android:icon="@drawable/ic_menu_admin" android:title="@string/menu_reports" />
+        <item android:id="@+id/adminSettingsFragment" android:icon="@drawable/ic_menu_admin" android:title="@string/menu_settings" />
+        <item android:id="@+id/adminLogsFragment" android:icon="@drawable/ic_menu_admin" android:title="@string/menu_logs" />
+    </group>
+
+</menu>
