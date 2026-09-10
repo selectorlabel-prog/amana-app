@@ -1,0 +1,6 @@
+[dual] launching playwright-chromium…
+[dual] Glass http://127.0.0.1:8100/ <- http://127.0.0.1:8095/
+[dual] Glass http://127.0.0.1:8101/ <- http://127.0.0.1:7400/
+[dual] playwright-chromium OK
+[dual] market first frame 117027 bytes -> C:\Users\Administrator.user-HP\AndroidStudioProjects\amana\glass-preview-bridge\evidence\PROOF-LIVE-market.png
+[dual] admin first frame 45044 bytes -> C:\Users\Administrator.user-HP\AndroidStudioProjects\amana\glass-preview-bridge\evidence\PROOF-LIVE-admin.png

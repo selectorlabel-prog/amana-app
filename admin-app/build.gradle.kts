@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.amana.admin"
+    namespace = "amana.admin"
     compileSdk = 35
 
     defaultConfig {
@@ -37,6 +37,7 @@ android {
     }
     
     buildFeatures {
+        viewBinding = true
         compose = true
     }
     
@@ -48,7 +49,17 @@ android {
 dependencies {
     implementation(project(":core"))
     
-    // Compose BOM
+    // XML / ViewBinding UI path
+    implementation("androidx.appcompat:appcompat:1.7.0")
+    implementation("com.google.android.material:material:1.12.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.2.0")
+    implementation("androidx.recyclerview:recyclerview:1.3.2")
+    implementation("androidx.fragment:fragment-ktx:1.8.5")
+    implementation("androidx.activity:activity-ktx:1.10.0")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.8.5")
+    implementation("androidx.navigation:navigation-ui-ktx:2.8.5")
+    
+    // Compose BOM (kept for com.amana.admin.MainActivity Compose stub)
     implementation(platform("androidx.compose:compose-bom:2024.12.01"))
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.ui:ui-graphics")

@@ -15,6 +15,7 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "amana"
+include(":app")
 include(":customer-app")
 include(":provider-app")
 include(":admin-app")

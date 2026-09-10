@@ -1,25 +1,13 @@
-# معاينة اللوحة الجانبية — جاهزة الآن
+# معاينة أمانة في لوحة Glass — بدون CanvasKit
 
-## لماذا فشل Flutter مباشرة في Glass؟
+## التغيير الجذري
+المعاينة صارت ملفات PNG+HTML في `glass-preview-bridge/live/` تتحدّث كل ثانيتين. لا تفتح Flutter مباشرة في Glass.
 
-متصفح Cursor Glass (Simple Browser) لا يشغّل محرك Flutter CanvasKit/WASM بشكل موثوق.
-حتى عندما يعيد الخادم HTTP 200 تظهر شاشة بيضاء. هذا قيد في اللوحة الجانبية، وليس لأن التطبيق متوقف.
+## كيف تعيد الفتح
+افتح `glass-preview-bridge/live/market.html` و `admin.html` (أو `http://127.0.0.1:8100` و `:8101` إن فشل مسار الملف).
 
-## الروابط التي تعمل الآن في اللوحة الجانبية
-
-افتح **فقط** هذين الرابطين عبر `open_resource`:
-
-| التطبيق | رابط Glass الآمن |
-|---------|------------------|
-| السوق (Market) | http://127.0.0.1:8100/ |
-| الإدارة (Admin) | http://127.0.0.1:8101/ |
-
-هذه صفحات HTML عادية + صور حية من Chromium — بدون Flutter/WASM داخل Glass.
-التحديث تلقائي كل ~1.5 ثانية.
-
-## لا تفتح في Glass
-
-- http://127.0.0.1:8095/ (مصدر Flutter للسوق)
-- http://127.0.0.1:7400/ (مصدر Flutter للإدارة)
-
-هذه المصادر تعمل لالتقاط اللقطات فقط؛ فتحها في Glass يعيد مشكلة الشاشة البيضاء.
+## أمر واحد
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\start_glass_previews.ps1
+```
+(أضف `-ForceFlutter` لإعادة مصادر Flutter الثابتة على 8095/7400)

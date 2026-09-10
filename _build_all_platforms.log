@@ -1,0 +1,13 @@
+=== Amana platform build start 08/31/2026 00:15:17 ===
+[00:15:17] STUDIO already running pid=9340 15060
+[00:15:17] Copied gateway logo to admin. Size=943620
+[00:15:17] Creating market ios/ via flutter create --platforms=ios
+[00:19:56] market ios create exit=0 exists=True
+[00:19:56] admin ios/ already exists
+[00:19:56] pub get + launcher icons MARKET
+[00:20:18] market pub get exit=0
+[00:20:58] market icons exit=0
+[00:20:58] pub get + launcher icons ADMIN
+[00:21:19] admin pub get exit=0
+[00:21:57] admin icons exit=0
+[00:21:57] BUILD MARKET APK

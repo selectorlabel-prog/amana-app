@@ -1,0 +1,330 @@
+{
+  "at": "2026-08-29T06:33:57.338Z",
+  "results": [
+    {
+      "name": "market",
+      "url": "http://127.0.0.1:8095/",
+      "extraArgs": [],
+      "navError": null,
+      "firstFrameDom": true,
+      "elapsedMs": 50504,
+      "state": {
+        "title": "أمانة",
+        "href": "http://127.0.0.1:8095/",
+        "bootPresent": false,
+        "bootText": null,
+        "flutterView": true,
+        "fltGlass": true,
+        "fltScene": false,
+        "canvas": true,
+        "canvasW": 420,
+        "canvasH": 800,
+        "bodyText": "",
+        "swController": false
+      },
+      "pageErrors": [],
+      "failed": [],
+      "console": [
+        "[debug] Injecting <script> tag. Using callback.",
+        "[warning] WebGL: CONTEXT_LOST_WEBGL: loseContext: context lost",
+        "[warning] WARNING: Falling back to CPU-only rendering. Reason: canvasKitForceCpuOnly is set to true"
+      ],
+      "badStatus": [],
+      "responses": [
+        {
+          "status": 200,
+          "url": "http://127.0.0.1:8095/",
+          "mime": "text/html; charset=utf-8",
+          "xfo": null,
+          "csp": null,
+          "coop": null,
+          "coep": null,
+          "corp": "cross-origin"
+        },
+        {
+          "status": 200,
+          "url": "http://127.0.0.1:8095/flutter_bootstrap.js",
+          "mime": "application/javascript; charset=utf-8",
+          "xfo": null,
+          "csp": null,
+          "coop": null,
+          "coep": null,
+          "corp": "cross-origin"
+        },
+        {
+          "status": 200,
+          "url": "http://127.0.0.1:8095/canvaskit/chromium/canvaskit.js",
+          "mime": "application/javascript; charset=utf-8",
+          "xfo": null,
+          "csp": null,
+          "coop": null,
+          "coep": null,
+          "corp": "cross-origin"
+        },
+        {
+          "status": 200,
+          "url": "http://127.0.0.1:8095/canvaskit/chromium/canvaskit.wasm",
+          "mime": "application/wasm",
+          "xfo": null,
+          "csp": null,
+          "coop": null,
+          "coep": null,
+          "corp": "cross-origin"
+        },
+        {
+          "status": 200,
+          "url": "http://127.0.0.1:8095/main.dart.js",
+          "mime": "application/javascript; charset=utf-8",
+          "xfo": null,
+          "csp": null,
+          "coop": null,
+          "coep": null,
+          "corp": "cross-origin"
+        },
+        {
+          "status": 200,
+          "url": "http://127.0.0.1:8095/assets/FontManifest.json",
+          "mime": "application/json; charset=utf-8",
+          "xfo": null,
+          "csp": null,
+          "coop": null,
+          "coep": null,
+          "corp": "cross-origin"
+        },
+        {
+          "status": 200,
+          "url": "http://127.0.0.1:8095/assets/fonts/MaterialIcons-Regular.otf",
+          "mime": "application/octet-stream",
+          "xfo": null,
+          "csp": null,
+          "coop": null,
+          "coep": null,
+          "corp": "cross-origin"
+        },
+        {
+          "status": 200,
+          "url": "http://127.0.0.1:8095/assets/packages/cupertino_icons/assets/CupertinoIcons.ttf",
+          "mime": "font/ttf",
+          "xfo": null,
+          "csp": null,
+          "coop": null,
+          "coep": null,
+          "corp": "cross-origin"
+        },
+        {
+          "status": 200,
+          "url": "http://127.0.0.1:8095/favicon.png",
+          "mime": "image/png",
+          "xfo": null,
+          "csp": null,
+          "coop": null,
+          "coep": null,
+          "corp": "cross-origin"
+        },
+        {
+          "status": 200,
+          "url": "https://fonts.gstatic.com/s/roboto/v32/KFOmCnqEu92Fr1Me4GZLCzYlKw.woff2",
+          "mime": "font/woff2",
+          "xfo": null,
+          "csp": null,
+          "coop": "same-origin; report-to=\"apps-themes\"",
+          "coep": null,
+          "corp": "cross-origin"
+        },
+        {
+          "status": 200,
+          "url": "http://127.0.0.1:8095/assets/.env",
+          "mime": "application/octet-stream",
+          "xfo": null,
+          "csp": null,
+          "coop": null,
+          "coep": null,
+          "corp": "cross-origin"
+        },
+        {
+          "status": 200,
+          "url": "http://127.0.0.1:8095/assets/AssetManifest.bin.json",
+          "mime": "application/json; charset=utf-8",
+          "xfo": null,
+          "csp": null,
+          "coop": null,
+          "coep": null,
+          "corp": "cross-origin"
+        },
+        {
+          "status": 200,
+          "url": "https://fonts.gstatic.com/s/notosansarabic/v28/nwpxtLGrOAZMl5nJ_wfgRg3DrWFZWsnVBJ_sS6tlqHHFlhQ5l3sQWIHPqzCfyGyvvnCBFQLaig.woff2",
+          "mime": "font/woff2",
+          "xfo": null,
+          "csp": null,
+          "coop": "same-origin; report-to=\"apps-themes\"",
+          "coep": null,
+          "corp": "cross-origin"
+        },
+        {
+          "status": 200,
+          "url": "http://127.0.0.1:8095/assets/assets/branding/amana_logo_animated.gif",
+          "mime": "image/gif",
+          "xfo": null,
+          "csp": null,
+          "coop": null,
+          "coep": null,
+          "corp": "cross-origin"
+        }
+      ],
+      "shot": "C:\\Users\\Administrator.user-HP\\AndroidStudioProjects\\amana\\glass-preview-bridge\\evidence\\LIVE-market.png"
+    },
+    {
+      "name": "admin",
+      "url": "http://127.0.0.1:7400/",
+      "extraArgs": [],
+      "navError": null,
+      "firstFrameDom": false,
+      "elapsedMs": 37247,
+      "state": {
+        "title": "amana_admin",
+        "href": "http://127.0.0.1:7400/",
+        "bootPresent": false,
+        "bootText": null,
+        "flutterView": false,
+        "fltGlass": false,
+        "fltScene": false,
+        "canvas": false,
+        "canvasW": 0,
+        "canvasH": 0,
+        "bodyText": "",
+        "swController": false
+      },
+      "pageErrors": [
+        "SyntaxError: Invalid or unexpected token",
+        "CompileError: WebAssembly.compileStreaming(): section was shorter than expected size (5109529 bytes expected, 4164533 decoded) @+4197373",
+        "Error: SyntaxError: Invalid or unexpected token\n\nDart stack trace:\n"
+      ],
+      "failed": [
+        {
+          "url": "https://fonts.gstatic.com/s/roboto/v32/KFOmCnqEu92Fr1Me4GZLCzYlKw.woff2",
+          "method": "GET",
+          "failure": "net::ERR_NAME_NOT_RESOLVED",
+          "resourceType": "fetch"
+        }
+      ],
+      "console": [
+        "[debug] Injecting <script> tag. Using callback.",
+        "[warning] WebGL: CONTEXT_LOST_WEBGL: loseContext: context lost",
+        "[error] Failed to load resource: net::ERR_NAME_NOT_RESOLVED",
+        "[warning] Failed to load font Roboto at https://fonts.gstatic.com/s/roboto/v32/KFOmCnqEu92Fr1Me4GZLCzYlKw.woff2",
+        "[warning] Flutter Web engine failed to complete HTTP request to fetch \"https://fonts.gstatic.com/s/roboto/v32/KFOmCnqEu92Fr1Me4GZLCzYlKw.woff2\": TypeError: Failed to fetch"
+      ],
+      "badStatus": [],
+      "responses": [
+        {
+          "status": 200,
+          "url": "http://127.0.0.1:7400/",
+          "mime": "text/html; charset=utf-8",
+          "xfo": null,
+          "csp": null,
+          "coop": null,
+          "coep": null,
+          "corp": "cross-origin"
+        },
+        {
+          "status": 200,
+          "url": "http://127.0.0.1:7400/flutter_bootstrap.js",
+          "mime": "application/javascript; charset=utf-8",
+          "xfo": null,
+          "csp": null,
+          "coop": null,
+          "coep": null,
+          "corp": "cross-origin"
+        },
+        {
+          "status": 200,
+          "url": "http://127.0.0.1:7400/canvaskit/chromium/canvaskit.js",
+          "mime": "application/javascript; charset=utf-8",
+          "xfo": null,
+          "csp": null,
+          "coop": null,
+          "coep": null,
+          "corp": "cross-origin"
+        },
+        {
+          "status": 200,
+          "url": "http://127.0.0.1:7400/canvaskit/chromium/canvaskit.wasm",
+          "mime": "application/wasm",
+          "xfo": null,
+          "csp": null,
+          "coop": null,
+          "coep": null,
+          "corp": "cross-origin"
+        },
+        {
+          "status": 200,
+          "url": "http://127.0.0.1:7400/main.dart.js",
+          "mime": "application/javascript; charset=utf-8",
+          "xfo": null,
+          "csp": null,
+          "coop": null,
+          "coep": null,
+          "corp": "cross-origin"
+        },
+        {
+          "status": 200,
+          "url": "http://127.0.0.1:7400/assets/FontManifest.json",
+          "mime": "application/json; charset=utf-8",
+          "xfo": null,
+          "csp": null,
+          "coop": null,
+          "coep": null,
+          "corp": "cross-origin"
+        },
+        {
+          "status": 200,
+          "url": "http://127.0.0.1:7400/assets/fonts/MaterialIcons-Regular.otf",
+          "mime": "application/octet-stream",
+          "xfo": null,
+          "csp": null,
+          "coop": null,
+          "coep": null,
+          "corp": "cross-origin"
+        },
+        {
+          "status": 200,
+          "url": "http://127.0.0.1:7400/assets/packages/cupertino_icons/assets/CupertinoIcons.ttf",
+          "mime": "font/ttf",
+          "xfo": null,
+          "csp": null,
+          "coop": null,
+          "coep": null,
+          "corp": "cross-origin"
+        },
+        {
+          "status": 200,
+          "url": "http://127.0.0.1:7400/favicon.png",
+          "mime": "image/png",
+          "xfo": null,
+          "csp": null,
+          "coop": null,
+          "coep": null,
+          "corp": "cross-origin"
+        }
+      ],
+      "shot": "C:\\Users\\Administrator.user-HP\\AndroidStudioProjects\\amana\\glass-preview-bridge\\evidence\\LIVE-admin.png"
+    }
+  ],
+  "iframe": {
+    "iframeState": {
+      "title": "أمانة - الإدارة",
+      "boot": false,
+      "flutterView": true,
+      "fltGlass": true,
+      "body": ""
+    },
+    "iframeFailed": [],
+    "iframeConsole": [
+      "[debug] Injecting <script> tag. Using callback.",
+      "[warning] WARNING: Falling back to CPU-only rendering. Reason: canvasKitForceCpuOnly is set to true"
+    ],
+    "iframeErrors": [],
+    "iframeShot": "C:\\Users\\Administrator.user-HP\\AndroidStudioProjects\\amana\\glass-preview-bridge\\evidence\\LIVE-admin-iframe.png"
+  }
+}

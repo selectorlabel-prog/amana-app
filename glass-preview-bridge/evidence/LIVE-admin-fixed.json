@@ -1,0 +1,18 @@
+{
+  "mounted": true,
+  "state": {
+    "title": "أمانة - الإدارة",
+    "boot": false,
+    "flutterView": true,
+    "fltGlass": true,
+    "body": ""
+  },
+  "pageErrors": [],
+  "failed": [],
+  "console": [
+    "[debug] Injecting <script> tag. Using callback.",
+    "[warning] WebGL: CONTEXT_LOST_WEBGL: loseContext: context lost",
+    "[warning] WARNING: Falling back to CPU-only rendering. Reason: canvasKitForceCpuOnly is set to true"
+  ],
+  "shot": "C:\\Users\\Administrator.user-HP\\AndroidStudioProjects\\amana\\glass-preview-bridge\\evidence\\LIVE-admin-fixed.png"
+}

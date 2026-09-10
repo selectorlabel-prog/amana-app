@@ -43,34 +43,32 @@ const state = Object.fromEntries(
 
 function htmlPage(t) {
   const s = state[t.name];
+  // Zero-JS page: works in any embedded browser (Glass Simple Browser).
+  // <meta refresh> reloads the whole page every 2s; each render embeds a
+  // fresh timestamp in the img URL so nothing can be cached.
+  const ts = Date.now();
+  const statusLine = s.error
+    ? `ERROR: ${s.error}`
+    : `Live #${s.n} · ${s.status} · ${s.lastAt || "…"}`;
   return `<!DOCTYPE html>
 <html lang="ar" dir="rtl"><head>
-<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta charset="utf-8"/>
+<meta http-equiv="refresh" content="2"/>
+<meta http-equiv="Cache-Control" content="no-store"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>أمانة · ${t.name}</title>
 <style>
 body{margin:0;background:#0f1419;color:#e7ecf1;font-family:Tahoma,sans-serif}
 header{padding:10px 14px;border-bottom:1px solid #243041;background:#151b24;font-size:13px}
 img{display:block;width:min(100%,${t.viewport.width}px);margin:12px auto;background:#111;min-height:200px;border:1px solid #2a3648;border-radius:8px}
-.meta{color:#9aa8b8;font-size:12px;margin-top:4px}
-.ok{color:#6ddea8}.err{color:#ff8f8f}
+.meta{color:${s.error ? "#ff8f8f" : "#6ddea8"};font-size:12px;margin-top:4px}
 </style></head><body>
 <header>
-  <div>أمانة · معاينة ${t.name} (HTML+صورة — بدون Flutter في Glass)</div>
-  <div class="meta" id="st">${s.status}</div>
+  <div>أمانة · معاينة ${t.name} — HTML ثابت، تحديث تلقائي كل ثانيتين بدون JavaScript</div>
+  <div class="meta">${statusLine}</div>
 </header>
-<img id="i" src="/frame.png?t=0" alt="preview"/>
-<script>
-async function tick(){
-  try{
-    const j=await(await fetch('/status.json',{cache:'no-store'})).json();
-    const el=document.getElementById('st');
-    el.textContent=(j.error?('ERROR: '+j.error):('Live #'+j.captureCount+' · '+j.status+' · '+(j.lastCaptureAt||'')));
-    el.className='meta '+(j.error?'err':'ok');
-    if(j.hasFrame) document.getElementById('i').src='/frame.png?t='+Date.now();
-  }catch(e){}
-}
-setInterval(tick,1000);tick();
-</script></body></html>`;
+<img src="/frame.png?ts=${ts}" alt="preview"/>
+</body></html>`;
 }
 
 function listen(t) {
@@ -91,7 +89,7 @@ function listen(t) {
           res.end(svg);
           return;
         }
-        res.writeHead(200, { "Content-Type": "image/png", "Cache-Control": "no-store" });
+        res.writeHead(200, { "Content-Type": "image/png", "Cache-Control": "no-store, no-cache, must-revalidate" });
         res.end(s.png);
         return;
       }
@@ -113,7 +111,7 @@ function listen(t) {
         );
         return;
       }
-      res.writeHead(200, { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "no-store" });
+      res.writeHead(200, { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "no-store, no-cache, must-revalidate" });
       res.end(htmlPage(t));
     })
     .listen(t.bridgePort, "127.0.0.1", () => {
